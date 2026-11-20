@@ -1,0 +1,195 @@
+{
+  "pbtResults": {
+    "4.3 Write property test for unique codes in `test/properties_test.dart`": {
+      "status": "passed",
+      "lastRunTimestamp": 1795190935006
+    },
+    "4.4 Write property test for table round trip and code shape in `test/properties_test.dart`": {
+      "status": "passed",
+      "lastRunTimestamp": 1795190935308
+    },
+    "4.5 Write property test for invalid lookups in `test/properties_test.dart`": {
+      "status": "passed",
+      "lastRunTimestamp": 1795190935954
+    }
+  },
+  "executionHistory": {
+    "1. Remove the scaffold and add the property-testing dependency": [
+      {
+        "executionId": "f578356f-87cc-46be-9ac7-5c9c1225a72e",
+        "chatSessionId": "sess_4bf135fd-15cf-4cac-903c-309bae96eb17",
+        "timestamp": 1795180202562
+      },
+      {
+        "executionId": "f578356f-87cc-46be-9ac7-5c9c1225a72e",
+        "chatSessionId": "sess_4bf135fd-15cf-4cac-903c-309bae96eb17",
+        "timestamp": 1795181042234
+      }
+    ],
+    "2.1 Create the ITU fixture `test/support/itu_fixture.dart`": [
+      {
+        "executionId": "f2708383-336c-4154-8a6a-2a7a269fde15",
+        "chatSessionId": "sess_2f5d34ad-8aae-4961-9fe9-df0fd9423071",
+        "timestamp": 1795181194372
+      },
+      {
+        "executionId": "f2708383-336c-4154-8a6a-2a7a269fde15",
+        "chatSessionId": "sess_2f5d34ad-8aae-4961-9fe9-df0fd9423071",
+        "timestamp": 1795181245482
+      }
+    ],
+    "2.2 Create the oracles `test/support/oracles.dart`": [
+      {
+        "executionId": "91942dd0-e99a-4217-83c3-2c2c017687ae",
+        "chatSessionId": "sess_3cdb69da-3c25-4ff4-934f-1c836d3b08a3",
+        "timestamp": 1795181711522
+      },
+      {
+        "executionId": "91942dd0-e99a-4217-83c3-2c2c017687ae",
+        "chatSessionId": "sess_3cdb69da-3c25-4ff4-934f-1c836d3b08a3",
+        "timestamp": 1795181904608
+      }
+    ],
+    "2.3 Create the generators `test/support/arbitraries.dart`": [
+      {
+        "executionId": "2a466e34-db25-4f5b-adb5-7d406dd071a7",
+        "chatSessionId": "sess_61e9cb4d-aa34-4c8e-a50b-ea89d7fccda7",
+        "timestamp": 1795187959661
+      },
+      {
+        "executionId": "2a466e34-db25-4f5b-adb5-7d406dd071a7",
+        "chatSessionId": "sess_61e9cb4d-aa34-4c8e-a50b-ea89d7fccda7",
+        "timestamp": 1795189252197
+      }
+    ],
+    "2.4 Create the requirement ID list `test/support/requirement_ids.dart`": [
+      {
+        "executionId": "a08c1739-a821-48d2-bd2f-9c808fd70355",
+        "chatSessionId": "sess_d14f0b45-c986-44d1-b67b-155ff3bbbe20",
+        "timestamp": 1795189282243
+      },
+      {
+        "executionId": "a08c1739-a821-48d2-bd2f-9c808fd70355",
+        "chatSessionId": "sess_d14f0b45-c986-44d1-b67b-155ff3bbbe20",
+        "timestamp": 1795189402370
+      }
+    ],
+    "2. Write the test support files": [
+      {
+        "executionId": "a08c1739-a821-48d2-bd2f-9c808fd70355",
+        "chatSessionId": "sess_d14f0b45-c986-44d1-b67b-155ff3bbbe20",
+        "timestamp": 1795189402478
+      }
+    ],
+    "3.1 Create `lib/src/morse_format_exception.dart` and export it": [
+      {
+        "executionId": "dc64954c-f430-4507-a76c-79a484a6203f",
+        "chatSessionId": "sess_c099df4f-b321-45a4-978d-588b5b36872c",
+        "timestamp": 1795189469897
+      },
+      {
+        "executionId": "dc64954c-f430-4507-a76c-79a484a6203f",
+        "chatSessionId": "sess_c099df4f-b321-45a4-978d-588b5b36872c",
+        "timestamp": 1795189654907
+      }
+    ],
+    "3.2 Write unit tests for the exception in `test/errors_test.dart`": [
+      {
+        "executionId": "dc64954c-f430-4507-a76c-79a484a6203f",
+        "chatSessionId": "sess_c099df4f-b321-45a4-978d-588b5b36872c",
+        "timestamp": 1795189655379
+      },
+      {
+        "executionId": "dc64954c-f430-4507-a76c-79a484a6203f",
+        "chatSessionId": "sess_c099df4f-b321-45a4-978d-588b5b36872c",
+        "timestamp": 1795189698129
+      }
+    ],
+    "3. Implement MorseFormatException": [
+      {
+        "executionId": "dc64954c-f430-4507-a76c-79a484a6203f",
+        "chatSessionId": "sess_c099df4f-b321-45a4-978d-588b5b36872c",
+        "timestamp": 1795189698263
+      }
+    ],
+    "4.1 Create `lib/src/code_table.dart` and export it": [
+      {
+        "executionId": "9ec0638b-26ed-4116-be84-a70a5bb1730a",
+        "chatSessionId": "sess_372f8d23-d872-4bed-86c9-43d4f7aa8e14",
+        "timestamp": 1795189722021
+      },
+      {
+        "executionId": "9ec0638b-26ed-4116-be84-a70a5bb1730a",
+        "chatSessionId": "sess_372f8d23-d872-4bed-86c9-43d4f7aa8e14",
+        "timestamp": 1795189780099
+      }
+    ],
+    "4.2 Write unit tests for CodeTable in `test/code_table_test.dart`": [
+      {
+        "executionId": "9d476fe9-9986-41e7-a1bf-8f28967ccf66",
+        "chatSessionId": "sess_d80bbe09-9ee1-44a3-ac0a-f0417b42f6e4",
+        "timestamp": 1795189821222
+      },
+      {
+        "executionId": "9d476fe9-9986-41e7-a1bf-8f28967ccf66",
+        "chatSessionId": "sess_d80bbe09-9ee1-44a3-ac0a-f0417b42f6e4",
+        "timestamp": 1795189896510
+      }
+    ],
+    "4.3 Write property test for unique codes in `test/properties_test.dart`": [
+      {
+        "executionId": "c5c2e22a-24c1-4974-8102-fbc78e3081ce",
+        "chatSessionId": "sess_2e2ea96c-ded4-4b79-a649-2a8e932a0f5d",
+        "timestamp": 1795189962329
+      },
+      {
+        "executionId": "c5c2e22a-24c1-4974-8102-fbc78e3081ce",
+        "chatSessionId": "sess_2e2ea96c-ded4-4b79-a649-2a8e932a0f5d",
+        "timestamp": 1795190286269
+      }
+    ],
+    "4.4 Write property test for table round trip and code shape in `test/properties_test.dart`": [
+      {
+        "executionId": "6d2912bc-ee59-4ed7-84db-ff989e794a13",
+        "chatSessionId": "sess_0018ac17-8328-4eee-9770-e6935e289ea2",
+        "timestamp": 1795190318846
+      },
+      {
+        "executionId": "6d2912bc-ee59-4ed7-84db-ff989e794a13",
+        "chatSessionId": "sess_0018ac17-8328-4eee-9770-e6935e289ea2",
+        "timestamp": 1795190387656
+      }
+    ],
+    "4.5 Write property test for invalid lookups in `test/properties_test.dart`": [
+      {
+        "executionId": "f48d9ab4-590e-454e-83a7-9508166e8b0c",
+        "chatSessionId": "sess_fa43982c-3373-47aa-a5db-d5f68a64889d",
+        "timestamp": 1795190638199
+      },
+      {
+        "executionId": "f48d9ab4-590e-454e-83a7-9508166e8b0c",
+        "chatSessionId": "sess_fa43982c-3373-47aa-a5db-d5f68a64889d",
+        "timestamp": 1795190699911
+      }
+    ],
+    "4. Implement CodeTable": [
+      {
+        "executionId": "f48d9ab4-590e-454e-83a7-9508166e8b0c",
+        "chatSessionId": "sess_fa43982c-3373-47aa-a5db-d5f68a64889d",
+        "timestamp": 1795190700163
+      }
+    ],
+    "5. Checkpoint: code table complete": [
+      {
+        "executionId": "bf408de5-78fd-4332-8a39-b34ab003e7b5",
+        "chatSessionId": "sess_075c246d-5acf-4560-b9dc-bbce1bcbe44c",
+        "timestamp": 1795190894500
+      },
+      {
+        "executionId": "bf408de5-78fd-4332-8a39-b34ab003e7b5",
+        "chatSessionId": "sess_075c246d-5acf-4560-b9dc-bbce1bcbe44c",
+        "timestamp": 1795190948234
+      }
+    ]
+  }
+}

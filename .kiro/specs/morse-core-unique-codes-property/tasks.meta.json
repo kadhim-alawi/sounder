@@ -1,0 +1,98 @@
+{
+  "pbtResults": {
+    "1. Run bug condition exploration against the unfixed REQ-CODE-4 property": {
+      "status": "passed",
+      "failingExample": "Collision table: 'E' mutated from '.' to '..' (same code as 'I'). On the unfixed test, 'REQ-CODE-4 codes are unique' PASSED under seed 1003, while 5 other tests failed: ITU fixture REQ-TEST-3/REQ-CODE-1/2/3; REQ-CODE-6 reverse lookup has 43 entries; REQ-CODE-2 REQ-TEST-2 maps A,E,T,1,0; REQ-CODE-10 characters immutability; REQ-CODE-5/7/8 round trip (Falsifying example: E, seed: 2003). Cause: neither (E, I) nor (I, E) was among the 200 sampled pairs; miss chance (902/903)^200 ≈ 0.80.",
+      "lastRunTimestamp": 1795193204636
+    },
+    "3.2 Verify the fixed property detects the `E` to `'..'` mutation": {
+      "status": "passed",
+      "lastRunTimestamp": 1795194875463
+    },
+    "3.3 Verify preservation after the fix": {
+      "status": "passed",
+      "lastRunTimestamp": 1795195160548
+    }
+  },
+  "executionHistory": {
+    "1. Run bug condition exploration against the unfixed REQ-CODE-4 property": [
+      {
+        "executionId": "b0245fde-42eb-48cf-a7eb-c8aad9e42841",
+        "chatSessionId": "sess_8c5e6876-5938-46ed-be85-a2208e67d160",
+        "timestamp": 1795193118253
+      },
+      {
+        "executionId": "b0245fde-42eb-48cf-a7eb-c8aad9e42841",
+        "chatSessionId": "sess_8c5e6876-5938-46ed-be85-a2208e67d160",
+        "timestamp": 1795193219982
+      }
+    ],
+    "2. Record preservation baseline on the unfixed code (BEFORE implementing the fix)": [
+      {
+        "executionId": "48c177aa-381d-406d-97cc-08f581adc9a7",
+        "chatSessionId": "sess_d1be83e2-be06-4f1b-9ee1-ea1ed6afcfc4",
+        "timestamp": 1795193260960
+      },
+      {
+        "executionId": "48c177aa-381d-406d-97cc-08f581adc9a7",
+        "chatSessionId": "sess_d1be83e2-be06-4f1b-9ee1-ea1ed6afcfc4",
+        "timestamp": 1795193833435
+      }
+    ],
+    "3.1 Rewrite the REQ-CODE-4 property block in `test/properties_test.dart`": [
+      {
+        "executionId": "d36891fa-f674-416c-af4a-9f9648b70707",
+        "chatSessionId": "sess_2efeb708-fe6f-42ac-8d64-55cbce45e896",
+        "timestamp": 1795194035333
+      },
+      {
+        "executionId": "d36891fa-f674-416c-af4a-9f9648b70707",
+        "chatSessionId": "sess_2efeb708-fe6f-42ac-8d64-55cbce45e896",
+        "timestamp": 1795194338098
+      }
+    ],
+    "3.2 Verify the fixed property detects the `E` to `'..'` mutation": [
+      {
+        "executionId": "f208a9f7-707e-4681-bdf2-47218f15b460",
+        "chatSessionId": "sess_23e2bd23-0ea8-4554-b6c8-ddef63ebf7b9",
+        "timestamp": 1795194638788
+      },
+      {
+        "executionId": "f208a9f7-707e-4681-bdf2-47218f15b460",
+        "chatSessionId": "sess_23e2bd23-0ea8-4554-b6c8-ddef63ebf7b9",
+        "timestamp": 1795194895202
+      }
+    ],
+    "3.3 Verify preservation after the fix": [
+      {
+        "executionId": "6305bf26-0689-4d96-9fda-fd78cd4371b2",
+        "chatSessionId": "sess_6b6174b1-548c-499e-a891-c155dbd6b8ed",
+        "timestamp": 1795195000178
+      },
+      {
+        "executionId": "6305bf26-0689-4d96-9fda-fd78cd4371b2",
+        "chatSessionId": "sess_6b6174b1-548c-499e-a891-c155dbd6b8ed",
+        "timestamp": 1795195180277
+      }
+    ],
+    "3. Fix the REQ-CODE-4 uniqueness property": [
+      {
+        "executionId": "6305bf26-0689-4d96-9fda-fd78cd4371b2",
+        "chatSessionId": "sess_6b6174b1-548c-499e-a891-c155dbd6b8ed",
+        "timestamp": 1795195180423
+      }
+    ],
+    "4. Checkpoint - Ensure all tests pass": [
+      {
+        "executionId": "fb32c33c-2b12-442d-bea3-b61bc3a607cc",
+        "chatSessionId": "sess_c068b969-c75c-4250-a2e0-3c0139b261b2",
+        "timestamp": 1795195215560
+      },
+      {
+        "executionId": "fb32c33c-2b12-442d-bea3-b61bc3a607cc",
+        "chatSessionId": "sess_c068b969-c75c-4250-a2e0-3c0139b261b2",
+        "timestamp": 1795195613450
+      }
+    ]
+  }
+}
