@@ -15,3 +15,5 @@
 2026-11-20: Bugfix spec morse-core-unique-codes-property. REQ-CODE-4 now checks each drawn character against the whole table. Mutation re-run: with E = '..' the property fails at seed 1003. Original design Property 1 and task 4.3 updated to match.
 
 2026-11-20: Bugfix verified by hand. With E = '..', the new REQ-CODE-4 property fails at seed 1003: "codeFor(E) is "..", shared by 2 entries: E I". The old pair-based version passed in the same situation. Reverted; all tests pass.
+
+2026-11-20: morse-core encoder done (tasks 6.1 to 7). 34 tests pass, including 3 encoder properties (reference model, output format, first unsupported character).

@@ -58,4 +58,48 @@ void main() {
       expect(e, isA<FormatException>());
     });
   });
+
+  // Encoder rejects the first Unsupported_Character. REQ-ERR-1, REQ-ERR-9.
+  group('MorseEncoder errors', () {
+    const encoder = MorseEncoder();
+
+    // Calls encode and asserts it throws exactly one REQ-ERR-1 error with the
+    // given offending value and position, and returns no value. REQ-ERR-9.
+    void expectErr1(String input, String offending, int position) {
+      String? result;
+      MorseFormatException? error;
+      try {
+        result = encoder.encode(input);
+      } on MorseFormatException catch (e) {
+        error = e;
+      }
+      expect(result, isNull, reason: 'no value may be returned');
+      expect(error, isNotNull, reason: 'a MorseFormatException is expected');
+      expect(error!.requirementId, 'REQ-ERR-1');
+      expect(error.offending, offending);
+      expect(error.offending.codeUnits, offending.codeUnits);
+      expect(error.position, position);
+    }
+
+    test('REQ-ERR-1 REQ-ERR-9 accented letter é at position 1', () {
+      expectErr1('hé', '\u00E9', 1);
+    });
+
+    test('REQ-ERR-1 REQ-ERR-9 tab is unsupported', () {
+      expectErr1('a\tb', '\t', 1);
+    });
+
+    test('REQ-ERR-1 REQ-ERR-9 dotless ı is not folded to I', () {
+      expectErr1('\u0131', '\u0131', 0);
+    });
+
+    test('REQ-ERR-1 REQ-ERR-9 surrogate pair 😀 carries both code units '
+        'at the high surrogate index', () {
+      expectErr1('ok \uD83D\uDE00', '\uD83D\uDE00', 3);
+    });
+
+    test('REQ-ERR-1 REQ-ERR-9 lone surrogate carries one code unit', () {
+      expectErr1('a\uD800b', '\uD800', 1);
+    });
+  });
 }

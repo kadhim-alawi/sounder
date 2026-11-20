@@ -2,15 +2,27 @@
   "pbtResults": {
     "4.3 Write property test for unique codes in `test/properties_test.dart`": {
       "status": "passed",
-      "lastRunTimestamp": 1795190935006
+      "lastRunTimestamp": 1795199347783
     },
     "4.4 Write property test for table round trip and code shape in `test/properties_test.dart`": {
       "status": "passed",
-      "lastRunTimestamp": 1795190935308
+      "lastRunTimestamp": 1795199356445
     },
     "4.5 Write property test for invalid lookups in `test/properties_test.dart`": {
       "status": "passed",
-      "lastRunTimestamp": 1795190935954
+      "lastRunTimestamp": 1795199348908
+    },
+    "6.4 Write property test for the encoder reference model in `test/properties_test.dart`": {
+      "status": "passed",
+      "lastRunTimestamp": 1795199349638
+    },
+    "6.5 Write property test for encoder output format in `test/properties_test.dart`": {
+      "status": "passed",
+      "lastRunTimestamp": 1795199362432
+    },
+    "6.6 Write property test for the first unsupported character in `test/properties_test.dart`": {
+      "status": "passed",
+      "lastRunTimestamp": 1795199351041
     }
   },
   "executionHistory": {
@@ -189,6 +201,97 @@
         "executionId": "bf408de5-78fd-4332-8a39-b34ab003e7b5",
         "chatSessionId": "sess_075c246d-5acf-4560-b9dc-bbce1bcbe44c",
         "timestamp": 1795190948234
+      }
+    ],
+    "6.1 Create `lib/src/morse_encoder.dart` and export it": [
+      {
+        "executionId": "240ba0cd-1e8d-4db4-9e7d-a406dbef365e",
+        "chatSessionId": "sess_19294ca7-945a-4f4d-92a2-5fd76915a919",
+        "timestamp": 1795196766898
+      },
+      {
+        "executionId": "240ba0cd-1e8d-4db4-9e7d-a406dbef365e",
+        "chatSessionId": "sess_19294ca7-945a-4f4d-92a2-5fd76915a919",
+        "timestamp": 1795196826792
+      }
+    ],
+    "6.2 Write unit tests for the encoder in `test/encoder_test.dart`": [
+      {
+        "executionId": "50dd9104-97f6-4f24-8c4c-c57b87ea43e3",
+        "chatSessionId": "sess_4c168ae6-90bb-4746-b785-9a146b68e28e",
+        "timestamp": 1795196877932
+      },
+      {
+        "executionId": "50dd9104-97f6-4f24-8c4c-c57b87ea43e3",
+        "chatSessionId": "sess_4c168ae6-90bb-4746-b785-9a146b68e28e",
+        "timestamp": 1795196925191
+      }
+    ],
+    "6.3 Write unit tests for encoder errors in `test/errors_test.dart`": [
+      {
+        "executionId": "4cd76d0b-1741-4848-8129-7e0f27500d32",
+        "chatSessionId": "sess_d84ccfb3-dc27-42eb-b552-d8948e210e69",
+        "timestamp": 1795197225938
+      },
+      {
+        "executionId": "4cd76d0b-1741-4848-8129-7e0f27500d32",
+        "chatSessionId": "sess_d84ccfb3-dc27-42eb-b552-d8948e210e69",
+        "timestamp": 1795197289078
+      }
+    ],
+    "6.4 Write property test for the encoder reference model in `test/properties_test.dart`": [
+      {
+        "executionId": "59a92eb0-fc3e-4f63-919f-eae11b222a99",
+        "chatSessionId": "sess_80ca8e17-3b74-4be9-8eb9-b57ca8e4b14d",
+        "timestamp": 1795197799986
+      },
+      {
+        "executionId": "59a92eb0-fc3e-4f63-919f-eae11b222a99",
+        "chatSessionId": "sess_80ca8e17-3b74-4be9-8eb9-b57ca8e4b14d",
+        "timestamp": 1795197859697
+      }
+    ],
+    "6.5 Write property test for encoder output format in `test/properties_test.dart`": [
+      {
+        "executionId": "1ea4c73c-a7c5-4cd7-9fbe-f215d00adb82",
+        "chatSessionId": "sess_0d7af76a-bfd8-4a25-a932-edcd274db085",
+        "timestamp": 1795198298837
+      },
+      {
+        "executionId": "1ea4c73c-a7c5-4cd7-9fbe-f215d00adb82",
+        "chatSessionId": "sess_0d7af76a-bfd8-4a25-a932-edcd274db085",
+        "timestamp": 1795198352631
+      }
+    ],
+    "6.6 Write property test for the first unsupported character in `test/properties_test.dart`": [
+      {
+        "executionId": "a78ef210-ef6c-4886-9cfb-81fa31355c9c",
+        "chatSessionId": "sess_7c18ba7b-2d35-453a-bcc0-a9f2ccc2d242",
+        "timestamp": 1795198826464
+      },
+      {
+        "executionId": "a78ef210-ef6c-4886-9cfb-81fa31355c9c",
+        "chatSessionId": "sess_7c18ba7b-2d35-453a-bcc0-a9f2ccc2d242",
+        "timestamp": 1795198911676
+      }
+    ],
+    "6. Implement MorseEncoder": [
+      {
+        "executionId": "a78ef210-ef6c-4886-9cfb-81fa31355c9c",
+        "chatSessionId": "sess_7c18ba7b-2d35-453a-bcc0-a9f2ccc2d242",
+        "timestamp": 1795198912321
+      }
+    ],
+    "7. Checkpoint: encoder complete": [
+      {
+        "executionId": "1d2accf5-6d5d-4880-aa63-c61f3882c8f2",
+        "chatSessionId": "sess_4b8205a3-0dc2-4bc7-bce7-d3213743d24b",
+        "timestamp": 1795199278237
+      },
+      {
+        "executionId": "1d2accf5-6d5d-4880-aa63-c61f3882c8f2",
+        "chatSessionId": "sess_4b8205a3-0dc2-4bc7-bce7-d3213743d24b",
+        "timestamp": 1795199382409
       }
     ]
   }

@@ -102,15 +102,15 @@ Commands: `cd packages/morse_core && dart test` and `cd packages/morse_core && d
   - Run `cd packages/morse_core && dart test` and `dart analyze`: zero failures, zero skipped tests, zero analyzer errors and warnings.
   - Ensure all tests pass, ask the user if questions arise.
 
-- [ ] 6. Implement MorseEncoder
-  - [ ] 6.1 Create `lib/src/morse_encoder.dart` and export it
+- [x] 6. Implement MorseEncoder
+  - [x] 6.1 Create `lib/src/morse_encoder.dart` and export it
     - `final class MorseEncoder` with a `const` constructor and `String encode(String text)`
     - One left-to-right pass over code units with a local `StringBuffer`, `gapPending`, and the design's rules: spaces only set `gapPending` when the buffer is non-empty; write `' / '` or `' '` before each code after the first
     - On the first unsupported code unit, throw `MorseFormatException(requirementId: 'REQ-ERR-1', position: i, offending: ...)`, where `offending` is both code units for a valid surrogate pair and the single code unit otherwise; no partial result escapes
     - Add the export to `lib/morse_core.dart`; `///` doc comments citing REQ IDs
     - _Requirements: REQ-ENC-1, REQ-ENC-2, REQ-ENC-3, REQ-ENC-4, REQ-ENC-5, REQ-ENC-6, REQ-ENC-7, REQ-ENC-10, REQ-ENC-11, REQ-FMT-2, REQ-ERR-1, REQ-ERR-9, REQ-ERR-10, REQ-PURE-3, REQ-PURE-4, REQ-PURE-5, REQ-PURE-7_
 
-  - [ ] 6.2 Write unit tests for the encoder in `test/encoder_test.dart`
+  - [x] 6.2 Write unit tests for the encoder in `test/encoder_test.dart`
     - REQ-ENC-7: `''` and `'   '` give `''`
     - REQ-ENC-8: `SOS` gives `... --- ...`
     - REQ-ENC-9: `hello world` gives `.... . .-.. .-.. --- / .-- --- .-. .-.. -..`
@@ -119,29 +119,29 @@ Commands: `cd packages/morse_core && dart test` and `cd packages/morse_core && d
     - REQ-FMT-7: ` e  t ` gives `. / -` (length 5)
     - _Requirements: REQ-ENC-7, REQ-ENC-8, REQ-ENC-9, REQ-ENC-12, REQ-ENC-13, REQ-FMT-7, REQ-TEST-2_
 
-  - [ ] 6.3 Write unit tests for encoder errors in `test/errors_test.dart`
+  - [x] 6.3 Write unit tests for encoder errors in `test/errors_test.dart`
     - REQ-ERR-1: `hé` (U+00E9 at 1), a tab, `ı`, `😀` (offending holds both code units, position is the high surrogate index), a lone surrogate; each asserts `requirementId == 'REQ-ERR-1'`, the exact `offending` and `position`, and that no value is returned
     - _Requirements: REQ-ERR-1, REQ-ERR-9, REQ-TEST-2_
 
-  - [ ] 6.4 Write property test for the encoder reference model in `test/properties_test.dart`
+  - [x] 6.4 Write property test for the encoder reference model in `test/properties_test.dart`
     - **Property 4: Encoder matches the reference model**
     - Use `plainText()`; compare `encode(s)` with the reference built from `normalise(s)` and fixture codes, and check `encode(s) == encode(asciiUpper(s))`; seed 4003
     - Test name starts with `REQ-ENC-1 REQ-ENC-2 REQ-ENC-3 REQ-ENC-4 REQ-ENC-5 REQ-ENC-6 REQ-ENC-7 REQ-ENC-11`
     - **Validates: Requirements 2.1, 2.2, 2.3, 2.4, 2.5, 2.6, 2.7, 2.11**
 
-  - [ ] 6.5 Write property test for encoder output format in `test/properties_test.dart`
+  - [x] 6.5 Write property test for encoder output format in `test/properties_test.dart`
     - **Property 5: Encoder output conforms to the format**
     - Use `plainText()`; assert `isEncodedText(encode(s))`; seed 5003
     - Test name starts with `REQ-ENC-6 REQ-ENC-10 REQ-FMT-2`
     - **Validates: Requirements 2.6, 2.10, 4.2**
 
-  - [ ] 6.6 Write property test for the first unsupported character in `test/properties_test.dart`
+  - [x] 6.6 Write property test for the first unsupported character in `test/properties_test.dart`
     - **Property 10: Encoder reports the first unsupported character**
     - Combine `plainText()`, `unsupportedChar()` and an arbitrary suffix with `combine3`; assert one `MorseFormatException` with `requirementId == 'REQ-ERR-1'`, `position == p.length`, `offending == u`; seed 10003
     - Test name starts with `REQ-ERR-1 REQ-ERR-9 REQ-ERR-10`
     - **Validates: Requirements 5.1, 5.9, 5.10**
 
-- [ ] 7. Checkpoint: encoder complete
+- [x] 7. Checkpoint: encoder complete
   - Run `cd packages/morse_core && dart test` and `dart analyze`: zero failures, zero skipped tests, zero analyzer errors and warnings.
   - Ensure all tests pass, ask the user if questions arise.
 

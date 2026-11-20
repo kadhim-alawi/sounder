@@ -5,4 +5,5 @@
 library;
 
 export 'src/code_table.dart';
+export 'src/morse_encoder.dart';
 export 'src/morse_format_exception.dart';
