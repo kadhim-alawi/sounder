@@ -89,6 +89,19 @@ Arbitrary<List<List<String>>> _words({required int minWords}) =>
 /// containing `-..-.`. REQ-FMT-1, REQ-FMT-4.
 Arbitrary<String> encodedText() => _words(minWords: 0).map(_joinWords);
 
+/// Encoded_Text as in [encodedText], paired with `k`, the number of
+/// Morse_Codes, and `w`, the number of Word_Separators. Built from fixture
+/// codes, independently of `MorseEncoder`. Includes the empty string
+/// (`k == 0`, `w == 0`) and words containing `-..-.`. REQ-DEC-7.
+Arbitrary<(String, int, int)> countedEncodedText() =>
+    _words(minWords: 0).map(
+      (words) => (
+        _joinWords(words),
+        words.fold<int>(0, (sum, word) => sum + word.length),
+        words.isEmpty ? 0 : words.length - 1,
+      ),
+    );
+
 /// Non-empty Encoded_Text, built directly rather than by filtering.
 Arbitrary<String> _nonEmptyEncodedText() =>
     _words(minWords: 1).map(_joinWords);

@@ -17,3 +17,5 @@
 2026-11-20: Bugfix verified by hand. With E = '..', the new REQ-CODE-4 property fails at seed 1003: "codeFor(E) is "..", shared by 2 entries: E I". The old pair-based version passed in the same situation. Reverted; all tests pass.
 
 2026-11-20: morse-core encoder done (tasks 6.1 to 7). 34 tests pass, including 3 encoder properties (reference model, output format, first unsupported character).
+
+2026-11-20: morse-core decoder done (tasks 8.1 to 9). 60 tests pass in 2 s, including 7 decoder properties (both round trips, closed output, exact acceptance, injected invalid character, well-formed errors, determinism).

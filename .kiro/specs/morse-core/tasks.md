@@ -145,25 +145,25 @@ Commands: `cd packages/morse_core && dart test` and `cd packages/morse_core && d
   - Run `cd packages/morse_core && dart test` and `dart analyze`: zero failures, zero skipped tests, zero analyzer errors and warnings.
   - Ensure all tests pass, ask the user if questions arise.
 
-- [ ] 8. Implement MorseDecoder
-  - [ ] 8.1 Create `lib/src/morse_decoder.dart` with the empty-input case and pass 1, and export it
+- [x] 8. Implement MorseDecoder
+  - [x] 8.1 Create `lib/src/morse_decoder.dart` with the empty-input case and pass 1, and export it
     - `final class MorseDecoder` with a `const` constructor and `String decode(String morse)`
     - Return `''` for empty input
     - Pass 1: throw `REQ-ERR-2` at the first code unit outside `{0x2E, 0x2D, 0x20, 0x2F}`, keeping a valid surrogate pair whole as `offending`
     - Add the export to `lib/morse_core.dart`; `///` doc comments citing REQ IDs
     - _Requirements: REQ-DEC-4, REQ-ERR-2, REQ-ERR-11, REQ-PURE-4, REQ-PURE-5, REQ-PURE-7_
 
-  - [ ] 8.2 Add pass 2: structural candidates and selection
+  - [x] 8.2 Add pass 2: structural candidates and selection
     - One walk recording tokens as `(start, text)`; a private `_Candidate(position, errNumber, offending)`
     - Rules exactly as the design table: REQ-ERR-3 unknown symbol token, REQ-ERR-4 token containing `/` other than `/`, REQ-ERR-5 second space of the first double-space run, REQ-ERR-6 leading or trailing space or `/` token (position 0 or length − 1), REQ-ERR-7 second `/` of `/ /`
     - Throw the candidate with the smallest `(position, errNumber)`
     - _Requirements: REQ-ERR-3, REQ-ERR-4, REQ-ERR-5, REQ-ERR-6, REQ-ERR-7, REQ-ERR-9, REQ-ERR-11, REQ-DEC-10, REQ-FMT-6_
 
-  - [ ] 8.3 Add pass 3: token mapping
+  - [x] 8.3 Add pass 3: token mapping
     - Write `' '` for a `/` token and `characterFor(token)!` otherwise, into a local `StringBuffer` returned only at the end
     - _Requirements: REQ-DEC-1, REQ-DEC-2, REQ-DEC-3, REQ-DEC-7, REQ-FMT-5, REQ-PURE-3_
 
-  - [ ] 8.4 Write unit tests for the decoder in `test/decoder_test.dart`
+  - [x] 8.4 Write unit tests for the decoder in `test/decoder_test.dart`
     - REQ-DEC-3: a word containing `-..-.` decodes to `/`
     - REQ-DEC-4: `''` gives `''`
     - REQ-DEC-5: `... --- ...` gives `SOS`
@@ -172,7 +172,7 @@ Commands: `cd packages/morse_core && dart test` and `cd packages/morse_core && d
     - REQ-DEC-9: `.---- ..--- ...-- / .-.-.- --..-- ..--.. -....-` gives `123 .,?-`
     - _Requirements: REQ-DEC-3, REQ-DEC-4, REQ-DEC-5, REQ-DEC-6, REQ-DEC-8, REQ-DEC-9, REQ-TEST-2_
 
-  - [ ] 8.5 Write unit tests for decoder errors in `test/errors_test.dart`
+  - [x] 8.5 Write unit tests for decoder errors in `test/errors_test.dart`
     - REQ-ERR-2: a letter and a surrogate pair inside otherwise valid input, at the exact index
     - REQ-ERR-3: `... ...... ...` gives Token `......` at 4
     - REQ-ERR-4: `/.`, `-/`, `//` at the token start
@@ -183,49 +183,49 @@ Commands: `cd packages/morse_core && dart test` and `cd packages/morse_core && d
     - REQ-ERR-11: `... / /` gives REQ-ERR-6 at 6, not REQ-ERR-7
     - _Requirements: REQ-ERR-2, REQ-ERR-3, REQ-ERR-4, REQ-ERR-5, REQ-ERR-6, REQ-ERR-7, REQ-ERR-8, REQ-ERR-9, REQ-ERR-11, REQ-TEST-2_
 
-  - [ ] 8.6 Write property test for the text round trip in `test/properties_test.dart`
+  - [x] 8.6 Write property test for the text round trip in `test/properties_test.dart`
     - **Property 6: Text round trip**
     - Use `plainText()`; assert `decode(encode(s)) == normalise(s)`; seed 6003
     - Test name starts with `REQ-FMT-3`
     - **Validates: Requirements 4.3**
 
-  - [ ] 8.7 Write property test for the code round trip in `test/properties_test.dart`
+  - [x] 8.7 Write property test for the code round trip in `test/properties_test.dart`
     - **Property 7: Code round trip**
     - Use `encodedText()`; assert `encode(decode(m)) == m` with no error; seed 7003
     - Test name starts with `REQ-DEC-1 REQ-DEC-2 REQ-DEC-3 REQ-FMT-4 REQ-FMT-5`
     - **Validates: Requirements 3.1, 3.2, 3.3, 4.4, 4.5**
 
-  - [ ] 8.8 Write property test for closed decoder output in `test/properties_test.dart`
+  - [x] 8.8 Write property test for closed decoder output in `test/properties_test.dart`
     - **Property 8: Decoder output is closed**
     - Use a variant of `encodedText()` that also yields `k` (codes) and `w` (Word_Separators); assert only uppercase Supported_Characters and single spaces, no leading or trailing space, length `k + w`; seed 8003
     - Test name starts with `REQ-DEC-7`
     - **Validates: Requirements 3.7**
 
-  - [ ] 8.9 Write property test for exact acceptance in `test/properties_test.dart`
+  - [x] 8.9 Write property test for exact acceptance in `test/properties_test.dart`
     - **Property 9: Decoder accepts exactly the conforming strings**
     - Use `oneOf(decoderAlphabetString(), nearMiss())`; assert `decode(s)` succeeds iff `isEncodedText(s)`; on success `encode(r) == s`; on failure exactly one `MorseFormatException` with `requirementId` in `REQ-ERR-3` to `REQ-ERR-7`; seed 9003
     - Test name starts with `REQ-DEC-10 REQ-FMT-5 REQ-FMT-6 REQ-ERR-9`
     - **Validates: Requirements 3.10, 4.5, 4.6, 5.9**
 
-  - [ ] 8.10 Write property test for injected invalid characters in `test/properties_test.dart`
+  - [x] 8.10 Write property test for injected invalid characters in `test/properties_test.dart`
     - **Property 11: Decoder reports an injected invalid character**
     - Use `injectedInvalid()`, one `(m, i, c)` triple per case, 200 cases; do not loop over every index or code unit; assert `requirementId == 'REQ-ERR-2'`, `position == i`, `offending == c`; seed 11003
     - Test name starts with `REQ-ERR-2 REQ-ERR-11 REQ-ERR-12`
     - **Validates: Requirements 5.2, 5.11, 5.12**
 
-  - [ ] 8.11 Write property test for well-formed errors in `test/properties_test.dart`
+  - [x] 8.11 Write property test for well-formed errors in `test/properties_test.dart`
     - **Property 12: Every error is well formed**
     - Use `oneOf` of arbitrary Unicode strings, `decoderAlphabetString()` and `nearMiss()`; run both `encode` and `decode`; for every thrown exception check position range, `offset == position`, position in the message, quoted Token or `U+XXXX` form, `source == null`, `toString() == message`; seed 12003
     - Test name starts with `REQ-ERR-8`
     - **Validates: Requirements 5.8**
 
-  - [ ] 8.12 Write property test for determinism in `test/properties_test.dart`
+  - [x] 8.12 Write property test for determinism in `test/properties_test.dart`
     - **Property 13: Determinism**
     - Use the same mixed string generator; call `encode` twice and `decode` twice; results are equal or both throw with the same `requirementId` and `position`; seed 13003
     - Test name starts with `REQ-PURE-2`
     - **Validates: Requirements 6.2**
 
-- [ ] 9. Checkpoint: decoder complete
+- [x] 9. Checkpoint: decoder complete
   - Run `cd packages/morse_core && dart test` and `dart analyze`: zero failures, zero skipped tests, zero analyzer errors and warnings.
   - Ensure all tests pass, ask the user if questions arise.
 

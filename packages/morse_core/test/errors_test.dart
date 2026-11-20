@@ -102,4 +102,120 @@ void main() {
       expectErr1('a\uD800b', '\uD800', 1);
     });
   });
+
+  // Decoder rejects non-conforming Encoded_Text. REQ-ERR-2 to REQ-ERR-9,
+  // REQ-ERR-11.
+  group('MorseDecoder errors', () {
+    const decoder = MorseDecoder();
+
+    // Calls decode, asserts it throws exactly one MorseFormatException with
+    // the given kind, offending value and position, and returns no value.
+    // Returns the error for further checks. REQ-ERR-9.
+    MorseFormatException expectErr(
+      String input,
+      String requirementId,
+      String offending,
+      int position,
+    ) {
+      String? result;
+      MorseFormatException? error;
+      try {
+        result = decoder.decode(input);
+      } on MorseFormatException catch (e) {
+        error = e;
+      }
+      expect(result, isNull, reason: 'no value may be returned');
+      expect(error, isNotNull, reason: 'a MorseFormatException is expected');
+      expect(error!.requirementId, requirementId);
+      expect(error.offending, offending);
+      expect(error.offending.codeUnits, offending.codeUnits);
+      expect(error.position, position);
+      return error;
+    }
+
+    test('REQ-ERR-2 REQ-ERR-9 letter inside valid input at its index', () {
+      expectErr('... a ---', 'REQ-ERR-2', 'a', 4);
+    });
+
+    test('REQ-ERR-2 REQ-ERR-9 surrogate pair carries both code units '
+        'at the high surrogate index', () {
+      expectErr('.- \uD83D\uDE00 -', 'REQ-ERR-2', '\uD83D\uDE00', 3);
+    });
+
+    test('REQ-ERR-3 REQ-ERR-9 unknown Token ...... at 4', () {
+      expectErr('... ...... ...', 'REQ-ERR-3', '......', 4);
+    });
+
+    test('REQ-ERR-4 REQ-ERR-9 Token /. at its start', () {
+      expectErr('... /.', 'REQ-ERR-4', '/.', 4);
+    });
+
+    test('REQ-ERR-4 REQ-ERR-9 Token -/ at its start', () {
+      expectErr('-/', 'REQ-ERR-4', '-/', 0);
+    });
+
+    test('REQ-ERR-4 REQ-ERR-9 Token // at its start', () {
+      expectErr('.- // -', 'REQ-ERR-4', '//', 3);
+    });
+
+    test('REQ-ERR-5 REQ-ERR-9 double space at the second space, 4', () {
+      expectErr('...  ---', 'REQ-ERR-5', ' ', 4);
+    });
+
+    test('REQ-ERR-6 REQ-ERR-9 leading space at 0', () {
+      expectErr(' ...', 'REQ-ERR-6', ' ', 0);
+    });
+
+    test('REQ-ERR-6 REQ-ERR-9 trailing / Token at 4', () {
+      expectErr('... /', 'REQ-ERR-6', '/', 4);
+    });
+
+    test('REQ-ERR-6 REQ-ERR-9 lone / Token at 0', () {
+      expectErr('/', 'REQ-ERR-6', '/', 0);
+    });
+
+    test('REQ-ERR-7 REQ-ERR-9 empty word gives second / at 6', () {
+      expectErr('... / / ...', 'REQ-ERR-7', '/', 6);
+    });
+
+    test('REQ-ERR-11 REQ-ERR-9 tie at 6 picks REQ-ERR-6 over REQ-ERR-7', () {
+      expectErr('... / /', 'REQ-ERR-6', '/', 6);
+    });
+
+    test('REQ-ERR-8 exact decoder messages; source null; toString is the '
+        'message and omits the input', () {
+      final cases = <(String, String, String, String, int)>[
+        (
+          '... ...... ...',
+          'REQ-ERR-3',
+          '......',
+          'Unknown Morse code "......" at position 4.',
+          4,
+        ),
+        (
+          '...  ---',
+          'REQ-ERR-5',
+          ' ',
+          'Extra space U+0020 at position 4; '
+              'letters are separated by one space.',
+          4,
+        ),
+        (
+          '... /',
+          'REQ-ERR-6',
+          '/',
+          'Word separator "/" (U+002F) at end, position 4.',
+          4,
+        ),
+      ];
+      for (final (input, id, offending, message, position) in cases) {
+        final e = expectErr(input, id, offending, position);
+        expect(e.message, message);
+        expect(e.source, isNull);
+        expect(e.offset, position);
+        expect(e.toString(), e.message);
+        expect(e.toString(), isNot(contains(input)));
+      }
+    });
+  });
 }

@@ -23,6 +23,34 @@
     "6.6 Write property test for the first unsupported character in `test/properties_test.dart`": {
       "status": "passed",
       "lastRunTimestamp": 1795199351041
+    },
+    "8.6 Write property test for the text round trip in `test/properties_test.dart`": {
+      "status": "passed",
+      "lastRunTimestamp": 1795201770631
+    },
+    "8.7 Write property test for the code round trip in `test/properties_test.dart`": {
+      "status": "passed",
+      "lastRunTimestamp": 1795202828455
+    },
+    "8.8 Write property test for closed decoder output in `test/properties_test.dart`": {
+      "status": "passed",
+      "lastRunTimestamp": 1795203225004
+    },
+    "8.9 Write property test for exact acceptance in `test/properties_test.dart`": {
+      "status": "passed",
+      "lastRunTimestamp": 1795203806716
+    },
+    "8.10 Write property test for injected invalid characters in `test/properties_test.dart`": {
+      "status": "passed",
+      "lastRunTimestamp": 1795204079834
+    },
+    "8.11 Write property test for well-formed errors in `test/properties_test.dart`": {
+      "status": "passed",
+      "lastRunTimestamp": 1795204543312
+    },
+    "8.12 Write property test for determinism in `test/properties_test.dart`": {
+      "status": "passed",
+      "lastRunTimestamp": 1795204763893
     }
   },
   "executionHistory": {
@@ -292,6 +320,169 @@
         "executionId": "1d2accf5-6d5d-4880-aa63-c61f3882c8f2",
         "chatSessionId": "sess_4b8205a3-0dc2-4bc7-bce7-d3213743d24b",
         "timestamp": 1795199382409
+      }
+    ],
+    "8.1 Create `lib/src/morse_decoder.dart` with the empty-input case and pass 1, and export it": [
+      {
+        "executionId": "66be463c-6886-4e70-80c0-65308cb61565",
+        "chatSessionId": "sess_3f0b6984-ed68-45e0-8220-5693125f46c4",
+        "timestamp": 1795199870673
+      },
+      {
+        "executionId": "66be463c-6886-4e70-80c0-65308cb61565",
+        "chatSessionId": "sess_3f0b6984-ed68-45e0-8220-5693125f46c4",
+        "timestamp": 1795199938707
+      }
+    ],
+    "8.2 Add pass 2: structural candidates and selection": [
+      {
+        "executionId": "bb3deebb-bd94-435d-a837-354c23611085",
+        "chatSessionId": "sess_2ca31d95-7e4c-47a1-91b7-8e0ec255f2c6",
+        "timestamp": 1795200296821
+      },
+      {
+        "executionId": "bb3deebb-bd94-435d-a837-354c23611085",
+        "chatSessionId": "sess_2ca31d95-7e4c-47a1-91b7-8e0ec255f2c6",
+        "timestamp": 1795200411039
+      }
+    ],
+    "8.3 Add pass 3: token mapping": [
+      {
+        "executionId": "e3256b61-4265-4a0a-911e-56a1bd5e9645",
+        "chatSessionId": "sess_b0d5a420-12ba-4252-b5c1-bdf02c3f43cc",
+        "timestamp": 1795200523041
+      },
+      {
+        "executionId": "e3256b61-4265-4a0a-911e-56a1bd5e9645",
+        "chatSessionId": "sess_b0d5a420-12ba-4252-b5c1-bdf02c3f43cc",
+        "timestamp": 1795200730824
+      }
+    ],
+    "8.4 Write unit tests for the decoder in `test/decoder_test.dart`": [
+      {
+        "executionId": "0d2e3e14-a415-4bf5-b988-0ab0cda5fea2",
+        "chatSessionId": "sess_cde3603e-e7e1-4bea-a507-b47f85bff4c0",
+        "timestamp": 1795200836549
+      },
+      {
+        "executionId": "0d2e3e14-a415-4bf5-b988-0ab0cda5fea2",
+        "chatSessionId": "sess_cde3603e-e7e1-4bea-a507-b47f85bff4c0",
+        "timestamp": 1795200895048
+      }
+    ],
+    "8.5 Write unit tests for decoder errors in `test/errors_test.dart`": [
+      {
+        "executionId": "cc161360-c547-487f-b9ba-c5802b530909",
+        "chatSessionId": "sess_e572ebd6-8637-4d82-9c79-1be98c252e85",
+        "timestamp": 1795200959097
+      },
+      {
+        "executionId": "cc161360-c547-487f-b9ba-c5802b530909",
+        "chatSessionId": "sess_e572ebd6-8637-4d82-9c79-1be98c252e85",
+        "timestamp": 1795201026223
+      }
+    ],
+    "8.6 Write property test for the text round trip in `test/properties_test.dart`": [
+      {
+        "executionId": "695857f4-6318-4d5b-8b66-e724a7259fc1",
+        "chatSessionId": "sess_c0bb8cc3-fc59-4f30-98a5-f5cc042c6903",
+        "timestamp": 1795201725711
+      },
+      {
+        "executionId": "695857f4-6318-4d5b-8b66-e724a7259fc1",
+        "chatSessionId": "sess_c0bb8cc3-fc59-4f30-98a5-f5cc042c6903",
+        "timestamp": 1795201782027
+      }
+    ],
+    "8.7 Write property test for the code round trip in `test/properties_test.dart`": [
+      {
+        "executionId": "5102cc73-ff00-4eb8-b41a-c2e00253156b",
+        "chatSessionId": "sess_8d99ff5c-2790-44bb-a170-2c729f510b15",
+        "timestamp": 1795202767557
+      },
+      {
+        "executionId": "5102cc73-ff00-4eb8-b41a-c2e00253156b",
+        "chatSessionId": "sess_8d99ff5c-2790-44bb-a170-2c729f510b15",
+        "timestamp": 1795202844146
+      }
+    ],
+    "8.8 Write property test for closed decoder output in `test/properties_test.dart`": [
+      {
+        "executionId": "25184779-be2c-4372-bb4b-1583cfdb7b41",
+        "chatSessionId": "sess_22022ca1-f27c-47e1-9452-318641a3b5b3",
+        "timestamp": 1795203173000
+      },
+      {
+        "executionId": "25184779-be2c-4372-bb4b-1583cfdb7b41",
+        "chatSessionId": "sess_22022ca1-f27c-47e1-9452-318641a3b5b3",
+        "timestamp": 1795203237361
+      }
+    ],
+    "8.9 Write property test for exact acceptance in `test/properties_test.dart`": [
+      {
+        "executionId": "8de53065-4dc9-4779-828e-1c744ad2ca59",
+        "chatSessionId": "sess_6abdc961-c63a-4640-b502-349ba83aca91",
+        "timestamp": 1795203751509
+      },
+      {
+        "executionId": "8de53065-4dc9-4779-828e-1c744ad2ca59",
+        "chatSessionId": "sess_6abdc961-c63a-4640-b502-349ba83aca91",
+        "timestamp": 1795203819514
+      }
+    ],
+    "8.10 Write property test for injected invalid characters in `test/properties_test.dart`": [
+      {
+        "executionId": "5b0e7f53-4f98-4c99-badb-87b525622289",
+        "chatSessionId": "sess_6dae45c7-ba97-4b72-a6e4-f99713c51ef6",
+        "timestamp": 1795204034599
+      },
+      {
+        "executionId": "5b0e7f53-4f98-4c99-badb-87b525622289",
+        "chatSessionId": "sess_6dae45c7-ba97-4b72-a6e4-f99713c51ef6",
+        "timestamp": 1795204090781
+      }
+    ],
+    "8.11 Write property test for well-formed errors in `test/properties_test.dart`": [
+      {
+        "executionId": "beab4152-4835-4e65-910d-9754c266473f",
+        "chatSessionId": "sess_68c7ec62-ba5d-47df-b852-e547da8cc0b2",
+        "timestamp": 1795204300944
+      },
+      {
+        "executionId": "beab4152-4835-4e65-910d-9754c266473f",
+        "chatSessionId": "sess_68c7ec62-ba5d-47df-b852-e547da8cc0b2",
+        "timestamp": 1795204559478
+      }
+    ],
+    "8.12 Write property test for determinism in `test/properties_test.dart`": [
+      {
+        "executionId": "a8834450-d900-4f30-8cd2-794a17e5d908",
+        "chatSessionId": "sess_d6e5ba9b-fe23-4ed7-8207-f53a7ef7a1b7",
+        "timestamp": 1795204715915
+      },
+      {
+        "executionId": "a8834450-d900-4f30-8cd2-794a17e5d908",
+        "chatSessionId": "sess_d6e5ba9b-fe23-4ed7-8207-f53a7ef7a1b7",
+        "timestamp": 1795204776012
+      }
+    ],
+    "8. Implement MorseDecoder": [
+      {
+        "executionId": "a8834450-d900-4f30-8cd2-794a17e5d908",
+        "chatSessionId": "sess_d6e5ba9b-fe23-4ed7-8207-f53a7ef7a1b7",
+        "timestamp": 1795204776394
+      }
+    ],
+    "9. Checkpoint: decoder complete": [
+      {
+        "executionId": "0aa82e5c-1ee1-4163-b294-e04188e22f32",
+        "chatSessionId": "sess_1dddcba4-f6a0-489a-9090-b278b44b1fd4",
+        "timestamp": 1795204999034
+      },
+      {
+        "executionId": "0aa82e5c-1ee1-4163-b294-e04188e22f32",
+        "chatSessionId": "sess_1dddcba4-f6a0-489a-9090-b278b44b1fd4",
+        "timestamp": 1795205051975
       }
     ]
   }
