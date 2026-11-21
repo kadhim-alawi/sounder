@@ -229,13 +229,13 @@ Commands: `cd packages/morse_core && dart test` and `cd packages/morse_core && d
   - Run `cd packages/morse_core && dart test` and `dart analyze`: zero failures, zero skipped tests, zero analyzer errors and warnings.
   - Ensure all tests pass, ask the user if questions arise.
 
-- [ ] 10. Finish the public surface and add purity and structure tests
-  - [ ] 10.1 Complete the example and library doc
+- [x] 10. Finish the public surface and add purity and structure tests
+  - [x] 10.1 Complete the example and library doc
     - Rewrite `example/morse_core_example.dart` to import only `package:morse_core/morse_core.dart` and use `CodeTable`, `MorseEncoder`, `MorseDecoder` and `MorseFormatException` (look up a code, encode and decode `hello world`, catch an error and print only its message)
     - Finish the `lib/morse_core.dart` library doc comment, citing REQ-PURE-5
     - _Requirements: REQ-PURE-5, REQ-PURE-6, REQ-PURE-7_
 
-  - [ ] 10.2 Write purity tests for dependencies, I/O and file structure in `test/purity_test.dart`
+  - [x] 10.2 Write purity tests for dependencies, I/O and file structure in `test/purity_test.dart`
     - `dart:io` is used only in this test, and it reads only files under `packages/morse_core/`
     - REQ-PURE-1: `pubspec.yaml` has no `dependencies` entries; every `import` in `lib/` is an allowed `dart:` library or a relative path; none is on the forbidden list; no `lib/` file imports `kiri_check`, `test` or `lints`
     - REQ-PURE-3: no `lib/` file imports I/O, clock or random libraries; no top-level or `static` variable without `final` or `const`; mutating `codes` and `characters` throws
@@ -243,18 +243,18 @@ Commands: `cd packages/morse_core && dart test` and `cd packages/morse_core && d
     - REQ-PURE-5: the test imports only `package:morse_core/morse_core.dart`, uses all four classes, and checks that every public class in `lib/src/` is exported
     - _Requirements: REQ-PURE-1, REQ-PURE-3, REQ-PURE-4, REQ-PURE-5, REQ-TEST-7_
 
-  - [ ] 10.3 Write purity tests for scaffold removal and doc comments in `test/purity_test.dart`
+  - [x] 10.3 Write purity tests for scaffold removal and doc comments in `test/purity_test.dart`
     - REQ-PURE-6: no `Awesome` identifier in the package; no `morse_core_base.dart` or `morse_core_test.dart`; the `pubspec.yaml` description and `example/` refer only to the four classes
     - REQ-PURE-7: every public declaration in `lib/` has a preceding `///` comment containing `REQ-<AREA>-<n>`, and every cited ID is in `test/support/requirement_ids.dart`
     - _Requirements: REQ-PURE-6, REQ-PURE-7_
 
-  - [ ] 10.4 Write the test-name meta-test in `test/purity_test.dart`
+  - [x] 10.4 Write the test-name meta-test in `test/purity_test.dart`
     - REQ-TEST-4: scan `test/*.dart` for `test('` and `property('` names; assert each begins with REQ IDs and that every ID listed in REQ-TEST-1, REQ-TEST-2 and REQ-TEST-3 begins at least one test name
     - REQ-TEST-5: assert no `skip:` appears in any test file
     - REQ-PURE-9: assert that each of REQ-PURE-1 to REQ-PURE-7 appears in at least one test name
     - _Requirements: REQ-TEST-4, REQ-TEST-5, REQ-PURE-9_
 
-- [ ] 11. Final checkpoint: full suite and analyzer
+- [x] 11. Final checkpoint: full suite and analyzer
   - Run `cd packages/morse_core && dart test`: zero failures, zero errors, zero skipped tests, finished within 60 seconds.
   - Run `cd packages/morse_core && dart analyze`: zero errors and zero warnings.
   - Confirm `pubspec.lock` still records `kiri_check` 1.4.0 and `dependencies` is empty.

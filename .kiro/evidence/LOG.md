@@ -19,3 +19,5 @@
 2026-11-20: morse-core encoder done (tasks 6.1 to 7). 34 tests pass, including 3 encoder properties (reference model, output format, first unsupported character).
 
 2026-11-20: morse-core decoder done (tasks 8.1 to 9). 60 tests pass in 2 s, including 7 decoder properties (both round trips, closed output, exact acceptance, injected invalid character, well-formed errors, determinism).
+
+2026-11-21: morse-core complete (tasks 10.1 to 11). Purity, structure and test-name checks pass; dart analyze clean.
