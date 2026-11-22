@@ -1,0 +1,9 @@
+{
+  // Cloudflare Worker that serves the Sounder web build.
+  "name": "sounder",
+  "compatibility_date": "2025-11-01",
+  "assets": {
+    "directory": "./app/build/web",
+    "not_found_handling": "single-page-application"
+  }
+}
