@@ -1,0 +1,15 @@
+{
+  "version": "v1",
+  "hooks": [
+    {
+      "name": "Engine guard",
+      "trigger": "Stop",
+      "action": {
+        "type": "command",
+        "command": "cmd /c \"git diff --quiet HEAD -- packages/morse_core || (cd packages\\morse_core && dart test > ..\\..\\.kiro\\evidence\\engine-guard.log 2>&1 && echo PASS >> ..\\..\\.kiro\\evidence\\engine-guard.log || echo FAIL >> ..\\..\\.kiro\\evidence\\engine-guard.log)\""
+      },
+      "description": "After each agent turn, if anything under packages/morse_core changed since the last commit, run its tests and save the result to .kiro/evidence/engine-guard.log.",
+      "enabled": true
+    }
+  ]
+}

@@ -22,4 +22,12 @@
 
 2026-11-21: morse-core complete (tasks 10.1 to 11). Purity, structure and test-name checks pass; dart analyze clean.
 
+2026-11-22: Flutter web app created in app/ and linked to morse_core by path; shows "Sounder" and SOS in Morse.
+
+2026-11-22: Hosting decision changed from Netlify to Cloudflare after reading Netlify's pricing: 300 credits/month, 15 per deploy, all projects paused at the limit. Cloudflare Workers: unlimited static assets, 100k function requests/day. tech.md steering updated.
+
 2026-11-22: App shell live at https://sounder.kadhim-alawi.workers.dev (Cloudflare Workers static assets). First upload used app/web (the template) by mistake; fixed by uploading app/build/web.
+
+2026-11-22: GitHub Actions now tests morse_core, builds the web app and deploys to Cloudflare on every push to main. First run failed (Wrangler 3 needs a script entry point); fixed by pinning Wrangler 4.166.0.
+
+2026-11-22: Hooks. A File Save hook never fired, including on agent edits in a new session; Kiro docs confirm file triggers ignore manual saves. Isolated it with a marker-file test: Agent Stop fires reliably. Engine guard rebuilt on Agent Stop: runs morse_core tests only when engine files changed, writes PASS/FAIL to .kiro/evidence/engine-guard.log. First run: 86 tests, PASS. Evidence logger made a manual steering slash command (/log-evidence), as the docs recommend.
