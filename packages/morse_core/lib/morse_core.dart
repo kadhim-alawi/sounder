@@ -24,7 +24,26 @@
 /// ```
 library;
 
+export 'src/batch_decoder.dart';
+export 'src/calibration.dart';
+export 'src/calibration_rejection.dart';
+export 'src/calibration_result.dart';
+export 'src/calibrator.dart';
+export 'src/classifier.dart';
 export 'src/code_table.dart';
+export 'src/debouncer.dart';
+export 'src/decoded_item.dart';
+export 'src/decoded_item_kind.dart';
+export 'src/gap_class.dart';
+export 'src/live_decoder.dart';
 export 'src/morse_decoder.dart';
 export 'src/morse_encoder.dart';
 export 'src/morse_format_exception.dart';
+export 'src/morse_symbol.dart';
+export 'src/press.dart';
+export 'src/rejection_reason.dart';
+export 'src/switch_event.dart';
+export 'src/switch_event_kind.dart';
+export 'src/timing_config.dart';
+export 'src/timing_input_error_kind.dart';
+export 'src/timing_input_exception.dart';

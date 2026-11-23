@@ -31,3 +31,9 @@
 2026-11-22: GitHub Actions now tests morse_core, builds the web app and deploys to Cloudflare on every push to main. First run failed (Wrangler 3 needs a script entry point); fixed by pinning Wrangler 4.166.0.
 
 2026-11-22: Hooks. A File Save hook never fired, including on agent edits in a new session; Kiro docs confirm file triggers ignore manual saves. Isolated it with a marker-file test: Agent Stop fires reliably. Engine guard rebuilt on Agent Stop: runs morse_core tests only when engine files changed, writes PASS/FAIL to .kiro/evidence/engine-guard.log. First run: 86 tests, PASS. Evidence logger made a manual steering slash command (/log-evidence), as the docs recommend.
+
+2026-11-22: adaptive-timing design. Kiro read kiri_check 1.4.0's source and found filters can loop forever, so every generator builds valid inputs directly. It found that REQ-LIVE-6, read literally, contradicts REQ-LIVE-11 (a held dah would split a letter) and proposed a wording fix. Live and batch decoders are built separately so the equivalence property tests two implementations. 19 properties.
+
+2026-11-23: During task 6.3 Kiro found a new spec gap: the 2^40 µs cap added on Nov 22 (G1) lets a valid calibration measure a median above the cap, so Calibration() would throw, breaking REQ-CAL-31 ("never throws"). Added Rejection_Reason durationTooLong with its own requirement and test.
+
+2026-11-23: adaptive-timing complete. 264 tests pass in 11 s (morse-core + timing engine), including 19 timing properties; dart analyze clean. Task 11.2 aborted mid-run; re-dispatched as four smaller runs, each verified before the next.

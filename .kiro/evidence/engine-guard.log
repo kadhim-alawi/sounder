@@ -1,106 +1,323 @@
-00:00 +0: loading test\code_table_test.dart
-00:00 +0: test\code_table_test.dart: codes REQ-CODE-1 holds exactly the 43 supported characters as keys
-00:00 +1: test\decoder_test.dart: MorseDecoder REQ-DEC-3 the code -..-. inside a word decodes to /
-00:00 +2: test\encoder_test.dart: MorseEncoder REQ-ENC-7 empty and all-space input encode to empty string
-00:00 +3: test\encoder_test.dart: MorseEncoder REQ-ENC-7 empty and all-space input encode to empty string
-00:00 +4: test\encoder_test.dart: MorseEncoder REQ-ENC-7 empty and all-space input encode to empty string
-00:00 +5: test\encoder_test.dart: MorseEncoder REQ-ENC-7 empty and all-space input encode to empty string
-00:00 +6: test\encoder_test.dart: MorseEncoder REQ-ENC-7 empty and all-space input encode to empty string
-00:00 +7: test\encoder_test.dart: MorseEncoder REQ-ENC-7 empty and all-space input encode to empty string
-00:00 +8: test\encoder_test.dart: MorseEncoder REQ-ENC-7 empty and all-space input encode to empty string
-00:00 +9: test\encoder_test.dart: MorseEncoder REQ-ENC-7 empty and all-space input encode to empty string
-00:00 +10: test\encoder_test.dart: MorseEncoder REQ-ENC-7 empty and all-space input encode to empty string
-00:00 +11: test\encoder_test.dart: MorseEncoder REQ-ENC-7 empty and all-space input encode to empty string
-00:00 +12: test\code_table_test.dart: invalid lookups REQ-CODE-9 codeFor returns null for non-supported input
-00:00 +13: test\encoder_test.dart: MorseEncoder REQ-ENC-8 SOS encodes to ... --- ...
-00:00 +14: test\code_table_test.dart: invalid lookups REQ-CODE-9 characterFor returns null for non-codes
-00:00 +15: test\errors_test.dart: MorseFormatException REQ-ERR-8 unsupported character message uses U+XXXX
-00:00 +16: test\errors_test.dart: MorseFormatException REQ-ERR-8 unsupported character message uses U+XXXX
-00:00 +17: test\errors_test.dart: MorseFormatException REQ-ERR-8 unsupported character message uses U+XXXX
-00:00 +18: test\errors_test.dart: MorseFormatException REQ-ERR-8 unsupported character message uses U+XXXX
-00:00 +19: test\errors_test.dart: MorseFormatException REQ-ERR-8 unsupported character message uses U+XXXX
-00:00 +20: test\errors_test.dart: MorseFormatException REQ-ERR-8 unsupported character message uses U+XXXX
-00:00 +21: test\errors_test.dart: MorseFormatException REQ-ERR-8 unsupported character message uses U+XXXX
-00:00 +22: test\errors_test.dart: MorseFormatException REQ-ERR-8 unsupported character message uses U+XXXX
-00:00 +23: test\errors_test.dart: MorseFormatException REQ-ERR-8 unknown Morse code message quotes the Token
-00:00 +24: test\errors_test.dart: MorseFormatException REQ-ERR-8 extra space message
-00:00 +25: test\errors_test.dart: MorseFormatException REQ-ERR-8 trailing word separator message
-00:00 +26: test\errors_test.dart: MorseFormatException REQ-ERR-8 surrogate pair renders as its combined code point
-00:00 +27: test\errors_test.dart: MorseFormatException REQ-ERR-8 lone surrogate renders as U+D800, never verbatim
-00:00 +28: test\errors_test.dart: MorseFormatException REQ-ERR-8 offset equals position, source is null, toString equals message
-00:00 +29: test\errors_test.dart: MorseEncoder errors REQ-ERR-1 REQ-ERR-9 accented letter é at position 1
-00:00 +30: test\errors_test.dart: MorseEncoder errors REQ-ERR-1 REQ-ERR-9 tab is unsupported
-00:00 +31: test\errors_test.dart: MorseEncoder errors REQ-ERR-1 REQ-ERR-9 dotless ı is not folded to I
-00:00 +32: test\errors_test.dart: MorseEncoder errors REQ-ERR-1 REQ-ERR-9 surrogate pair 😀 carries both code units at the high surrogate index
-00:00 +33: test\errors_test.dart: MorseEncoder errors REQ-ERR-1 REQ-ERR-9 lone surrogate carries one code unit
-00:00 +34: test\errors_test.dart: MorseDecoder errors REQ-ERR-2 REQ-ERR-9 letter inside valid input at its index
-00:00 +35: test\errors_test.dart: MorseDecoder errors REQ-ERR-2 REQ-ERR-9 surrogate pair carries both code units at the high surrogate index
-00:00 +36: test\errors_test.dart: MorseDecoder errors REQ-ERR-3 REQ-ERR-9 unknown Token ...... at 4
-00:00 +37: test\errors_test.dart: MorseDecoder errors REQ-ERR-4 REQ-ERR-9 Token /. at its start
-00:00 +38: test\errors_test.dart: MorseDecoder errors REQ-ERR-4 REQ-ERR-9 Token -/ at its start
-00:00 +39: test\errors_test.dart: MorseDecoder errors REQ-ERR-4 REQ-ERR-9 Token // at its start
-00:00 +40: test\errors_test.dart: MorseDecoder errors REQ-ERR-5 REQ-ERR-9 double space at the second space, 4
-00:00 +41: test\errors_test.dart: MorseDecoder errors REQ-ERR-6 REQ-ERR-9 leading space at 0
-00:00 +42: test\errors_test.dart: MorseDecoder errors REQ-ERR-6 REQ-ERR-9 trailing / Token at 4
-00:00 +43: test\errors_test.dart: MorseDecoder errors REQ-ERR-6 REQ-ERR-9 lone / Token at 0
-00:00 +44: test\errors_test.dart: MorseDecoder errors REQ-ERR-7 REQ-ERR-9 empty word gives second / at 6
-00:00 +45: test\errors_test.dart: MorseDecoder errors REQ-ERR-11 REQ-ERR-9 tie at 6 picks REQ-ERR-6 over REQ-ERR-7
-00:00 +46: test\errors_test.dart: MorseDecoder errors REQ-ERR-8 exact decoder messages; source null; toString is the message and omits the input
-00:00 +47: test\properties_test.dart: REQ-CODE-4 codes are unique
+00:00 +0: loading test\batch_decoder_test.dart
+00:00 +0: test\batch_decoder_test.dart: BatchDecoder REQ-BATCH-3 an unknown Symbol sequence gives an Unknown_Letter_Item and decoding continues
+00:00 +1: test\batch_decoder_test.dart: BatchDecoder REQ-BATCH-3 an unknown Symbol sequence gives an Unknown_Letter_Item and decoding continues
+00:00 +2: test\batch_decoder_test.dart: BatchDecoder REQ-BATCH-3 an unknown Symbol sequence gives an Unknown_Letter_Item and decoding continues
+00:00 +3: test\batch_decoder_test.dart: BatchDecoder REQ-BATCH-3 an unknown Symbol sequence gives an Unknown_Letter_Item and decoding continues
+00:00 +4: test\batch_decoder_test.dart: BatchDecoder REQ-BATCH-3 an unknown Symbol sequence gives an Unknown_Letter_Item and decoding continues
+00:00 +5: test\calibrator_test.dart: Calibrator REQ-CAL-1 the default Calibration_Word is PARIS
+00:00 +6: test\code_table_test.dart: codes REQ-CODE-1 holds exactly the 43 supported characters as keys
+00:00 +7: test\code_table_test.dart: codes REQ-CODE-1 holds exactly the 43 supported characters as keys
+00:00 +8: test\code_table_test.dart: codes REQ-CODE-1 holds exactly the 43 supported characters as keys
+00:00 +9: test\code_table_test.dart: codes REQ-CODE-1 holds exactly the 43 supported characters as keys
+00:00 +10: test\code_table_test.dart: codes REQ-CODE-1 holds exactly the 43 supported characters as keys
+00:00 +11: test\code_table_test.dart: codes REQ-CODE-1 holds exactly the 43 supported characters as keys
+00:00 +12: test\code_table_test.dart: codes REQ-CODE-1 holds exactly the 43 supported characters as keys
+00:00 +13: test\code_table_test.dart: codes REQ-CODE-1 holds exactly the 43 supported characters as keys
+00:00 +14: test\code_table_test.dart: codes REQ-CODE-1 holds exactly the 43 supported characters as keys
+00:00 +15: test\code_table_test.dart: codes REQ-CODE-1 holds exactly the 43 supported characters as keys
+00:00 +16: test\code_table_test.dart: codes REQ-CODE-1 holds exactly the 43 supported characters as keys
+00:00 +17: test\classifier_test.dart: Decoder Debounce_Time limit REQ-TIMING-9 BatchDecoder accepts Debounce_Time equal to Dit_Length or Symbol_Gap
+00:00 +18: test\classifier_test.dart: Decoder Debounce_Time limit REQ-TIMING-9 BatchDecoder accepts Debounce_Time equal to Dit_Length or Symbol_Gap
+00:00 +19: test\classifier_test.dart: Decoder Debounce_Time limit REQ-TIMING-9 BatchDecoder accepts Debounce_Time equal to Dit_Length or Symbol_Gap
+00:00 +20: test\classifier_test.dart: Decoder Debounce_Time limit REQ-TIMING-9 BatchDecoder accepts Debounce_Time equal to Dit_Length or Symbol_Gap
+00:00 +21: test\classifier_test.dart: Decoder Debounce_Time limit REQ-TIMING-9 BatchDecoder accepts Debounce_Time equal to Dit_Length or Symbol_Gap
+00:00 +22: test\classifier_test.dart: Decoder Debounce_Time limit REQ-TIMING-9 BatchDecoder accepts Debounce_Time equal to Dit_Length or Symbol_Gap
+00:00 +23: test\classifier_test.dart: Decoder Debounce_Time limit REQ-TIMING-9 BatchDecoder accepts Debounce_Time equal to Dit_Length or Symbol_Gap
+00:00 +24: test\code_table_test.dart: codes REQ-CODE-1 has no lowercase, space or other keys
+00:00 +25: test\code_table_test.dart: codes REQ-CODE-1 has no lowercase, space or other keys
+00:00 +26: test\batch_decoder_test.dart: BatchDecoder REQ-BATCH-6 the Ideal_Timing of HI THERE decodes with one Word_Space
+00:00 +27: test\batch_decoder_test.dart: BatchDecoder REQ-BATCH-6 the Ideal_Timing of HI THERE decodes with one Word_Space
+00:00 +28: test\calibrator_test.dart: Calibrator REQ-CAL-3 unsuitable words REQ-CAL-3 the message names the first failed rule in order
+00:00 +29: test\classifier_test.dart: Decoder Debounce_Time limit REQ-TIMING-9 BatchDecoder rejects Debounce_Time one more than Dit_Length when Dit_Length binds
+00:00 +30: test\classifier_test.dart: Decoder Debounce_Time limit REQ-TIMING-9 BatchDecoder rejects Debounce_Time one more than Dit_Length when Dit_Length binds
+00:00 +31: test\classifier_test.dart: Decoder Debounce_Time limit REQ-TIMING-9 BatchDecoder rejects Debounce_Time one more than Dit_Length when Dit_Length binds
+00:00 +32: test\classifier_test.dart: Decoder Debounce_Time limit REQ-TIMING-9 BatchDecoder rejects Debounce_Time one more than Dit_Length when Dit_Length binds
+00:00 +33: test\classifier_test.dart: Decoder Debounce_Time limit REQ-TIMING-9 BatchDecoder rejects Debounce_Time one more than Dit_Length when Dit_Length binds
+00:00 +34: test\classifier_test.dart: Decoder Debounce_Time limit REQ-TIMING-9 BatchDecoder rejects Debounce_Time one more than Dit_Length when Dit_Length binds
+00:00 +35: test\classifier_test.dart: Decoder Debounce_Time limit REQ-TIMING-9 BatchDecoder rejects Debounce_Time one more than Dit_Length when Dit_Length binds
+00:00 +36: test\classifier_test.dart: Decoder Debounce_Time limit REQ-TIMING-9 BatchDecoder rejects Debounce_Time one more than Dit_Length when Dit_Length binds
+00:00 +37: test\classifier_test.dart: Decoder Debounce_Time limit REQ-TIMING-9 BatchDecoder rejects Debounce_Time one more than Dit_Length when Dit_Length binds
+00:00 +38: test\classifier_test.dart: Decoder Debounce_Time limit REQ-TIMING-9 BatchDecoder rejects Debounce_Time one more than Dit_Length when Dit_Length binds
+00:00 +39: test\classifier_test.dart: Decoder Debounce_Time limit REQ-TIMING-9 BatchDecoder rejects Debounce_Time one more than Dit_Length when Dit_Length binds
+00:00 +40: test\classifier_test.dart: Decoder Debounce_Time limit REQ-TIMING-9 BatchDecoder rejects Debounce_Time one more than Dit_Length when Dit_Length binds
+00:00 +41: test\classifier_test.dart: Decoder Debounce_Time limit REQ-TIMING-9 BatchDecoder rejects Debounce_Time one more than Dit_Length when Dit_Length binds
+00:00 +42: test\classifier_test.dart: Decoder Debounce_Time limit REQ-TIMING-9 BatchDecoder rejects Debounce_Time one more than Dit_Length when Dit_Length binds
+00:00 +43: test\classifier_test.dart: Decoder Debounce_Time limit REQ-TIMING-9 BatchDecoder rejects Debounce_Time one more than Dit_Length when Dit_Length binds
+00:00 +44: test\classifier_test.dart: Decoder Debounce_Time limit REQ-TIMING-9 BatchDecoder rejects Debounce_Time one more than Dit_Length when Dit_Length binds
+00:00 +45: test\calibrator_test.dart: Calibrator REQ-CAL-4 the PARIS plan REQ-CAL-4 dahs are expected at Presses 1, 2, 5 and 7
+00:00 +46: test\calibrator_test.dart: Calibrator REQ-CAL-4 the PARIS plan REQ-CAL-4 dahs are expected at Presses 1, 2, 5 and 7
+00:00 +47: test\calibrator_test.dart: Calibrator REQ-CAL-4 the PARIS plan REQ-CAL-4 dahs are expected at Presses 1, 2, 5 and 7
+00:00 +48: test\debouncer_test.dart: Debouncer REQ-DEBOUNCE-20 invalid Press lists REQ-DEBOUNCE-20 release before press reports releaseBeforePress at its index
+00:00 +49: test\debouncer_test.dart: Debouncer REQ-DEBOUNCE-20 invalid Press lists REQ-DEBOUNCE-20 release before press reports releaseBeforePress at its index
+00:00 +50: test\code_table_test.dart: immutability REQ-CODE-10 codes rejects []=, remove, clear and addAll
+00:00 +51: test\code_table_test.dart: immutability REQ-CODE-10 codes rejects []=, remove, clear and addAll
+00:00 +52: test\code_table_test.dart: immutability REQ-CODE-10 codes rejects []=, remove, clear and addAll
+00:00 +53: test\code_table_test.dart: immutability REQ-CODE-10 codes rejects []=, remove, clear and addAll
+00:00 +54: test\code_table_test.dart: immutability REQ-CODE-10 codes rejects []=, remove, clear and addAll
+00:00 +55: test\classifier_test.dart: Decoder Debounce_Time limit REQ-TIMING-9 LiveDecoder rejects Debounce_Time one more than Dit_Length when Dit_Length binds
+00:00 +56: test\calibrator_test.dart: Calibrator REQ-CAL-5 debounce before measuring REQ-CAL-5 the default Timing_Config removes one bounce Press
+00:00 +57: test\calibrator_test.dart: Calibrator REQ-CAL-5 debounce before measuring REQ-CAL-5 the default Timing_Config removes one bounce Press
+00:00 +58: test\code_table_test.dart: immutability REQ-CODE-10 characters rejects []=, remove, clear and addAll
+00:00 +59: test\debouncer_test.dart: Debouncer REQ-DEBOUNCE-20 invalid Press lists REQ-DEBOUNCE-20 an invalid list returns no partial result and leaves the input unchanged
+00:00 +60: test\classifier_test.dart: Decoder Debounce_Time limit REQ-TIMING-9 LiveDecoder rejects Debounce_Time one more than Symbol_Gap when Symbol_Gap binds
+00:00 +61: test\calibrator_test.dart: Calibrator REQ-CAL-5 debounce before measuring REQ-CAL-5 the given Timing_Config sets the Debounce_Time
+00:00 +62: test\code_table_test.dart: ITU fixture REQ-TEST-3 REQ-CODE-1 REQ-CODE-2 REQ-CODE-3 matches ITU-R M.1677-1
+00:00 +63: test\classifier_test.dart: Classifier REQ-TIMING-5 Dit_Length 100,000 and Dah_Length 300,000 give Press_Threshold 200,000
+00:00 +64: test\classifier_test.dart: Classifier REQ-TIMING-5 Dit_Length 100,000 and Dah_Length 300,000 give Press_Threshold 200,000
+00:00 +65: test\calibrator_test.dart: Calibrator REQ-CAL-8 wrong Press count REQ-CAL-8 debounce leaving zero Presses is a wrong count
+00:00 +66: test\classifier_test.dart: Classifier REQ-TIMING-5 Dah_Length 300,001 gives Press_Threshold 200,001
+00:00 +67: test\calibrator_test.dart: Calibrator REQ-CAL-9 a dit as long as the shortest dah gives pressesOverlap
+00:00 +68: test\classifier_test.dart: Classifier REQ-TIMING-6 Symbol_Gap 250,000 and Letter_Gap 700,000 give thresholds 475,000 and 1,400,000
+00:00 +69: test\classifier_test.dart: Classifier REQ-TIMING-6 Symbol_Gap 250,000 and Letter_Gap 700,000 give thresholds 475,000 and 1,400,000
+00:00 +70: test\calibrator_test.dart: Calibrator REQ-CAL-11 invalid Event_Sequences REQ-CAL-11 two presses in a row at event 3 gives invalidEvents with the index and the rule
+00:00 +71: test\classifier_test.dart: Classifier REQ-TIMING-6 Word_Gap_Factor 2.5 and Letter_Gap 700,001 give Word_Gap_Threshold 1,750,003
+00:00 +72: test\classifier_test.dart: Classifier REQ-TIMING-6 Word_Gap_Factor 2.5 and Letter_Gap 700,001 give Word_Gap_Threshold 1,750,003
+00:00 +73: test\calibrator_test.dart: Calibrator REQ-CAL-11 invalid Event_Sequences REQ-CAL-11 REQ-EVENT-5 a timestamp out of range gives invalidEvents instead of an error
+00:00 +74: test\classifier_test.dart: Classifier REQ-TIMING-11 a negative Press duration throws negativeDuration with no index
+00:00 +75: test\calibrator_test.dart: Calibrator REQ-CAL-11 invalid Event_Sequences REQ-CAL-11 a sequence ending with a press gives invalidEvents
+00:00 +76: test\classifier_test.dart: Classifier REQ-TIMING-11 a negative Gap duration throws negativeDuration with no index
+00:00 +77: test\calibrator_test.dart: Calibrator REQ-CAL-12 rejection order REQ-CAL-12 invalidEvents comes before wrongPressCount
+00:00 +78: test\classifier_test.dart: Classifier REQ-PBT-6 REQ-TIMING-3 REQ-TIMING-4 a duration exactly at a threshold falls in the longer class
+00:00 +79: test\classifier_test.dart: Classifier REQ-PBT-6 REQ-TIMING-3 REQ-TIMING-4 a duration exactly at a threshold falls in the longer class
+00:00 +80: test\calibrator_test.dart: Calibrator REQ-CAL-12 rejection order REQ-CAL-12 pressesOverlap comes before gapsOverlap
+00:00 +81: test\classifier_test.dart: Classifier REQ-TIMING-1 Word_Gap_Factor 1 + 2^-52 with Letter_Gap 2^40 gives Word_Gap_Threshold 2^40 + 1 exactly
+00:00 +82: test\classifier_test.dart: Classifier REQ-TIMING-1 Word_Gap_Factor 1 + 2^-52 with Letter_Gap 2^40 gives Word_Gap_Threshold 2^40 + 1 exactly
+00:00 +83: test\calibrator_test.dart: Calibrator REQ-CAL-12 rejection order REQ-CAL-12 zeroDuration comes before durationTooLong
+00:00 +84: test\classifier_test.dart: Classifier REQ-TIMING-1 Word_Gap_Factor 1,000 with Letter_Gap 2^40 gives Word_Gap_Threshold 1,000 x 2^40 exactly
+00:00 +85: test\calibrator_test.dart: Calibrator REQ-CAL-13 rejection messages REQ-CAL-13 every reason produces a non-empty English message
+00:00 +86: test\calibrator_test.dart: Calibrator REQ-CAL-13 rejection messages REQ-CAL-13 messages hold no timestamp, duration or Symbol, and numbers only where allowed
+00:00 +87: test\calibrator_test.dart: Calibrator REQ-CAL-20 letter case of the word does not change the result
+00:00 +88: test\calibrator_test.dart: Calibrator REQ-CAL-30 zero durations REQ-CAL-30 a zero-length dit with Debounce_Time 0 gives zeroDuration
+00:00 +89: test\calibrator_test.dart: Calibrator REQ-CAL-30 zero durations REQ-CAL-30 zero-length inside-letter Gaps give zeroDuration
+00:00 +90: test\calibrator_test.dart: Calibrator REQ-CAL-31 exactly one result, never an error REQ-CAL-31 a median above 2^40 gives durationTooLong
+00:00 +91: test\calibrator_test.dart: Calibrator REQ-CAL-31 exactly one result, never an error REQ-CAL-31 a median of exactly 2^40 is accepted
+00:00 +92: test\calibrator_test.dart: Calibrator REQ-CAL-31 exactly one result, never an error REQ-CAL-31 varied inputs each return one result without throwing
+00:00 +93: test\decoder_test.dart: MorseDecoder REQ-DEC-3 the code -..-. inside a word decodes to /
+00:01 +94: test\decoder_test.dart: MorseDecoder REQ-DEC-4 REQ-TEST-2 empty input decodes to empty string
+00:01 +95: test\decoder_test.dart: MorseDecoder REQ-DEC-5 REQ-TEST-2 ... --- ... decodes to SOS
+00:01 +96: test\decoder_test.dart: MorseDecoder REQ-DEC-6 REQ-TEST-2 slash and brackets decode to "/ ()"
+00:01 +97: test\decoder_test.dart: MorseDecoder REQ-DEC-8 hello world decodes to HELLO WORLD
+00:01 +98: test\decoder_test.dart: MorseDecoder REQ-DEC-9 digits and punctuation decode to "123 .,?-"
+00:01 +99: test\encoder_test.dart: MorseEncoder REQ-ENC-7 empty and all-space input encode to empty string
+00:01 +100: test\encoder_test.dart: MorseEncoder REQ-ENC-8 SOS encodes to ... --- ...
+00:01 +101: test\encoder_test.dart: MorseEncoder REQ-ENC-9 hello world encodes with a word separator
+00:01 +102: test\errors_test.dart: MorseFormatException REQ-ERR-8 unsupported character message uses U+XXXX
+00:01 +103: test\errors_test.dart: MorseFormatException REQ-ERR-8 unsupported character message uses U+XXXX
+00:01 +104: test\errors_test.dart: MorseFormatException REQ-ERR-8 unsupported character message uses U+XXXX
+00:01 +105: test\errors_test.dart: MorseFormatException REQ-ERR-8 unsupported character message uses U+XXXX
+00:01 +106: test\live_decoder_test.dart: LiveDecoder REQ-LIVE-2 a new decoder is empty and not pressed, and reading does not change it
+00:01 +107: test\live_decoder_test.dart: LiveDecoder REQ-LIVE-2 a new decoder is empty and not pressed, and reading does not change it
+00:01 +108: test\live_decoder_test.dart: LiveDecoder REQ-LIVE-2 a new decoder is empty and not pressed, and reading does not change it
+00:01 +109: test\live_decoder_test.dart: LiveDecoder REQ-LIVE-2 a new decoder is empty and not pressed, and reading does not change it
+00:01 +110: test\live_decoder_test.dart: LiveDecoder REQ-LIVE-2 a new decoder is empty and not pressed, and reading does not change it
+00:01 +111: test\live_decoder_test.dart: LiveDecoder REQ-LIVE-2 a new decoder is empty and not pressed, and reading does not change it
+00:01 +112: test\live_decoder_test.dart: LiveDecoder REQ-LIVE-2 a new decoder is empty and not pressed, and reading does not change it
+00:01 +113: test\live_decoder_test.dart: LiveDecoder REQ-LIVE-2 a new decoder is empty and not pressed, and reading does not change it
+00:01 +114: test\live_decoder_test.dart: LiveDecoder REQ-LIVE-2 a new decoder is empty and not pressed, and reading does not change it
+00:01 +115: test\live_decoder_test.dart: LiveDecoder REQ-LIVE-2 a new decoder is empty and not pressed, and reading does not change it
+00:01 +116: test\live_decoder_test.dart: LiveDecoder REQ-LIVE-2 a new decoder is empty and not pressed, and reading does not change it
+00:01 +117: test\live_decoder_test.dart: LiveDecoder REQ-LIVE-2 a new decoder is empty and not pressed, and reading does not change it
+00:01 +118: test\live_decoder_test.dart: LiveDecoder REQ-LIVE-2 a new decoder is empty and not pressed, and reading does not change it
+00:01 +119: test\errors_test.dart: MorseDecoder errors REQ-ERR-2 REQ-ERR-9 surrogate pair carries both code units at the high surrogate index
+00:01 +120: test\live_decoder_test.dart: LiveDecoder REQ-LIVE-3 press reports pressed and release reports not pressed before the call returns
+00:01 +121: test\errors_test.dart: MorseDecoder errors REQ-ERR-3 REQ-ERR-9 unknown Token ...... at 4
+00:01 +122: test\live_decoder_test.dart: LiveDecoder REQ-LIVE-4 REQ-LIVE-12 a dit is confirmed only once the Debounce_Time has passed after its release
+00:01 +123: test\live_decoder_test.dart: LiveDecoder REQ-LIVE-4 REQ-LIVE-12 a dit is confirmed only once the Debounce_Time has passed after its release
+00:01 +124: test\errors_test.dart: MorseDecoder errors REQ-ERR-4 REQ-ERR-9 Token -/ at its start
+00:01 +125: test\live_decoder_test.dart: LiveDecoder REQ-LIVE-12 press 0, release 100,000, advanceTo 130,000 holds a Partial_Sequence of a dit
+00:01 +126: test\errors_test.dart: MorseDecoder errors REQ-ERR-4 REQ-ERR-9 Token // at its start
+00:01 +127: test\live_decoder_test.dart: LiveDecoder REQ-LIVE-13 advanceTo 800,000 after REQ-LIVE-12 completes the letter E
+00:01 +128: test\live_decoder_test.dart: LiveDecoder REQ-LIVE-13 advanceTo 800,000 after REQ-LIVE-12 completes the letter E
+00:01 +129: test\live_decoder_test.dart: LiveDecoder REQ-LIVE-13 advanceTo 800,000 after REQ-LIVE-12 completes the letter E
+00:01 +130: test\live_decoder_test.dart: LiveDecoder REQ-LIVE-13 advanceTo 800,000 after REQ-LIVE-12 completes the letter E
+00:01 +131: test\errors_test.dart: MorseDecoder errors REQ-ERR-6 REQ-ERR-9 lone / Token at 0
+00:01 +132: test\live_decoder_test.dart: LiveDecoder REQ-LIVE-5 a press less than the Debounce_Time after a release merges with the previous Press
+00:01 +133: test\live_decoder_test.dart: LiveDecoder REQ-LIVE-5 a press less than the Debounce_Time after a release merges with the previous Press
+00:01 +134: test\live_decoder_test.dart: LiveDecoder REQ-LIVE-5 a press less than the Debounce_Time after a release merges with the previous Press
+00:01 +135: test\errors_test.dart: MorseDecoder errors REQ-ERR-8 exact decoder messages; source null; toString is the message and omits the input
+00:01 +136: test\errors_test.dart: MorseDecoder errors REQ-ERR-8 exact decoder messages; source null; toString is the message and omits the input
+00:01 +137: test\live_decoder_test.dart: LiveDecoder REQ-LIVE-6 a press call after a between-letters Gap completes the letter before the new Symbol
+00:01 +138: test\live_decoder_test.dart: LiveDecoder REQ-LIVE-6 a dah held across the Letter_Gap_Threshold stays in its letter, measured to the Pending_Press press timestamp
+00:01 +139: test\live_decoder_test.dart: LiveDecoder REQ-LIVE-7 a Word_Space is appended when the first Symbol of the next letter is confirmed after a word-length Gap
+00:01 +140: test\live_decoder_test.dart: LiveDecoder REQ-LIVE-7 a Gap one below the Word_Gap_Threshold adds no Word_Space and a Gap equal to it adds one
+00:01 +141: test\live_decoder_test.dart: LiveDecoder REQ-LIVE-7 no Word_Space before the first letter, however long the silence before it
+00:01 +142: test\live_decoder_test.dart: LiveDecoder REQ-LIVE-8 items are only appended to, never changed, and cannot be modified by the caller
+00:01 +143: test\live_decoder_test.dart: LiveDecoder REQ-LIVE-9 REQ-LIVE-9 a press while pressed raises two presses in a row and changes nothing
+00:01 +144: test\live_decoder_test.dart: LiveDecoder REQ-LIVE-9 REQ-LIVE-9 a release before any press raises starts with a release and changes nothing
+00:01 +145: test\live_decoder_test.dart: LiveDecoder REQ-LIVE-9 REQ-LIVE-9 a release while not pressed raises two releases in a row and changes nothing
+00:01 +146: test\live_decoder_test.dart: LiveDecoder REQ-LIVE-9 REQ-LIVE-9 a timestamp earlier than the latest raises decreasing timestamp for every call and changes nothing
+00:01 +147: test\live_decoder_test.dart: LiveDecoder REQ-LIVE-9 REQ-LIVE-9 REQ-EVENT-5 a timestamp outside the range raises timestamp out of range for every call and changes nothing
+00:01 +148: test\live_decoder_test.dart: LiveDecoder REQ-LIVE-9 REQ-LIVE-9 the range limits themselves are accepted
+00:01 +149: test\live_decoder_test.dart: LiveDecoder REQ-LIVE-10 advanceTo while pressed records the timestamp and changes nothing else
+00:01 +150: test\live_decoder_test.dart: LiveDecoder REQ-LIVE-14 a Press shorter than the Debounce_Time is discarded with no Symbol
+00:01 +151: test\live_decoder_test.dart: LiveDecoder REQ-LIVE-14 later Gaps are measured from the last appended Press, not from a discarded one
+00:01 +152: test\properties_test.dart: REQ-CODE-4 codes are unique
 
-00:00 +48: test\purity_test.dart: (setUpAll)
-00:00 +48: test\properties_test.dart: REQ-CODE-5 REQ-CODE-7 REQ-CODE-8 table round trip and code shape
+00:02 +153: test\purity_test.dart: (setUpAll)
+00:02 +154: test\purity_test.dart: (setUpAll)
+00:02 +154: test\switch_event_test.dart: REQ-EVENT-3 BatchDecoder rules REQ-EVENT-3 timestamp out of range is reported at its index
+00:02 +155: test\switch_event_test.dart: REQ-EVENT-3 BatchDecoder rules REQ-EVENT-3 timestamp out of range is reported at its index
+00:02 +156: test\switch_event_test.dart: REQ-EVENT-3 BatchDecoder rules REQ-EVENT-3 timestamp out of range is reported at its index
+00:02 +156: test\properties_test.dart: REQ-CODE-5 REQ-CODE-7 REQ-CODE-8 table round trip and code shape
 
-00:00 +49: test\purity_test.dart: dependencies and imports REQ-PURE-1 pubspec.yaml lists no runtime dependencies
-00:00 +50: test\properties_test.dart: REQ-CODE-9 invalid lookups return null without throwing
-00:01 +51: test\properties_test.dart: REQ-CODE-9 invalid lookups return null without throwing
-00:01 +52: test\properties_test.dart: REQ-CODE-9 invalid lookups return null without throwing
-00:01 +53: test\properties_test.dart: REQ-CODE-9 invalid lookups return null without throwing
-00:01 +54: test\properties_test.dart: REQ-CODE-9 invalid lookups return null without throwing
+00:02 +157: test\properties_test.dart: REQ-CODE-5 REQ-CODE-7 REQ-CODE-8 table round trip and code shape
+00:02 +158: test\properties_test.dart: REQ-CODE-5 REQ-CODE-7 REQ-CODE-8 table round trip and code shape
+00:02 +159: test\purity_test.dart: dependencies and imports REQ-PURE-1 dev_dependencies are test and lint tooling only
+00:02 +160: test\purity_test.dart: dependencies and imports REQ-PURE-1 dev_dependencies are test and lint tooling only
+00:02 +161: test\properties_test.dart: REQ-CODE-9 invalid lookups return null without throwing
+00:02 +162: test\properties_test.dart: REQ-CODE-9 invalid lookups return null without throwing
+00:02 +163: test\properties_test.dart: REQ-CODE-9 invalid lookups return null without throwing
+00:02 +164: test\properties_test.dart: REQ-CODE-9 invalid lookups return null without throwing
+00:02 +165: test\properties_test.dart: REQ-CODE-9 invalid lookups return null without throwing
+00:02 +166: test\properties_test.dart: REQ-CODE-9 invalid lookups return null without throwing
+00:02 +167: test\properties_test.dart: REQ-CODE-9 invalid lookups return null without throwing
+00:02 +168: test\properties_test.dart: REQ-CODE-9 invalid lookups return null without throwing
+00:02 +169: test\properties_test.dart: REQ-CODE-9 invalid lookups return null without throwing
+00:02 +170: test\properties_test.dart: REQ-CODE-9 invalid lookups return null without throwing
+00:02 +171: test\properties_test.dart: REQ-CODE-9 invalid lookups return null without throwing
+00:02 +172: test\properties_test.dart: REQ-CODE-9 invalid lookups return null without throwing
+00:02 +173: test\properties_test.dart: REQ-CODE-9 invalid lookups return null without throwing
+00:02 +174: test\properties_test.dart: REQ-CODE-9 invalid lookups return null without throwing
+00:02 +175: test\properties_test.dart: REQ-CODE-9 invalid lookups return null without throwing
+00:02 +176: test\properties_test.dart: REQ-CODE-9 invalid lookups return null without throwing
+00:02 +177: test\properties_test.dart: REQ-CODE-9 invalid lookups return null without throwing
+00:02 +178: test\properties_test.dart: REQ-CODE-9 invalid lookups return null without throwing
+00:02 +179: test\properties_test.dart: REQ-CODE-9 invalid lookups return null without throwing
+00:02 +180: test\properties_test.dart: REQ-CODE-9 invalid lookups return null without throwing
+00:02 +181: test\properties_test.dart: REQ-CODE-9 invalid lookups return null without throwing
+00:02 +182: test\properties_test.dart: REQ-CODE-9 invalid lookups return null without throwing
+00:02 +183: test\properties_test.dart: REQ-CODE-9 invalid lookups return null without throwing
+00:02 +184: test\properties_test.dart: REQ-CODE-9 invalid lookups return null without throwing
+00:02 +185: test\properties_test.dart: REQ-CODE-9 invalid lookups return null without throwing
+00:02 +186: test\properties_test.dart: REQ-CODE-9 invalid lookups return null without throwing
+00:02 +187: test\properties_test.dart: REQ-CODE-9 invalid lookups return null without throwing
+00:02 +188: test\properties_test.dart: REQ-CODE-9 invalid lookups return null without throwing
+00:02 +189: test\properties_test.dart: REQ-CODE-9 invalid lookups return null without throwing
+00:02 +190: test\properties_test.dart: REQ-CODE-9 invalid lookups return null without throwing
+00:02 +191: test\properties_test.dart: REQ-CODE-9 invalid lookups return null without throwing
+00:02 +192: test\properties_test.dart: REQ-CODE-9 invalid lookups return null without throwing
+00:02 +193: test\properties_test.dart: REQ-CODE-9 invalid lookups return null without throwing
+00:02 +194: test\properties_test.dart: REQ-CODE-9 invalid lookups return null without throwing
+00:02 +195: test\properties_test.dart: REQ-CODE-9 invalid lookups return null without throwing
+00:02 +196: test\properties_test.dart: REQ-CODE-9 invalid lookups return null without throwing
+00:02 +197: test\properties_test.dart: REQ-CODE-9 invalid lookups return null without throwing
 
-00:01 +55: test\purity_test.dart: no I/O, clock, randomness or mutable globals REQ-PURE-3 no lib/ file uses clock, random, file, network or environment APIs
-00:01 +56: test\properties_test.dart: REQ-ENC-1 REQ-ENC-2 REQ-ENC-3 REQ-ENC-4 REQ-ENC-5 REQ-ENC-6 REQ-ENC-7 REQ-ENC-11 encoder matches the reference model
-00:01 +57: test\properties_test.dart: REQ-ENC-1 REQ-ENC-2 REQ-ENC-3 REQ-ENC-4 REQ-ENC-5 REQ-ENC-6 REQ-ENC-7 REQ-ENC-11 encoder matches the reference model
-00:01 +58: test\properties_test.dart: REQ-ENC-1 REQ-ENC-2 REQ-ENC-3 REQ-ENC-4 REQ-ENC-5 REQ-ENC-6 REQ-ENC-7 REQ-ENC-11 encoder matches the reference model
-00:01 +59: test\properties_test.dart: REQ-ENC-1 REQ-ENC-2 REQ-ENC-3 REQ-ENC-4 REQ-ENC-5 REQ-ENC-6 REQ-ENC-7 REQ-ENC-11 encoder matches the reference model
+00:02 +198: test\timing_properties_test.dart: REQ-DEBOUNCE-4 REQ-DEBOUNCE-5 REQ-DEBOUNCE-6 REQ-DEBOUNCE-7 REQ-DEBOUNCE-10 REQ-PBT-8 Debouncer matches merge-then-drop and leaves no bounce
+00:02 +199: test\timing_properties_test.dart: REQ-DEBOUNCE-4 REQ-DEBOUNCE-5 REQ-DEBOUNCE-6 REQ-DEBOUNCE-7 REQ-DEBOUNCE-10 REQ-PBT-8 Debouncer matches merge-then-drop and leaves no bounce
+00:02 +200: test\timing_properties_test.dart: REQ-DEBOUNCE-4 REQ-DEBOUNCE-5 REQ-DEBOUNCE-6 REQ-DEBOUNCE-7 REQ-DEBOUNCE-10 REQ-PBT-8 Debouncer matches merge-then-drop and leaves no bounce
+00:02 +201: test\timing_properties_test.dart: REQ-DEBOUNCE-4 REQ-DEBOUNCE-5 REQ-DEBOUNCE-6 REQ-DEBOUNCE-7 REQ-DEBOUNCE-10 REQ-PBT-8 Debouncer matches merge-then-drop and leaves no bounce
+00:02 +202: test\timing_properties_test.dart: REQ-DEBOUNCE-4 REQ-DEBOUNCE-5 REQ-DEBOUNCE-6 REQ-DEBOUNCE-7 REQ-DEBOUNCE-10 REQ-PBT-8 Debouncer matches merge-then-drop and leaves no bounce
+00:02 +203: test\timing_properties_test.dart: REQ-DEBOUNCE-4 REQ-DEBOUNCE-5 REQ-DEBOUNCE-6 REQ-DEBOUNCE-7 REQ-DEBOUNCE-10 REQ-PBT-8 Debouncer matches merge-then-drop and leaves no bounce
+00:02 +203: test\properties_test.dart: REQ-ENC-1 REQ-ENC-2 REQ-ENC-3 REQ-ENC-4 REQ-ENC-5 REQ-ENC-6 REQ-ENC-7 REQ-ENC-11 encoder matches the reference model
 
-00:01 +60: test\purity_test.dart: file structure and exports REQ-PURE-4 each lib/src/ file declares exactly one public class named after the file
-00:01 +61: test\properties_test.dart: REQ-ENC-6 REQ-ENC-10 REQ-FMT-2 encoder output conforms to the format
-00:01 +62: test\properties_test.dart: REQ-ENC-6 REQ-ENC-10 REQ-FMT-2 encoder output conforms to the format
+00:02 +204: test\timing_properties_test.dart: REQ-DEBOUNCE-4 REQ-DEBOUNCE-5 REQ-DEBOUNCE-6 REQ-DEBOUNCE-7 REQ-DEBOUNCE-10 REQ-PBT-8 Debouncer matches merge-then-drop and leaves no bounce
+00:02 +205: test\timing_properties_test.dart: REQ-DEBOUNCE-4 REQ-DEBOUNCE-5 REQ-DEBOUNCE-6 REQ-DEBOUNCE-7 REQ-DEBOUNCE-10 REQ-PBT-8 Debouncer matches merge-then-drop and leaves no bounce
+00:02 +206: test\timing_properties_test.dart: REQ-DEBOUNCE-4 REQ-DEBOUNCE-5 REQ-DEBOUNCE-6 REQ-DEBOUNCE-7 REQ-DEBOUNCE-10 REQ-PBT-8 Debouncer matches merge-then-drop and leaves no bounce
+00:02 +207: test\timing_properties_test.dart: REQ-DEBOUNCE-4 REQ-DEBOUNCE-5 REQ-DEBOUNCE-6 REQ-DEBOUNCE-7 REQ-DEBOUNCE-10 REQ-PBT-8 Debouncer matches merge-then-drop and leaves no bounce
+00:02 +208: test\timing_properties_test.dart: REQ-DEBOUNCE-4 REQ-DEBOUNCE-5 REQ-DEBOUNCE-6 REQ-DEBOUNCE-7 REQ-DEBOUNCE-10 REQ-PBT-8 Debouncer matches merge-then-drop and leaves no bounce
+00:02 +209: test\timing_properties_test.dart: REQ-DEBOUNCE-4 REQ-DEBOUNCE-5 REQ-DEBOUNCE-6 REQ-DEBOUNCE-7 REQ-DEBOUNCE-10 REQ-PBT-8 Debouncer matches merge-then-drop and leaves no bounce
+00:02 +209: test\properties_test.dart: REQ-ENC-6 REQ-ENC-10 REQ-FMT-2 encoder output conforms to the format
 
-00:01 +63: test\purity_test.dart: file structure and exports REQ-PURE-5 lib/morse_core.dart exports every public class in lib/src/
-00:01 +64: test\properties_test.dart: REQ-FMT-3 text round trip
-00:01 +65: test\properties_test.dart: REQ-FMT-3 text round trip
+00:02 +210: test\timing_properties_test.dart: REQ-DEBOUNCE-4 REQ-DEBOUNCE-5 REQ-DEBOUNCE-6 REQ-DEBOUNCE-7 REQ-DEBOUNCE-10 REQ-PBT-8 Debouncer matches merge-then-drop and leaves no bounce
+00:02 +211: test\timing_properties_test.dart: REQ-DEBOUNCE-4 REQ-DEBOUNCE-5 REQ-DEBOUNCE-6 REQ-DEBOUNCE-7 REQ-DEBOUNCE-10 REQ-PBT-8 Debouncer matches merge-then-drop and leaves no bounce
+00:02 +212: test\timing_properties_test.dart: REQ-DEBOUNCE-4 REQ-DEBOUNCE-5 REQ-DEBOUNCE-6 REQ-DEBOUNCE-7 REQ-DEBOUNCE-10 REQ-PBT-8 Debouncer matches merge-then-drop and leaves no bounce
+00:02 +213: test\timing_properties_test.dart: REQ-DEBOUNCE-4 REQ-DEBOUNCE-5 REQ-DEBOUNCE-6 REQ-DEBOUNCE-7 REQ-DEBOUNCE-10 REQ-PBT-8 Debouncer matches merge-then-drop and leaves no bounce
+00:02 +214: test\timing_properties_test.dart: REQ-DEBOUNCE-4 REQ-DEBOUNCE-5 REQ-DEBOUNCE-6 REQ-DEBOUNCE-7 REQ-DEBOUNCE-10 REQ-PBT-8 Debouncer matches merge-then-drop and leaves no bounce
+00:02 +215: test\timing_properties_test.dart: REQ-DEBOUNCE-4 REQ-DEBOUNCE-5 REQ-DEBOUNCE-6 REQ-DEBOUNCE-7 REQ-DEBOUNCE-10 REQ-PBT-8 Debouncer matches merge-then-drop and leaves no bounce
+00:02 +216: test\timing_properties_test.dart: REQ-DEBOUNCE-4 REQ-DEBOUNCE-5 REQ-DEBOUNCE-6 REQ-DEBOUNCE-7 REQ-DEBOUNCE-10 REQ-PBT-8 Debouncer matches merge-then-drop and leaves no bounce
+00:02 +217: test\timing_properties_test.dart: REQ-DEBOUNCE-4 REQ-DEBOUNCE-5 REQ-DEBOUNCE-6 REQ-DEBOUNCE-7 REQ-DEBOUNCE-10 REQ-PBT-8 Debouncer matches merge-then-drop and leaves no bounce
+00:02 +217: test\properties_test.dart: REQ-FMT-3 text round trip
 
-00:01 +66: test\properties_test.dart: REQ-FMT-3 text round trip
-00:01 +67: test\purity_test.dart: scaffold removal REQ-PURE-6 no file in the package contains the scaffold identifier
-00:01 +67: test\properties_test.dart: REQ-DEC-1 REQ-DEC-2 REQ-DEC-3 REQ-FMT-4 REQ-FMT-5 code round trip
+00:02 +218: test\timing_properties_test.dart: REQ-DEBOUNCE-4 REQ-DEBOUNCE-5 REQ-DEBOUNCE-6 REQ-DEBOUNCE-7 REQ-DEBOUNCE-10 REQ-PBT-8 Debouncer matches merge-then-drop and leaves no bounce
+00:02 +218: test\properties_test.dart: REQ-DEC-1 REQ-DEC-2 REQ-DEC-3 REQ-FMT-4 REQ-FMT-5 code round trip
 
-00:01 +68: test\purity_test.dart: scaffold removal REQ-PURE-6 no file in the package contains the scaffold identifier
-00:01 +68: test\properties_test.dart: REQ-DEC-7 decoder output is closed
+00:02 +219: test\timing_properties_test.dart: REQ-DEBOUNCE-4 REQ-DEBOUNCE-5 REQ-DEBOUNCE-6 REQ-DEBOUNCE-7 REQ-DEBOUNCE-10 REQ-PBT-8 Debouncer matches merge-then-drop and leaves no bounce
+00:02 +220: test\timing_properties_test.dart: REQ-DEBOUNCE-4 REQ-DEBOUNCE-5 REQ-DEBOUNCE-6 REQ-DEBOUNCE-7 REQ-DEBOUNCE-10 REQ-PBT-8 Debouncer matches merge-then-drop and leaves no bounce
+00:02 +221: test\timing_properties_test.dart: REQ-DEBOUNCE-4 REQ-DEBOUNCE-5 REQ-DEBOUNCE-6 REQ-DEBOUNCE-7 REQ-DEBOUNCE-10 REQ-PBT-8 Debouncer matches merge-then-drop and leaves no bounce
+00:02 +221: test\properties_test.dart: REQ-DEC-7 decoder output is closed
 
-00:01 +69: test\purity_test.dart: scaffold removal REQ-PURE-6 no file in the package contains the scaffold identifier
-00:01 +69: test\properties_test.dart: REQ-DEC-10 REQ-FMT-5 REQ-FMT-6 REQ-ERR-9 decoder accepts exactly the conforming strings
+00:02 +222: test\timing_properties_test.dart: REQ-DEBOUNCE-4 REQ-DEBOUNCE-5 REQ-DEBOUNCE-6 REQ-DEBOUNCE-7 REQ-DEBOUNCE-10 REQ-PBT-8 Debouncer matches merge-then-drop and leaves no bounce
+00:02 +223: test\timing_properties_test.dart: REQ-DEBOUNCE-4 REQ-DEBOUNCE-5 REQ-DEBOUNCE-6 REQ-DEBOUNCE-7 REQ-DEBOUNCE-10 REQ-PBT-8 Debouncer matches merge-then-drop and leaves no bounce
+00:02 +224: test\timing_properties_test.dart: REQ-DEBOUNCE-4 REQ-DEBOUNCE-5 REQ-DEBOUNCE-6 REQ-DEBOUNCE-7 REQ-DEBOUNCE-10 REQ-PBT-8 Debouncer matches merge-then-drop and leaves no bounce
 
-00:01 +70: test\purity_test.dart: scaffold removal REQ-PURE-6 no file in the package contains the scaffold identifier
-00:01 +71: test\properties_test.dart: REQ-ERR-1 REQ-ERR-9 REQ-ERR-10 encoder reports the first unsupported character
+00:02 +225: test\properties_test.dart: REQ-DEC-10 REQ-FMT-5 REQ-FMT-6 REQ-ERR-9 decoder accepts exactly the conforming strings
 
-00:01 +72: test\purity_test.dart: scaffold removal REQ-PURE-6 the scaffold files are gone
-00:01 +73: test\properties_test.dart: REQ-ERR-2 REQ-ERR-11 REQ-ERR-12 decoder reports an injected invalid character
-00:01 +74: test\properties_test.dart: REQ-ERR-2 REQ-ERR-11 REQ-ERR-12 decoder reports an injected invalid character
-00:01 +75: test\properties_test.dart: REQ-ERR-2 REQ-ERR-11 REQ-ERR-12 decoder reports an injected invalid character
-00:01 +76: test\properties_test.dart: REQ-ERR-2 REQ-ERR-11 REQ-ERR-12 decoder reports an injected invalid character
+00:02 +226: test\purity_test.dart: no I/O, clock, randomness or mutable globals REQ-PURE-3 REQ-CODE-10 mutating codes and characters throws and leaves them unchanged
+00:02 +227: test\timing_properties_test.dart: REQ-DEBOUNCE-8 REQ-PBT-8 debounce is idempotent
+00:02 +227: test\properties_test.dart: REQ-ERR-1 REQ-ERR-9 REQ-ERR-10 encoder reports the first unsupported character
 
-00:01 +77: test\purity_test.dart: doc comments REQ-PURE-7 every public declaration in lib/ has a /// comment citing a requirement ID
-00:01 +78: test\properties_test.dart: REQ-ERR-8 every error is well formed
-00:01 +79: test\properties_test.dart: REQ-ERR-8 every error is well formed
-00:01 +80: test\properties_test.dart: REQ-ERR-8 every error is well formed
-00:01 +81: test\properties_test.dart: REQ-ERR-8 every error is well formed
-00:01 +82: test\properties_test.dart: REQ-ERR-8 every error is well formed
+00:02 +228: test\timing_properties_test.dart: REQ-DEBOUNCE-8 REQ-PBT-8 debounce is idempotent
+00:02 +229: test\timing_properties_test.dart: REQ-DEBOUNCE-8 REQ-PBT-8 debounce is idempotent
 
-00:01 +83: test\purity_test.dart: test names and skips REQ-TEST-5 no test file skips a test
-00:01 +84: test\properties_test.dart: REQ-PURE-2 encoder and decoder are deterministic
-00:01 +85: test\properties_test.dart: REQ-PURE-2 encoder and decoder are deterministic
+00:02 +230: test\properties_test.dart: REQ-ERR-2 REQ-ERR-11 REQ-ERR-12 decoder reports an injected invalid character
 
-00:01 +86: All tests passed!
+00:03 +231: test\purity_test.dart: no time constants outside Timing_Config REQ-DEBOUNCE-2 the defaults 30000 and 2.0 appear in timing_config.dart and in no other lib/ file
+00:03 +232: test\timing_properties_test.dart: REQ-DEBOUNCE-9 REQ-BATCH-1 REQ-PBT-8 bounce never becomes a Symbol
+00:03 +233: test\timing_properties_test.dart: REQ-DEBOUNCE-9 REQ-BATCH-1 REQ-PBT-8 bounce never becomes a Symbol
+00:03 +234: test\timing_properties_test.dart: REQ-DEBOUNCE-9 REQ-BATCH-1 REQ-PBT-8 bounce never becomes a Symbol
+00:03 +235: test\timing_properties_test.dart: REQ-DEBOUNCE-9 REQ-BATCH-1 REQ-PBT-8 bounce never becomes a Symbol
+00:03 +236: test\timing_properties_test.dart: REQ-DEBOUNCE-9 REQ-BATCH-1 REQ-PBT-8 bounce never becomes a Symbol
+00:03 +237: test\timing_properties_test.dart: REQ-DEBOUNCE-9 REQ-BATCH-1 REQ-PBT-8 bounce never becomes a Symbol
+00:03 +237: test\properties_test.dart: REQ-ERR-8 every error is well formed
+
+00:03 +238: test\timing_properties_test.dart: REQ-DEBOUNCE-9 REQ-BATCH-1 REQ-PBT-8 bounce never becomes a Symbol
+00:03 +239: test\timing_properties_test.dart: REQ-DEBOUNCE-9 REQ-BATCH-1 REQ-PBT-8 bounce never becomes a Symbol
+00:03 +240: test\timing_properties_test.dart: REQ-DEBOUNCE-9 REQ-BATCH-1 REQ-PBT-8 bounce never becomes a Symbol
+00:03 +240: test\properties_test.dart: REQ-PURE-2 encoder and decoder are deterministic
+
+00:03 +241: test\timing_properties_test.dart: REQ-DEBOUNCE-9 REQ-BATCH-1 REQ-PBT-8 bounce never becomes a Symbol
+00:03 +242: test\timing_properties_test.dart: REQ-DEBOUNCE-9 REQ-BATCH-1 REQ-PBT-8 bounce never becomes a Symbol
+00:03 +243: test\timing_properties_test.dart: REQ-DEBOUNCE-9 REQ-BATCH-1 REQ-PBT-8 bounce never becomes a Symbol
+00:03 +244: test\timing_properties_test.dart: REQ-DEBOUNCE-9 REQ-BATCH-1 REQ-PBT-8 bounce never becomes a Symbol
+00:03 +245: test\timing_properties_test.dart: REQ-DEBOUNCE-9 REQ-BATCH-1 REQ-PBT-8 bounce never becomes a Symbol
+
+00:03 +246: test\purity_test.dart: scaffold removal REQ-PURE-6 no file in the package contains the scaffold identifier
+00:03 +247: test\timing_properties_test.dart: REQ-CAL-15 REQ-CAL-2 REQ-CAL-6 REQ-CAL-20 calibrating from the Ideal_Timing returns the original Calibration
+00:03 +248: test\timing_properties_test.dart: REQ-CAL-15 REQ-CAL-2 REQ-CAL-6 REQ-CAL-20 calibrating from the Ideal_Timing returns the original Calibration
+00:03 +249: test\timing_properties_test.dart: REQ-CAL-15 REQ-CAL-2 REQ-CAL-6 REQ-CAL-20 calibrating from the Ideal_Timing returns the original Calibration
+00:03 +250: test\timing_properties_test.dart: REQ-CAL-15 REQ-CAL-2 REQ-CAL-6 REQ-CAL-20 calibrating from the Ideal_Timing returns the original Calibration
+00:03 +251: test\timing_properties_test.dart: REQ-CAL-15 REQ-CAL-2 REQ-CAL-6 REQ-CAL-20 calibrating from the Ideal_Timing returns the original Calibration
+00:03 +252: test\timing_properties_test.dart: REQ-CAL-15 REQ-CAL-2 REQ-CAL-6 REQ-CAL-20 calibrating from the Ideal_Timing returns the original Calibration
+00:03 +253: test\timing_properties_test.dart: REQ-CAL-15 REQ-CAL-2 REQ-CAL-6 REQ-CAL-20 calibrating from the Ideal_Timing returns the original Calibration
+00:03 +254: test\timing_properties_test.dart: REQ-CAL-15 REQ-CAL-2 REQ-CAL-6 REQ-CAL-20 calibrating from the Ideal_Timing returns the original Calibration
+00:03 +255: test\timing_properties_test.dart: REQ-CAL-15 REQ-CAL-2 REQ-CAL-6 REQ-CAL-20 calibrating from the Ideal_Timing returns the original Calibration
+00:03 +256: test\timing_properties_test.dart: REQ-CAL-15 REQ-CAL-2 REQ-CAL-6 REQ-CAL-20 calibrating from the Ideal_Timing returns the original Calibration
+00:03 +257: test\timing_properties_test.dart: REQ-CAL-15 REQ-CAL-2 REQ-CAL-6 REQ-CAL-20 calibrating from the Ideal_Timing returns the original Calibration
+
+00:03 +258: test\purity_test.dart: test names and skips REQ-TEST-4 every test name begins with a known requirement ID
+00:03 +259: test\timing_properties_test.dart: REQ-CAL-3 REQ-CAL-7 REQ-CAL-8 REQ-CAL-9 REQ-CAL-10 REQ-CAL-11 REQ-CAL-12 REQ-CAL-31 REQ-EVENT-2 REQ-EVENT-6 Calibrator follows the rejection order and never throws
+00:03 +260: test\timing_properties_test.dart: REQ-CAL-3 REQ-CAL-7 REQ-CAL-8 REQ-CAL-9 REQ-CAL-10 REQ-CAL-11 REQ-CAL-12 REQ-CAL-31 REQ-EVENT-2 REQ-EVENT-6 Calibrator follows the rejection order and never throws
+00:03 +261: test\timing_properties_test.dart: REQ-CAL-3 REQ-CAL-7 REQ-CAL-8 REQ-CAL-9 REQ-CAL-10 REQ-CAL-11 REQ-CAL-12 REQ-CAL-31 REQ-EVENT-2 REQ-EVENT-6 Calibrator follows the rejection order and never throws
+00:03 +262: test\timing_properties_test.dart: REQ-CAL-3 REQ-CAL-7 REQ-CAL-8 REQ-CAL-9 REQ-CAL-10 REQ-CAL-11 REQ-CAL-12 REQ-CAL-31 REQ-EVENT-2 REQ-EVENT-6 Calibrator follows the rejection order and never throws
+00:03 +263: test\timing_properties_test.dart: REQ-CAL-3 REQ-CAL-7 REQ-CAL-8 REQ-CAL-9 REQ-CAL-10 REQ-CAL-11 REQ-CAL-12 REQ-CAL-31 REQ-EVENT-2 REQ-EVENT-6 Calibrator follows the rejection order and never throws
+
+00:03 +264: test\timing_properties_test.dart: REQ-TIMING-1 REQ-TIMING-2 thresholds match the exact formulas and are ordered
+
+00:03 +265: test\timing_properties_test.dart: REQ-TIMING-3 REQ-TIMING-4 REQ-TIMING-11 classification is a threshold comparison
+
+00:03 +266: test\timing_properties_test.dart: REQ-TIMING-7 press jitter is tolerated
+
+00:03 +267: test\timing_properties_test.dart: REQ-TIMING-8 gap jitter is tolerated
+
+00:03 +268: test\timing_properties_test.dart: REQ-TIMING-10 classification is scale invariant
+
+00:03 +269: test\timing_properties_test.dart: REQ-BATCH-8 REQ-BATCH-2 jittered keying decodes to the text
+
+00:03 +270: test\timing_properties_test.dart: REQ-BATCH-9 batch decoding is scale invariant
+
+00:04 +271: test\timing_properties_test.dart: REQ-BATCH-1 REQ-BATCH-3 REQ-BATCH-4 REQ-EVENT-2 batch output matches the reference decoder and is well formed
+
+00:04 +272: test\timing_properties_test.dart: REQ-EVENT-3 REQ-EVENT-5 REQ-EVENT-6 invalid sequences are rejected at the lowest index
+
+00:04 +273: test\timing_properties_test.dart: REQ-LIVE-11 REQ-LIVE-3 REQ-LIVE-4 REQ-LIVE-7 REQ-LIVE-8 REQ-PBT-8 live decoding equals batch decoding
+
+00:04 +274: test\timing_properties_test.dart: REQ-LIVE-9 REQ-EVENT-5 invalid live calls change nothing
+
+00:04 +275: test\timing_properties_test.dart: REQ-ENGINE-2 two new instances given the same calls return equal results or the same error
+
+00:04 +276: test\timing_properties_test.dart: REQ-ENGINE-5 REQ-EVENT-4 REQ-CAL-13 messages and toString leak no input
+
+00:05 +277: test\timing_properties_test.dart: REQ-DEBOUNCE-1 REQ-DEBOUNCE-3 REQ-CAL-14 config and Calibration validation
+
+00:05 +278: All tests passed!
 PASS  

@@ -1,0 +1,702 @@
+{
+  "pbtResults": {
+    "2.6 Write property test for config and Calibration validation": {
+      "status": "passed",
+      "lastRunTimestamp": 1795380226994
+    },
+    "3.3 Write property test for Debouncer against the reference model": {
+      "status": "passed",
+      "lastRunTimestamp": 1795381138912
+    },
+    "3.4 Write property test for debounce idempotence": {
+      "status": "passed",
+      "lastRunTimestamp": 1795381247155
+    },
+    "4.3 Write property test for threshold formulas and ordering": {
+      "status": "passed",
+      "lastRunTimestamp": 1795383598368
+    },
+    "4.4 Write property test for threshold classification": {
+      "status": "passed",
+      "lastRunTimestamp": 1795384112743
+    },
+    "4.5 Write property test for press jitter": {
+      "status": "passed",
+      "lastRunTimestamp": 1795384595463
+    },
+    "4.6 Write property test for gap jitter": {
+      "status": "passed",
+      "lastRunTimestamp": 1795385142728
+    },
+    "4.7 Write property test for classification scale invariance": {
+      "status": "passed",
+      "lastRunTimestamp": 1795385385975
+    },
+    "6.5 Write property test for the calibration round trip": {
+      "status": "passed",
+      "lastRunTimestamp": 1795387423340
+    },
+    "6.6 Write property test for rejection order and totality": {
+      "status": "passed",
+      "lastRunTimestamp": 1795388775130
+    },
+    "7.3 Write property test for bounce never becoming a Symbol": {
+      "status": "passed",
+      "lastRunTimestamp": 1795410660158
+    },
+    "7.4 Write property test for jitter tolerance of batch decoding": {
+      "status": "passed",
+      "lastRunTimestamp": 1795411317727
+    },
+    "7.5 Write property test for batch scale invariance": {
+      "status": "passed",
+      "lastRunTimestamp": 1795412007472
+    },
+    "7.6 Write property test for batch output against the reference decoder": {
+      "status": "passed",
+      "lastRunTimestamp": 1795412917424
+    },
+    "7.7 Write property test for invalid-sequence rejection": {
+      "status": "passed",
+      "lastRunTimestamp": 1795413806302
+    },
+    "9.5 Write property test for live and batch equivalence": {
+      "status": "passed",
+      "lastRunTimestamp": 1795417971735
+    },
+    "9.6 Write property test for invalid live calls": {
+      "status": "passed",
+      "lastRunTimestamp": 1795418848562
+    },
+    "9.7 Write property test for determinism": {
+      "status": "passed",
+      "lastRunTimestamp": 1795419862253
+    },
+    "9.8 Write property test for message privacy": {
+      "status": "passed",
+      "lastRunTimestamp": 1795421069832
+    }
+  },
+  "executionHistory": {
+    "1.1 Add the adaptive-timing requirement ID set and accept it in the ID checks": [
+      {
+        "executionId": "9d8d247d-70b3-4905-94d4-cd792b5f6f9b",
+        "chatSessionId": "sess_374d5ca0-34b4-49ac-b3d7-78fda0535fdc",
+        "timestamp": 1795337696617
+      },
+      {
+        "executionId": "9d8d247d-70b3-4905-94d4-cd792b5f6f9b",
+        "chatSessionId": "sess_374d5ca0-34b4-49ac-b3d7-78fda0535fdc",
+        "timestamp": 1795338493618
+      }
+    ],
+    "1.2 Widen the REQ-PURE-4 file-structure test to public enums": [
+      {
+        "executionId": "b1946e35-45fd-4022-897e-e5db8cda3fd2",
+        "chatSessionId": "sess_9e6c95c0-0651-4f09-a199-3089754579d2",
+        "timestamp": 1795338568445
+      },
+      {
+        "executionId": "b1946e35-45fd-4022-897e-e5db8cda3fd2",
+        "chatSessionId": "sess_9e6c95c0-0651-4f09-a199-3089754579d2",
+        "timestamp": 1795338823664
+      }
+    ],
+    "1. Prepare the existing purity tests for the timing engine": [
+      {
+        "executionId": "b1946e35-45fd-4022-897e-e5db8cda3fd2",
+        "chatSessionId": "sess_9e6c95c0-0651-4f09-a199-3089754579d2",
+        "timestamp": 1795338823814
+      }
+    ],
+    "2.1 Implement `TimingInputErrorKind` and `TimingInputException`": [
+      {
+        "executionId": "cf92f8b4-8fca-4af2-973f-7d1b2c2db996",
+        "chatSessionId": "sess_42bab1bd-abd6-4492-a94f-fa4b54246e4c",
+        "timestamp": 1795339042079
+      },
+      {
+        "executionId": "cf92f8b4-8fca-4af2-973f-7d1b2c2db996",
+        "chatSessionId": "sess_42bab1bd-abd6-4492-a94f-fa4b54246e4c",
+        "timestamp": 1795339254104
+      }
+    ],
+    "2.2 Implement `SwitchEventKind`, `SwitchEvent` and `Press`": [
+      {
+        "executionId": "c6d3ed3d-10e4-4811-84fd-6e20d52bf4b4",
+        "chatSessionId": "sess_eb6f9fee-c968-4122-bb2b-4acc4bb11164",
+        "timestamp": 1795339357545
+      },
+      {
+        "executionId": "c6d3ed3d-10e4-4811-84fd-6e20d52bf4b4",
+        "chatSessionId": "sess_eb6f9fee-c968-4122-bb2b-4acc4bb11164",
+        "timestamp": 1795339589590
+      }
+    ],
+    "2.3 Implement `TimingConfig` and `Calibration`": [
+      {
+        "executionId": "bc1dd281-5354-491e-9c7c-49527210d1c2",
+        "chatSessionId": "sess_c9d91799-5468-4979-85cb-9bd8549f8a2e",
+        "timestamp": 1795339902205
+      },
+      {
+        "executionId": "bc1dd281-5354-491e-9c7c-49527210d1c2",
+        "chatSessionId": "sess_c9d91799-5468-4979-85cb-9bd8549f8a2e",
+        "timestamp": 1795340227417
+      }
+    ],
+    "2.4 Implement `MorseSymbol`, `GapClass`, `DecodedItemKind` and `DecodedItem`": [
+      {
+        "executionId": "0d6e0d73-d3c8-4a5b-96c9-0ca253841abb",
+        "chatSessionId": "sess_9da6656d-0662-48f1-8dce-218442e5fb64",
+        "timestamp": 1795378972190
+      },
+      {
+        "executionId": "0d6e0d73-d3c8-4a5b-96c9-0ca253841abb",
+        "chatSessionId": "sess_9da6656d-0662-48f1-8dce-218442e5fb64",
+        "timestamp": 1795379341866
+      }
+    ],
+    "2. Implement the value types and the timing error": [
+      {
+        "executionId": "0d6e0d73-d3c8-4a5b-96c9-0ca253841abb",
+        "chatSessionId": "sess_9da6656d-0662-48f1-8dce-218442e5fb64",
+        "timestamp": 1795379342017
+      }
+    ],
+    "2.5 Write unit tests for `TimingConfig` and `Calibration`": [
+      {
+        "executionId": "d72b330e-1060-4e2e-abd7-8febbc6f64ae",
+        "chatSessionId": "sess_ff9ce8ff-4bfe-4239-b7a6-64d044006a35",
+        "timestamp": 1795379821287
+      },
+      {
+        "executionId": "d72b330e-1060-4e2e-abd7-8febbc6f64ae",
+        "chatSessionId": "sess_ff9ce8ff-4bfe-4239-b7a6-64d044006a35",
+        "timestamp": 1795379931018
+      }
+    ],
+    "2.6 Write property test for config and Calibration validation": [
+      {
+        "executionId": "7d6e9b54-ae2d-408d-8ddd-949450ec3e95",
+        "chatSessionId": "sess_73d71bc7-6269-4337-a3b7-a688e5adccdf",
+        "timestamp": 1795380083096
+      },
+      {
+        "executionId": "7d6e9b54-ae2d-408d-8ddd-949450ec3e95",
+        "chatSessionId": "sess_73d71bc7-6269-4337-a3b7-a688e5adccdf",
+        "timestamp": 1795380242124
+      }
+    ],
+    "3.1 Implement `Debouncer`": [
+      {
+        "executionId": "f82448e4-b485-4ce9-b91e-777f7eb3c1a7",
+        "chatSessionId": "sess_13707b97-e2cb-4c74-bfef-ca83dfd7b5f0",
+        "timestamp": 1795380341145
+      },
+      {
+        "executionId": "f82448e4-b485-4ce9-b91e-777f7eb3c1a7",
+        "chatSessionId": "sess_13707b97-e2cb-4c74-bfef-ca83dfd7b5f0",
+        "timestamp": 1795380469956
+      }
+    ],
+    "3. Implement the Debouncer": [
+      {
+        "executionId": "f82448e4-b485-4ce9-b91e-777f7eb3c1a7",
+        "chatSessionId": "sess_13707b97-e2cb-4c74-bfef-ca83dfd7b5f0",
+        "timestamp": 1795380470489
+      }
+    ],
+    "3.2 Write unit tests for `Debouncer`": [
+      {
+        "executionId": "71971edc-e15d-4138-a126-fb8d44a90c13",
+        "chatSessionId": "sess_bdb764c4-ac3a-4b86-9939-a6e365ee1d8e",
+        "timestamp": 1795380614368
+      },
+      {
+        "executionId": "71971edc-e15d-4138-a126-fb8d44a90c13",
+        "chatSessionId": "sess_bdb764c4-ac3a-4b86-9939-a6e365ee1d8e",
+        "timestamp": 1795380689442
+      }
+    ],
+    "3.3 Write property test for Debouncer against the reference model": [
+      {
+        "executionId": "369420aa-9952-4bba-9960-d318d66ca9cc",
+        "chatSessionId": "sess_36c2f014-6e9e-42f9-96bb-1c2207b1583b",
+        "timestamp": 1795380731899
+      },
+      {
+        "executionId": "369420aa-9952-4bba-9960-d318d66ca9cc",
+        "chatSessionId": "sess_36c2f014-6e9e-42f9-96bb-1c2207b1583b",
+        "timestamp": 1795381156030
+      }
+    ],
+    "3.4 Write property test for debounce idempotence": [
+      {
+        "executionId": "85ae7ff8-8727-4a92-a5d1-9b763ea45b4f",
+        "chatSessionId": "sess_699cc5e1-7adb-4f66-b76d-a71fb23f00f1",
+        "timestamp": 1795381205803
+      },
+      {
+        "executionId": "85ae7ff8-8727-4a92-a5d1-9b763ea45b4f",
+        "chatSessionId": "sess_699cc5e1-7adb-4f66-b76d-a71fb23f00f1",
+        "timestamp": 1795381268895
+      }
+    ],
+    "4.1 Implement `Classifier`": [
+      {
+        "executionId": "1d715a64-7479-4038-814c-e08e4fd0347f",
+        "chatSessionId": "sess_03c4e024-bdc7-45cc-8d25-5b9260941b4e",
+        "timestamp": 1795381649931
+      },
+      {
+        "executionId": "1d715a64-7479-4038-814c-e08e4fd0347f",
+        "chatSessionId": "sess_03c4e024-bdc7-45cc-8d25-5b9260941b4e",
+        "timestamp": 1795381744474
+      }
+    ],
+    "4. Implement the Classifier": [
+      {
+        "executionId": "1d715a64-7479-4038-814c-e08e4fd0347f",
+        "chatSessionId": "sess_03c4e024-bdc7-45cc-8d25-5b9260941b4e",
+        "timestamp": 1795381744902
+      }
+    ],
+    "4.2 Write unit tests for `Classifier`": [
+      {
+        "executionId": "9ffaccfc-25a8-4fc8-ba71-d12b779ca8df",
+        "chatSessionId": "sess_bc8341b1-121e-43e4-86a1-be4666b977ba",
+        "timestamp": 1795382194553
+      },
+      {
+        "executionId": "9ffaccfc-25a8-4fc8-ba71-d12b779ca8df",
+        "chatSessionId": "sess_bc8341b1-121e-43e4-86a1-be4666b977ba",
+        "timestamp": 1795382299323
+      }
+    ],
+    "4.3 Write property test for threshold formulas and ordering": [
+      {
+        "executionId": "9fb11708-5d39-48a6-bd75-99945eda10a4",
+        "chatSessionId": "sess_c552e57b-1575-4638-b09f-3afc385e7268",
+        "timestamp": 1795383014374
+      },
+      {
+        "executionId": "9fb11708-5d39-48a6-bd75-99945eda10a4",
+        "chatSessionId": "sess_c552e57b-1575-4638-b09f-3afc385e7268",
+        "timestamp": 1795383624221
+      }
+    ],
+    "4.4 Write property test for threshold classification": [
+      {
+        "executionId": "4bfc7515-07c5-442f-b2ea-41bec979e74b",
+        "chatSessionId": "sess_b4ad1076-9cac-45c5-a2fa-4722dd3cc7c5",
+        "timestamp": 1795383887771
+      },
+      {
+        "executionId": "4bfc7515-07c5-442f-b2ea-41bec979e74b",
+        "chatSessionId": "sess_b4ad1076-9cac-45c5-a2fa-4722dd3cc7c5",
+        "timestamp": 1795384137559
+      }
+    ],
+    "4.5 Write property test for press jitter": [
+      {
+        "executionId": "76b94886-51f6-4771-9126-b0b5073b9a3a",
+        "chatSessionId": "sess_8af5a4ad-04d1-46cb-95fa-7ddd750ee573",
+        "timestamp": 1795384495327
+      },
+      {
+        "executionId": "76b94886-51f6-4771-9126-b0b5073b9a3a",
+        "chatSessionId": "sess_8af5a4ad-04d1-46cb-95fa-7ddd750ee573",
+        "timestamp": 1795384623044
+      }
+    ],
+    "4.6 Write property test for gap jitter": [
+      {
+        "executionId": "8ae3082b-85c8-4b19-9f57-b4e2622b649b",
+        "chatSessionId": "sess_e5b0e058-f473-4a3e-b5d6-7b0fe079fd8b",
+        "timestamp": 1795384842177
+      },
+      {
+        "executionId": "8ae3082b-85c8-4b19-9f57-b4e2622b649b",
+        "chatSessionId": "sess_e5b0e058-f473-4a3e-b5d6-7b0fe079fd8b",
+        "timestamp": 1795385157769
+      }
+    ],
+    "4.7 Write property test for classification scale invariance": [
+      {
+        "executionId": "b1685f8f-3f1c-4939-b102-ff995bf0cf0b",
+        "chatSessionId": "sess_18236acb-b81c-4649-9c75-1bce0d378696",
+        "timestamp": 1795385296731
+      },
+      {
+        "executionId": "b1685f8f-3f1c-4939-b102-ff995bf0cf0b",
+        "chatSessionId": "sess_18236acb-b81c-4649-9c75-1bce0d378696",
+        "timestamp": 1795385411954
+      }
+    ],
+    "5. Checkpoint - Ensure all tests pass": [
+      {
+        "executionId": "92bbb549-884b-4229-8ee6-727b3920a416",
+        "chatSessionId": "sess_79520c52-0013-4bef-9d27-eeaa689ab0de",
+        "timestamp": 1795385626978
+      },
+      {
+        "executionId": "92bbb549-884b-4229-8ee6-727b3920a416",
+        "chatSessionId": "sess_79520c52-0013-4bef-9d27-eeaa689ab0de",
+        "timestamp": 1795385662334
+      }
+    ],
+    "6.1 Implement the internal event rules": [
+      {
+        "executionId": "563ac84f-aa5c-4080-950d-8d369d0a222a",
+        "chatSessionId": "sess_b99d372d-549d-4900-861d-448f57701087",
+        "timestamp": 1795385755508
+      },
+      {
+        "executionId": "563ac84f-aa5c-4080-950d-8d369d0a222a",
+        "chatSessionId": "sess_b99d372d-549d-4900-861d-448f57701087",
+        "timestamp": 1795385831327
+      }
+    ],
+    "6.2 Implement `RejectionReason`, `CalibrationRejection` and `CalibrationResult`": [
+      {
+        "executionId": "fbb2ea9d-23e3-460b-a1e6-fb91efe97b81",
+        "chatSessionId": "sess_05fa3807-f953-4ac9-bd5c-5a6e9bdb3feb",
+        "timestamp": 1795386061472
+      },
+      {
+        "executionId": "fbb2ea9d-23e3-460b-a1e6-fb91efe97b81",
+        "chatSessionId": "sess_05fa3807-f953-4ac9-bd5c-5a6e9bdb3feb",
+        "timestamp": 1795386146858
+      }
+    ],
+    "6.3 Implement `Calibrator`": [
+      {
+        "executionId": "08724e47-64b1-448b-b453-b05d4bbd8fdf",
+        "chatSessionId": "sess_b615b330-bf4b-460e-8f96-0db73a0bcd0d",
+        "timestamp": 1795386557700
+      },
+      {
+        "executionId": "08724e47-64b1-448b-b453-b05d4bbd8fdf",
+        "chatSessionId": "sess_b615b330-bf4b-460e-8f96-0db73a0bcd0d",
+        "timestamp": 1795386902758
+      }
+    ],
+    "6. Implement event rules and the Calibrator": [
+      {
+        "executionId": "08724e47-64b1-448b-b453-b05d4bbd8fdf",
+        "chatSessionId": "sess_b615b330-bf4b-460e-8f96-0db73a0bcd0d",
+        "timestamp": 1795386902906
+      }
+    ],
+    "6.4 Write unit tests for `Calibrator`": [
+      {
+        "executionId": "fa0846a9-5196-47ff-87fe-b3b9f6ad78e9",
+        "chatSessionId": "sess_8dc8a489-49c8-4ae3-9fa4-1e09e1399a86",
+        "timestamp": 1795387029394
+      },
+      {
+        "executionId": "fa0846a9-5196-47ff-87fe-b3b9f6ad78e9",
+        "chatSessionId": "sess_8dc8a489-49c8-4ae3-9fa4-1e09e1399a86",
+        "timestamp": 1795387210794
+      }
+    ],
+    "6.5 Write property test for the calibration round trip": [
+      {
+        "executionId": "a18555ba-27ff-432c-86b1-f56f2de07f15",
+        "chatSessionId": "sess_56b21f72-7086-49eb-830a-1c59fc84a1ec",
+        "timestamp": 1795387244563
+      },
+      {
+        "executionId": "a18555ba-27ff-432c-86b1-f56f2de07f15",
+        "chatSessionId": "sess_56b21f72-7086-49eb-830a-1c59fc84a1ec",
+        "timestamp": 1795387444379
+      }
+    ],
+    "6.6 Write property test for rejection order and totality": [
+      {
+        "executionId": "67fc7c0e-2390-4ff2-813a-498d60497d00",
+        "chatSessionId": "sess_b7616824-d178-4fc3-9a7a-21b5bbe74579",
+        "timestamp": 1795387623718
+      },
+      {
+        "executionId": "67fc7c0e-2390-4ff2-813a-498d60497d00",
+        "chatSessionId": "sess_b7616824-d178-4fc3-9a7a-21b5bbe74579",
+        "timestamp": 1795388800815
+      }
+    ],
+    "7.1 Implement `BatchDecoder`": [
+      {
+        "executionId": "b5fee499-101c-433d-b954-86f7b552aa6b",
+        "chatSessionId": "sess_d8447738-a732-4bdf-abef-45edca0c29d4",
+        "timestamp": 1795409153967
+      },
+      {
+        "executionId": "b5fee499-101c-433d-b954-86f7b552aa6b",
+        "chatSessionId": "sess_d8447738-a732-4bdf-abef-45edca0c29d4",
+        "timestamp": 1795409539490
+      }
+    ],
+    "7. Implement the Batch_Decoder": [
+      {
+        "executionId": "b5fee499-101c-433d-b954-86f7b552aa6b",
+        "chatSessionId": "sess_d8447738-a732-4bdf-abef-45edca0c29d4",
+        "timestamp": 1795409539887
+      }
+    ],
+    "7.2 Write unit tests for `BatchDecoder`": [
+      {
+        "executionId": "f5ec44df-67c0-48f8-b585-40ef1eed3094",
+        "chatSessionId": "sess_fbd597a8-7ee7-4a3b-a00e-2d2a951a4527",
+        "timestamp": 1795409650711
+      },
+      {
+        "executionId": "f5ec44df-67c0-48f8-b585-40ef1eed3094",
+        "chatSessionId": "sess_fbd597a8-7ee7-4a3b-a00e-2d2a951a4527",
+        "timestamp": 1795410225700
+      }
+    ],
+    "7.3 Write property test for bounce never becoming a Symbol": [
+      {
+        "executionId": "8eb75c7a-bb36-43f2-8c9f-604d75a2f6e5",
+        "chatSessionId": "sess_a348553e-cce4-4483-9a13-121cf69985ff",
+        "timestamp": 1795410398704
+      },
+      {
+        "executionId": "8eb75c7a-bb36-43f2-8c9f-604d75a2f6e5",
+        "chatSessionId": "sess_a348553e-cce4-4483-9a13-121cf69985ff",
+        "timestamp": 1795410690681
+      }
+    ],
+    "7.4 Write property test for jitter tolerance of batch decoding": [
+      {
+        "executionId": "0e02fc2e-7850-492f-a154-2ec0b0aa2c76",
+        "chatSessionId": "sess_d689115b-7353-4659-ab3c-04bbb046203c",
+        "timestamp": 1795411133664
+      },
+      {
+        "executionId": "0e02fc2e-7850-492f-a154-2ec0b0aa2c76",
+        "chatSessionId": "sess_d689115b-7353-4659-ab3c-04bbb046203c",
+        "timestamp": 1795411445978
+      }
+    ],
+    "7.5 Write property test for batch scale invariance": [
+      {
+        "executionId": "d1598a7a-dee5-4918-9fcc-90453b988ea2",
+        "chatSessionId": "sess_6dd89aa2-1f3e-4778-be2c-18a9b332dce5",
+        "timestamp": 1795411589748
+      },
+      {
+        "executionId": "d1598a7a-dee5-4918-9fcc-90453b988ea2",
+        "chatSessionId": "sess_6dd89aa2-1f3e-4778-be2c-18a9b332dce5",
+        "timestamp": 1795412052910
+      }
+    ],
+    "7.6 Write property test for batch output against the reference decoder": [
+      {
+        "executionId": "8a99566e-c136-43bc-be70-f2153c861713",
+        "chatSessionId": "sess_c5dd30ff-e442-44e1-957e-7ce8d1bba486",
+        "timestamp": 1795412705372
+      },
+      {
+        "executionId": "8a99566e-c136-43bc-be70-f2153c861713",
+        "chatSessionId": "sess_c5dd30ff-e442-44e1-957e-7ce8d1bba486",
+        "timestamp": 1795412949259
+      }
+    ],
+    "7.7 Write property test for invalid-sequence rejection": [
+      {
+        "executionId": "9e5cd495-b558-4c33-af0e-373f43076c6b",
+        "chatSessionId": "sess_26139058-2370-453d-8110-501533e7c0c1",
+        "timestamp": 1795413533464
+      },
+      {
+        "executionId": "9e5cd495-b558-4c33-af0e-373f43076c6b",
+        "chatSessionId": "sess_26139058-2370-453d-8110-501533e7c0c1",
+        "timestamp": 1795413851087
+      }
+    ],
+    "8. Checkpoint - Ensure all tests pass": [
+      {
+        "executionId": "02d0fe37-425c-4d1a-a2eb-6ba11f6a0cc7",
+        "chatSessionId": "sess_433a88f4-3196-42f3-aaf5-1d3d3a118385",
+        "timestamp": 1795413984343
+      },
+      {
+        "executionId": "02d0fe37-425c-4d1a-a2eb-6ba11f6a0cc7",
+        "chatSessionId": "sess_433a88f4-3196-42f3-aaf5-1d3d3a118385",
+        "timestamp": 1795414048477
+      }
+    ],
+    "9.1 Implement `LiveDecoder`": [
+      {
+        "executionId": "cf54657a-33dc-4788-a304-0d2bc73f73ba",
+        "chatSessionId": "sess_394157db-4629-4b2f-be52-e1e4d120422e",
+        "timestamp": 1795414450588
+      },
+      {
+        "executionId": "cf54657a-33dc-4788-a304-0d2bc73f73ba",
+        "chatSessionId": "sess_394157db-4629-4b2f-be52-e1e4d120422e",
+        "timestamp": 1795414856965
+      }
+    ],
+    "9. Implement the Live_Decoder": [
+      {
+        "executionId": "cf54657a-33dc-4788-a304-0d2bc73f73ba",
+        "chatSessionId": "sess_394157db-4629-4b2f-be52-e1e4d120422e",
+        "timestamp": 1795414857251
+      }
+    ],
+    "9.2 Write unit tests for `LiveDecoder`": [
+      {
+        "executionId": "64a523e8-4b7f-4778-9bf1-41c8d8f9df4e",
+        "chatSessionId": "sess_596d4e73-38a2-46ea-b0ee-77b4efe13343",
+        "timestamp": 1795415027467
+      },
+      {
+        "executionId": "64a523e8-4b7f-4778-9bf1-41c8d8f9df4e",
+        "chatSessionId": "sess_596d4e73-38a2-46ea-b0ee-77b4efe13343",
+        "timestamp": 1795415281223
+      }
+    ],
+    "9.3 Write unit tests for switch-event validation across all consumers": [
+      {
+        "executionId": "eb56736c-ceb1-4857-ae72-1844c87c5adf",
+        "chatSessionId": "sess_2a8e7b42-d46e-4cc1-bfde-af58bf20f4d9",
+        "timestamp": 1795416426961
+      },
+      {
+        "executionId": "eb56736c-ceb1-4857-ae72-1844c87c5adf",
+        "chatSessionId": "sess_2a8e7b42-d46e-4cc1-bfde-af58bf20f4d9",
+        "timestamp": 1795416672153
+      }
+    ],
+    "9.4 Write unit tests for the decoder Debounce_Time limit": [
+      {
+        "executionId": "99339be1-5732-4010-81d4-f8a887d930e6",
+        "chatSessionId": "sess_b1897bbe-e16b-4227-bdfd-6a1ebc75153b",
+        "timestamp": 1795417041772
+      },
+      {
+        "executionId": "99339be1-5732-4010-81d4-f8a887d930e6",
+        "chatSessionId": "sess_b1897bbe-e16b-4227-bdfd-6a1ebc75153b",
+        "timestamp": 1795417176157
+      }
+    ],
+    "9.5 Write property test for live and batch equivalence": [
+      {
+        "executionId": "bbada30c-9379-46fc-82f1-8143374a3f64",
+        "chatSessionId": "sess_7e6255fd-7f9b-415d-a43e-db946a823587",
+        "timestamp": 1795417480563
+      },
+      {
+        "executionId": "bbada30c-9379-46fc-82f1-8143374a3f64",
+        "chatSessionId": "sess_7e6255fd-7f9b-415d-a43e-db946a823587",
+        "timestamp": 1795418013492
+      }
+    ],
+    "9.6 Write property test for invalid live calls": [
+      {
+        "executionId": "07501238-c713-4a9d-846f-082b5a9183f8",
+        "chatSessionId": "sess_1a9d6ad9-465a-40b9-b23c-1d4f695edca0",
+        "timestamp": 1795418664959
+      },
+      {
+        "executionId": "07501238-c713-4a9d-846f-082b5a9183f8",
+        "chatSessionId": "sess_1a9d6ad9-465a-40b9-b23c-1d4f695edca0",
+        "timestamp": 1795418889426
+      }
+    ],
+    "9.7 Write property test for determinism": [
+      {
+        "executionId": "a400cac3-82d6-43b4-8ce2-ee3bc51194ee",
+        "chatSessionId": "sess_a3a86c98-6ff4-4405-8e95-c37d43cc88b4",
+        "timestamp": 1795419649592
+      },
+      {
+        "executionId": "a400cac3-82d6-43b4-8ce2-ee3bc51194ee",
+        "chatSessionId": "sess_a3a86c98-6ff4-4405-8e95-c37d43cc88b4",
+        "timestamp": 1795419902947
+      }
+    ],
+    "9.8 Write property test for message privacy": [
+      {
+        "executionId": "e609bdc2-9939-4851-8972-6ab5dda89472",
+        "chatSessionId": "sess_443bb1af-42c4-4a8d-a4e3-f26c30a5d2e3",
+        "timestamp": 1795420287297
+      },
+      {
+        "executionId": "e609bdc2-9939-4851-8972-6ab5dda89472",
+        "chatSessionId": "sess_443bb1af-42c4-4a8d-a4e3-f26c30a5d2e3",
+        "timestamp": 1795421101447
+      }
+    ],
+    "10. Checkpoint - Ensure all tests pass": [
+      {
+        "executionId": "adf0a1a1-f59d-4b3c-91ad-7d6e225ad571",
+        "chatSessionId": "sess_6f831eb6-cec5-4737-b079-28127b977c29",
+        "timestamp": 1795422215306
+      },
+      {
+        "executionId": "adf0a1a1-f59d-4b3c-91ad-7d6e225ad571",
+        "chatSessionId": "sess_6f831eb6-cec5-4737-b079-28127b977c29",
+        "timestamp": 1795422349133
+      }
+    ],
+    "11.1 Replace the REQ-PURE-6 public-API list with the REQ-ENGINE-4 list": [
+      {
+        "executionId": "0159d203-e273-457f-96b8-5d0986d7e43e",
+        "chatSessionId": "sess_46d58ecc-18ff-4408-aa28-21fcddff04bf",
+        "timestamp": 1795423058667
+      },
+      {
+        "executionId": "0159d203-e273-457f-96b8-5d0986d7e43e",
+        "chatSessionId": "sess_46d58ecc-18ff-4408-aa28-21fcddff04bf",
+        "timestamp": 1795423304784
+      }
+    ],
+    "11.2 Add the REQ-ENGINE-1, REQ-ENGINE-2, REQ-ENGINE-5 and REQ-DEBOUNCE-2 source scans": [
+      {
+        "executionId": "6994e47e-264e-4ec6-a1d2-aa71bb29b61b",
+        "chatSessionId": "sess_b81910f9-55cf-40c8-8c40-53b9f68f384a",
+        "timestamp": 1795423631818
+      },
+      {
+        "executionId": "b97f31ca-3b60-4501-ba2c-cae222d5122e",
+        "chatSessionId": "sess_b81910f9-55cf-40c8-8c40-53b9f68f384a",
+        "timestamp": 1795469023315
+      }
+    ],
+    "11.3 Add the REQ-ENGINE-3, REQ-ENGINE-6, REQ-ENGINE-8 and REQ-PBT-3 meta-tests": [
+      {
+        "executionId": "4228562f-58e9-41e0-877e-d27044863ab5",
+        "chatSessionId": "sess_44e325a2-0660-4970-b0bd-ff1ca80ac6ec",
+        "timestamp": 1795469120778
+      },
+      {
+        "executionId": "4228562f-58e9-41e0-877e-d27044863ab5",
+        "chatSessionId": "sess_44e325a2-0660-4970-b0bd-ff1ca80ac6ec",
+        "timestamp": 1795469354769
+      }
+    ],
+    "11. Replace the public-API test and add the structure and privacy tests": [
+      {
+        "executionId": "4228562f-58e9-41e0-877e-d27044863ab5",
+        "chatSessionId": "sess_44e325a2-0660-4970-b0bd-ff1ca80ac6ec",
+        "timestamp": 1795469354881
+      }
+    ],
+    "12. Final checkpoint - Ensure all tests pass": [
+      {
+        "executionId": "ebfa8fa4-22bd-46a7-926c-05a9db371476",
+        "chatSessionId": "sess_4856754b-8063-40a9-a889-941f44e991bb",
+        "timestamp": 1795469411276
+      },
+      {
+        "executionId": "ebfa8fa4-22bd-46a7-926c-05a9db371476",
+        "chatSessionId": "sess_4856754b-8063-40a9-a889-941f44e991bb",
+        "timestamp": 1795469461250
+      }
+    ]
+  }
+}
