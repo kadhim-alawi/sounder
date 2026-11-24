@@ -1,5 +1,26 @@
 {
-  "pbtResults": {},
+  "pbtResults": {
+    "2.3 Write the item generators and the append-undo property test (REQ-CI-2b, required)": {
+      "status": "passed",
+      "lastRunTimestamp": 1795512152607
+    },
+    "2.4 Write property test for Composer against a list model": {
+      "status": "passed",
+      "lastRunTimestamp": 1795512345894
+    },
+    "2.7 Write property test for item-by-item display text": {
+      "status": "passed",
+      "lastRunTimestamp": 1795512857605
+    },
+    "2.8 Write property test for Speak_Text": {
+      "status": "passed",
+      "lastRunTimestamp": 1795513011667
+    },
+    "2.11 Write property test for KeySession": {
+      "status": "passed",
+      "lastRunTimestamp": 1795516741107
+    }
+  },
   "executionHistory": {
     "1. Fix the app dependencies": [
       {
@@ -11,6 +32,157 @@
         "executionId": "7dab59b6-b598-4304-aa62-1048bf2d07f7",
         "chatSessionId": "sess_76c33344-a4b2-411a-8eb0-21e1ede063df",
         "timestamp": 1795508191196
+      }
+    ],
+    "2.1 Implement `Composer`": [
+      {
+        "executionId": "d20f692a-e09a-4dd8-9ebf-dcbdd65539fd",
+        "chatSessionId": "sess_86a0529c-3aa1-41ad-90ef-785ce09512e9",
+        "timestamp": 1795508767377
+      },
+      {
+        "executionId": "d20f692a-e09a-4dd8-9ebf-dcbdd65539fd",
+        "chatSessionId": "sess_86a0529c-3aa1-41ad-90ef-785ce09512e9",
+        "timestamp": 1795508888212
+      }
+    ],
+    "2.2 Write unit tests for `Composer` (REQ-CI-2a, required)": [
+      {
+        "executionId": "1bb6962a-7424-4024-8cba-1e183f25f7a0",
+        "chatSessionId": "sess_cff00651-de71-4c3c-acbf-82b420d8c76a",
+        "timestamp": 1795510331225
+      },
+      {
+        "executionId": "1bb6962a-7424-4024-8cba-1e183f25f7a0",
+        "chatSessionId": "sess_cff00651-de71-4c3c-acbf-82b420d8c76a",
+        "timestamp": 1795510512699
+      }
+    ],
+    "2.3 Write the item generators and the append-undo property test (REQ-CI-2b, required)": [
+      {
+        "executionId": "35b6339a-d083-4c8f-a377-09725a658316",
+        "chatSessionId": "sess_e57acb2f-9367-454a-ae17-39974bd3b362",
+        "timestamp": 1795511423914
+      },
+      {
+        "executionId": "35b6339a-d083-4c8f-a377-09725a658316",
+        "chatSessionId": "sess_e57acb2f-9367-454a-ae17-39974bd3b362",
+        "timestamp": 1795512167123
+      }
+    ],
+    "2.4 Write property test for Composer against a list model": [
+      {
+        "executionId": "afffb09e-c949-4a8e-bb88-3bd7492e4f0b",
+        "chatSessionId": "sess_dac653dd-3406-4ad1-82cc-f76603a220ef",
+        "timestamp": 1795512251204
+      },
+      {
+        "executionId": "afffb09e-c949-4a8e-bb88-3bd7492e4f0b",
+        "chatSessionId": "sess_dac653dd-3406-4ad1-82cc-f76603a220ef",
+        "timestamp": 1795512359371
+      }
+    ],
+    "2.5 Implement the display and speak text functions": [
+      {
+        "executionId": "e18eb3f4-9bf3-4002-b202-0db49ca19a3f",
+        "chatSessionId": "sess_49c40fd6-5385-483d-ab5d-ac728c6ca5e4",
+        "timestamp": 1795512459285
+      },
+      {
+        "executionId": "e18eb3f4-9bf3-4002-b202-0db49ca19a3f",
+        "chatSessionId": "sess_49c40fd6-5385-483d-ab5d-ac728c6ca5e4",
+        "timestamp": 1795512558785
+      }
+    ],
+    "2.6 Write unit tests for the text functions": [
+      {
+        "executionId": "8d48d148-082b-4c18-83b9-50bf0cd30d1e",
+        "chatSessionId": "sess_54c65ef8-ee6c-4697-8a1e-6ead98d6d31d",
+        "timestamp": 1795512635045
+      },
+      {
+        "executionId": "8d48d148-082b-4c18-83b9-50bf0cd30d1e",
+        "chatSessionId": "sess_54c65ef8-ee6c-4697-8a1e-6ead98d6d31d",
+        "timestamp": 1795512714066
+      }
+    ],
+    "2.7 Write property test for item-by-item display text": [
+      {
+        "executionId": "0bcb9978-6bef-4aaf-9ec3-e15ca1be084e",
+        "chatSessionId": "sess_04932755-c451-40ed-ae83-1851cdb2ee67",
+        "timestamp": 1795512784822
+      },
+      {
+        "executionId": "0bcb9978-6bef-4aaf-9ec3-e15ca1be084e",
+        "chatSessionId": "sess_04932755-c451-40ed-ae83-1851cdb2ee67",
+        "timestamp": 1795512869713
+      }
+    ],
+    "2.8 Write property test for Speak_Text": [
+      {
+        "executionId": "fd3c69fb-d1ed-4808-9118-5522079a3c56",
+        "chatSessionId": "sess_c89a12a8-3fd7-4f62-8aaa-0ee6593c78bc",
+        "timestamp": 1795512938815
+      },
+      {
+        "executionId": "fd3c69fb-d1ed-4808-9118-5522079a3c56",
+        "chatSessionId": "sess_c89a12a8-3fd7-4f62-8aaa-0ee6593c78bc",
+        "timestamp": 1795513023977
+      }
+    ],
+    "2.9 Implement `KeySession`": [
+      {
+        "executionId": "b896b0e6-d809-4e65-a5c9-fa26170d7285",
+        "chatSessionId": "sess_fc2ed4a7-d3b5-4775-98af-f6cd00cb08f1",
+        "timestamp": 1795513492718
+      },
+      {
+        "executionId": "b896b0e6-d809-4e65-a5c9-fa26170d7285",
+        "chatSessionId": "sess_fc2ed4a7-d3b5-4775-98af-f6cd00cb08f1",
+        "timestamp": 1795513694537
+      }
+    ],
+    "2. Implement the pure Dart compose layer": [
+      {
+        "executionId": "b896b0e6-d809-4e65-a5c9-fa26170d7285",
+        "chatSessionId": "sess_fc2ed4a7-d3b5-4775-98af-f6cd00cb08f1",
+        "timestamp": 1795513694633
+      }
+    ],
+    "2.10 Write unit tests for `KeySession`": [
+      {
+        "executionId": "5b16061e-5f2d-4c38-abc9-53099a9ff1cd",
+        "chatSessionId": "sess_24d8ebb3-0733-4360-8a1b-3ec7c54d0ead",
+        "timestamp": 1795516111997
+      },
+      {
+        "executionId": "5b16061e-5f2d-4c38-abc9-53099a9ff1cd",
+        "chatSessionId": "sess_24d8ebb3-0733-4360-8a1b-3ec7c54d0ead",
+        "timestamp": 1795516302400
+      }
+    ],
+    "2.11 Write property test for KeySession": [
+      {
+        "executionId": "aa186f00-3bbc-4e7e-9125-513fa5821a0c",
+        "chatSessionId": "sess_90dc6c41-f384-493f-a4de-aec6727cfd9e",
+        "timestamp": 1795516609983
+      },
+      {
+        "executionId": "aa186f00-3bbc-4e7e-9125-513fa5821a0c",
+        "chatSessionId": "sess_90dc6c41-f384-493f-a4de-aec6727cfd9e",
+        "timestamp": 1795516770332
+      }
+    ],
+    "3. Checkpoint - Ensure all tests pass": [
+      {
+        "executionId": "f3891df7-7808-4902-8abd-09a36ff09bef",
+        "chatSessionId": "sess_b8f40dd7-411d-47e9-a803-d7464334975f",
+        "timestamp": 1795517077129
+      },
+      {
+        "executionId": "f3891df7-7808-4902-8abd-09a36ff09bef",
+        "chatSessionId": "sess_b8f40dd7-411d-47e9-a803-d7464334975f",
+        "timestamp": 1795517128112
       }
     ]
   }

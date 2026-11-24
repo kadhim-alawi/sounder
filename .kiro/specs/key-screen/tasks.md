@@ -22,52 +22,52 @@ Conventions for every task:
   - Run `cd app && flutter pub get` and confirm it resolves; leave `main.dart` unchanged for now
   - _Requirements: REQ-KEY-6, REQ-SPEAK-1, REQ-COMPOSE-6_
 
-- [ ] 2. Implement the pure Dart compose layer
-  - [ ] 2.1 Implement `Composer`
+- [x] 2. Implement the pure Dart compose layer
+  - [x] 2.1 Implement `Composer`
     - `app/lib/compose/composer.dart`: `sentence` (unmodifiable view), `append`, `undo` (no-op when empty), `clear`; no other mutator
     - Imports only `package:morse_core/morse_core.dart`; no Flutter, `dart:ui`, `dart:html`, `dart:io`, `dart:js_interop`, clock, timer or I/O
     - _Requirements: REQ-COMPOSE-1, REQ-COMPOSE-2, REQ-COMPOSE-3, REQ-COMPOSE-4, REQ-COMPOSE-5_
-  - [ ] 2.2 Write unit tests for `Composer` (REQ-CI-2a, required)
+  - [x] 2.2 Write unit tests for `Composer` (REQ-CI-2a, required)
     - `app/test/composer_test.dart`: REQ-COMPOSE-2 append keeps order and leaves earlier items unchanged; REQ-COMPOSE-3 Undo removes only the last item, including Undo on an empty Sentence raising nothing; REQ-COMPOSE-4 Clear, including Clear on an empty Sentence; REQ-COMPOSE-5 the Sentence changes only through append, undo and clear (the returned list is unmodifiable)
     - _Requirements: REQ-COMPOSE-2, REQ-COMPOSE-3, REQ-COMPOSE-4, REQ-COMPOSE-5, REQ-CI-2_
-  - [ ] 2.3 Write the item generators and the append-undo property test (REQ-CI-2b, required)
+  - [x] 2.3 Write the item generators and the append-undo property test (REQ-CI-2b, required)
     - `app/test/support/item_arbitraries.dart`: `decodedItem()` as a `frequency` of Letter_Items from the code-table characters, Unknown_Letter_Items built from the fixed unknown prefix `........` plus random symbols (no filter), and Word_Spaces; `itemList(maxLength:)`
     - Create `app/test/compose_properties_test.dart` with seed `(200 + N) * 1000 + 3`, `maxExamples: 200`, and the tag comment `// Feature: key-screen, Property 1: append then undo round trip`
     - **Property 1: Append then undo round trip** (lengths 0 to 200, k derived by modulo, no filter)
     - **Validates: Requirements 3.6, 3.3** (REQ-COMPOSE-6, REQ-COMPOSE-3)
-  - [ ]* 2.4 Write property test for Composer against a list model
+  - [x] 2.4 Write property test for Composer against a list model
     - Add to `compose_properties_test.dart`; 0 to 300 operations of append, undo and clear; no operation throws
     - **Property 2: Composer matches a list model**
     - **Validates: Requirements 3.2, 3.3, 3.4** (REQ-COMPOSE-2, REQ-COMPOSE-3, REQ-COMPOSE-4)
-  - [ ] 2.5 Implement the display and speak text functions
+  - [x] 2.5 Implement the display and speak text functions
     - `app/lib/compose/sentence_text.dart`: `placeholder = '\u25A1'`; `sentenceText(items)` (letter → its character, unknown → Placeholder, Word_Space → one space); `speakText(items)` (Placeholders removed, space runs collapsed, trimmed); `partialGlyphs(s)` (`.` → `·` U+00B7, `-` → `–` U+2013)
     - Pure Dart under the same import rules as 2.1
     - _Requirements: REQ-KEY-10, REQ-KEY-11, REQ-SPEAK-1, REQ-SPEAK-2, REQ-COMPOSE-1_
-  - [ ]* 2.6 Write unit tests for the text functions
+  - [x] 2.6 Write unit tests for the text functions
     - `app/test/sentence_text_test.dart`: the `HI□ THERE` example; `speakText` of only Placeholders and Word_Spaces is empty; REQ-KEY-10 glyphs including the empty Partial_Sequence
     - _Requirements: REQ-KEY-10, REQ-KEY-11, REQ-SPEAK-1, REQ-SPEAK-2_
-  - [ ]* 2.7 Write property test for item-by-item display text
+  - [x] 2.7 Write property test for item-by-item display text
     - Add to `compose_properties_test.dart`; also a generator of 0 to 20 `.`/`-` characters
     - **Property 3: Display text maps item by item**
     - **Validates: Requirements 2.3, 2.2** (REQ-KEY-11, REQ-KEY-10)
-  - [ ]* 2.8 Write property test for Speak_Text
+  - [x] 2.8 Write property test for Speak_Text
     - Add to `compose_properties_test.dart`; oracle splits at Word_Spaces, keeps Letter_Item characters, drops empty parts, joins with one space
     - **Property 4: Speak_Text is the letters, words separated by single spaces**
     - **Validates: Requirements 4.1, 4.2** (REQ-SPEAK-1, REQ-SPEAK-2)
-  - [ ] 2.9 Implement `KeySession`
+  - [x] 2.9 Implement `KeySession`
     - `app/lib/compose/key_session.dart`: default Calibration (Dit_Length 100,000, Dah_Length 300,000, Symbol_Gap 250,000, Letter_Gap 700,000) as named constants with a REQ-KEY-6 comment, `TimingConfig.defaults`; `KeySession.withDecoder` for tests
     - Every call clamps `t' = max(t, decoder.latestTimestamp ?? t)`; catches only `TimingInputException`, returns false and changes nothing; after each accepted call forwards `decoder.items.sublist(_forwarded)` to the Composer and updates `_forwarded`
     - `undo` and `clear` touch only the Composer; getters `sentence`, `partialSequence`, `isPressed`
     - _Requirements: REQ-KEY-4, REQ-KEY-6, REQ-KEY-7, REQ-COMPOSE-1, REQ-COMPOSE-2, REQ-COMPOSE-3, REQ-COMPOSE-4_
-  - [ ]* 2.10 Write unit tests for `KeySession`
+  - [x] 2.10 Write unit tests for `KeySession`
     - `app/test/key_session_test.dart`: REQ-KEY-6 default Calibration values; press at 0, release at 100,000, `advanceTo(800,000)` gives `E`; a second press while held returns false and changes nothing (REQ-KEY-7)
     - _Requirements: REQ-KEY-6, REQ-KEY-7_
-  - [ ]* 2.11 Write property test for KeySession
+  - [x] 2.11 Write property test for KeySession
     - Add a `sessionCall()` generator to `item_arbitraries.dart` (`oneOf` press, release, advanceTo with `integer(0, 20000000)`, undo, clear); add the property to `compose_properties_test.dart`
     - **Property 5: KeySession clamps, discards errors and forwards each item once**
     - **Validates: Requirements 1.4, 1.7, 3.2, 3.3, 3.4** (REQ-KEY-4, REQ-KEY-7, REQ-COMPOSE-2, REQ-COMPOSE-3, REQ-COMPOSE-4)
 
-- [ ] 3. Checkpoint - Ensure all tests pass
+- [x] 3. Checkpoint - Ensure all tests pass
   - Run `cd app && flutter test` and `cd packages/morse_core && dart test`.
   - Ensure all tests pass, ask the user if questions arise.
 

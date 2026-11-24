@@ -176,7 +176,7 @@ final class PointerAdapter {
 // composer.dart
 /// The Spell mode Sentence. REQ-COMPOSE-1 to REQ-COMPOSE-5.
 final class Composer {
-  /// Unmodifiable view. REQ-COMPOSE-2.
+  /// Unmodifiable copy. REQ-COMPOSE-2.
   List<DecodedItem> get sentence;
   void append(DecodedItem item);   // REQ-COMPOSE-2
   void undo();                     // REQ-COMPOSE-3, no-op when empty
