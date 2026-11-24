@@ -16,7 +16,7 @@ Conventions for every task:
 
 ## Tasks
 
-- [ ] 1. Fix the app dependencies
+- [x] 1. Fix the app dependencies
   - In `app/pubspec.yaml`, move `morse_core: path: ../packages/morse_core` from `dev_dependencies` to `dependencies` (K6)
   - Add `flutter_riverpod: ^3.5.0` and `flutter_tts: ^4.2.5` to `dependencies`, and `kiri_check: ^1.4.0` to `dev_dependencies` (design D11, R5, R6, R7)
   - Run `cd app && flutter pub get` and confirm it resolves; leave `main.dart` unchanged for now

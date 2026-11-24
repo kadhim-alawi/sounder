@@ -43,3 +43,5 @@
 2026-11-24: SURPRISE: key-screen design. Kiro read the Flutter web engine source and proved key, pointer and frame timestamps share the browser's performance.now() clock, then found frame timestamps can lag the previous input event, which LiveDecoder would reject; fixed with a clamp costing at most one frame. Review found D8 would make the speech-failure screen impossible to close by keyboard; fixed with Escape.
 
 2026-11-24: MCP: added the Dart and Flutter MCP server (dart mcp-server) in .kiro/settings/mcp.json. Verified: Kiro used it to look up flutter_tts on pub.dev and analyze morse_core. The key-screen design had to use the pub.dev API directly because no Dart MCP server was available; from now on tasks use it.
+
+2026-11-24: SURPRISE: key-screen task 1. Kiro checked flutter_riverpod 3.5.0 and flutter_tts 4.2.5 on pub.dev through the dart MCP server, then reported its own deviation from steering: the server only had packages/morse_core as a root, so flutter pub get for app/ ran in the shell. Steering updated to register app/ as a root.

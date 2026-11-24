@@ -11,6 +11,7 @@ inclusion: always
 - Speech: the platform's own text-to-speech through a Flutter plugin.
 - Storage: on-device key-value storage only. No database, no accounts.
 - Use the dart MCP server (configured in .kiro/settings/mcp.json) to look up packages on pub.dev, check APIs, and run the analyzer and tests. Never guess an API or a package version.
+- Before using dart MCP tools, make sure both app/ and packages/morse_core are registered as roots with the dart MCP server (use its roots tool). If a dart MCP tool still cannot be used, run the command in the shell and say so, as you did in key-screen task 1.
 
 ## Layering rules
 - `morse_core` handles the code table, encoding, decoding, timing and calibration. Pure functions, no I/O.
