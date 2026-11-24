@@ -10,7 +10,7 @@ inclusion: always
 - Backend: one stateless serverless function, `functions/expand`, hosted on Netlify Functions.
 - Speech: the platform's own text-to-speech through a Flutter plugin.
 - Storage: on-device key-value storage only. No database, no accounts.
-- Look up current package names and versions with the Dart MCP server. Never guess an API.
+- Use the dart MCP server (configured in .kiro/settings/mcp.json) to look up packages on pub.dev, check APIs, and run the analyzer and tests. Never guess an API or a package version.
 
 ## Layering rules
 - `morse_core` handles the code table, encoding, decoding, timing and calibration. Pure functions, no I/O.
