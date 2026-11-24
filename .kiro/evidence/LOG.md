@@ -37,3 +37,9 @@
 2026-11-23: During task 6.3 Kiro found a new spec gap: the 2^40 µs cap added on Nov 22 (G1) lets a valid calibration measure a median above the cap, so Calibration() would throw, breaking REQ-CAL-31 ("never throws"). Added Rejection_Reason durationTooLong with its own requirement and test.
 
 2026-11-23: adaptive-timing complete. 264 tests pass in 11 s (morse-core + timing engine), including 19 timing properties; dart analyze clean. Task 11.2 aborted mid-run; re-dispatched as four smaller runs, each verified before the next.
+
+2026-11-23: Devpost "Meet the judges" email. Judges ask for specs/steering/hooks shown in the process, "Kiro surprised you" moments, a simple clean UI, and breadth across Kiro surfaces. Plan updated: MCP, Kiro Web, custom agent, CLI, powers and Crew each get a real job this week; surprises tagged SURPRISE: in this log.
+
+2026-11-24: SURPRISE: key-screen design. Kiro read the Flutter web engine source and proved key, pointer and frame timestamps share the browser's performance.now() clock, then found frame timestamps can lag the previous input event, which LiveDecoder would reject; fixed with a clamp costing at most one frame. Review found D8 would make the speech-failure screen impossible to close by keyboard; fixed with Escape.
+
+2026-11-24: MCP: added the Dart and Flutter MCP server (dart mcp-server) in .kiro/settings/mcp.json. Verified: Kiro used it to look up flutter_tts on pub.dev and analyze morse_core. The key-screen design had to use the pub.dev API directly because no Dart MCP server was available; from now on tasks use it.
