@@ -153,7 +153,7 @@ Conventions for every task:
   - Run `cd packages/morse_core && dart test` and `cd app && flutter test`; both exit 0 with zero failures.
   - Ensure all tests pass, ask the user if questions arise.
 
-- [ ] 9. Manual browser check before submission
+- [x] 9. Manual browser check before submission
   - This is a manual check by the user, not a coding task. It covers design research R4, which a widget test cannot prove.
   - On the deployed site in Chrome and Firefox: with Undo focused, Space does not activate Undo and does not scroll the page; a 100 ms dit decodes as `E`; Speak says the sentence; with no system voice available, the Fallback_View appears.
   - Record the result in `.kiro/evidence/LOG.md`.
