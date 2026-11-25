@@ -154,3 +154,31 @@ Arbitrary<SessionCall> sessionCall() {
 /// REQ-COMPOSE-2.
 Arbitrary<List<SessionCall>> sessionCalls({required int maxLength}) =>
     list<SessionCall>(sessionCall(), minLength: 0, maxLength: maxLength);
+
+/// Kind of a generated pointer event. REQ-KEY-3, REQ-KEY-7.
+enum PointerEventKind { down, up, cancel }
+
+/// One pointer event for the PointerAdapter property: a kind and a pointer
+/// id. REQ-KEY-3, REQ-KEY-7.
+final class PointerEventCall {
+  const PointerEventCall(this.kind, this.pointer);
+  final PointerEventKind kind;
+  final int pointer;
+  @override
+  String toString() => '${kind.name}($pointer)';
+}
+
+/// One pointer event: down, up or cancel with a pointer id from 0 to 3.
+/// REQ-KEY-3, REQ-KEY-7.
+Arbitrary<PointerEventCall> pointerEventCall() => combine2(
+  constantFrom<PointerEventKind>(PointerEventKind.values),
+  integer(min: 0, max: 3),
+).map((pair) => PointerEventCall(pair.$1, pair.$2));
+
+/// A list of 0 to [maxLength] pointer events. REQ-KEY-3, REQ-KEY-7.
+Arbitrary<List<PointerEventCall>> pointerEventCalls({required int maxLength}) =>
+    list<PointerEventCall>(
+      pointerEventCall(),
+      minLength: 0,
+      maxLength: maxLength,
+    );

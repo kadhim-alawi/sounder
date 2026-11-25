@@ -19,6 +19,10 @@
     "2.11 Write property test for KeySession": {
       "status": "passed",
       "lastRunTimestamp": 1795516741107
+    },
+    "4.5 Write property test for PointerAdapter": {
+      "status": "passed",
+      "lastRunTimestamp": 1795519508857
     }
   },
   "executionHistory": {
@@ -183,6 +187,279 @@
         "executionId": "f3891df7-7808-4902-8abd-09a36ff09bef",
         "chatSessionId": "sess_b8f40dd7-411d-47e9-a803-d7464334975f",
         "timestamp": 1795517128112
+      }
+    ],
+    "4.1 Implement `TimeBase` and `PlatformTimeBase`": [
+      {
+        "executionId": "393aac79-3596-489a-97cc-6e7cef3aa512",
+        "chatSessionId": "sess_91864645-b0e7-456a-abdf-324abf208d40",
+        "timestamp": 1795517798008
+      },
+      {
+        "executionId": "393aac79-3596-489a-97cc-6e7cef3aa512",
+        "chatSessionId": "sess_91864645-b0e7-456a-abdf-324abf208d40",
+        "timestamp": 1795517895679
+      }
+    ],
+    "4.2 Implement `KeyAction` and `keyActionFor`": [
+      {
+        "executionId": "36616b12-9ac5-4d0f-8330-62aba0ae70e4",
+        "chatSessionId": "sess_317bc8f6-ae6f-4453-a9e0-d1dba120a563",
+        "timestamp": 1795518033445
+      },
+      {
+        "executionId": "36616b12-9ac5-4d0f-8330-62aba0ae70e4",
+        "chatSessionId": "sess_317bc8f6-ae6f-4453-a9e0-d1dba120a563",
+        "timestamp": 1795518161559
+      }
+    ],
+    "4.3 Write unit tests for `keyActionFor`": [
+      {
+        "executionId": "eff939cb-388b-4a17-80a0-6ae9bc5caec2",
+        "chatSessionId": "sess_e5e50d0e-1db2-4a9f-95a0-a87af3866bde",
+        "timestamp": 1795518864845
+      },
+      {
+        "executionId": "eff939cb-388b-4a17-80a0-6ae9bc5caec2",
+        "chatSessionId": "sess_e5e50d0e-1db2-4a9f-95a0-a87af3866bde",
+        "timestamp": 1795519030716
+      }
+    ],
+    "4.4 Implement `PointerAdapter`": [
+      {
+        "executionId": "ba79d0f3-4b98-4cad-84d6-89380e9846ab",
+        "chatSessionId": "sess_ff1a992f-fa59-4e82-a2bf-0cde5b9fd4fc",
+        "timestamp": 1795519133555
+      },
+      {
+        "executionId": "ba79d0f3-4b98-4cad-84d6-89380e9846ab",
+        "chatSessionId": "sess_ff1a992f-fa59-4e82-a2bf-0cde5b9fd4fc",
+        "timestamp": 1795519319786
+      }
+    ],
+    "4.5 Write property test for PointerAdapter": [
+      {
+        "executionId": "bd91f50d-b9c8-4b9b-a8d8-2b0343b82212",
+        "chatSessionId": "sess_faf39f6a-a141-4368-a048-b61b49e63e1f",
+        "timestamp": 1795519390704
+      },
+      {
+        "executionId": "bd91f50d-b9c8-4b9b-a8d8-2b0343b82212",
+        "chatSessionId": "sess_faf39f6a-a141-4368-a048-b61b49e63e1f",
+        "timestamp": 1795519521117
+      }
+    ],
+    "4.6 Implement `SpeechService` and `FlutterTtsSpeechService`": [
+      {
+        "executionId": "c6498138-5e35-4c52-b289-00576259e658",
+        "chatSessionId": "sess_419bca60-56bf-464f-ad1b-5461ed61ea3a",
+        "timestamp": 1795519652404
+      },
+      {
+        "executionId": "c6498138-5e35-4c52-b289-00576259e658",
+        "chatSessionId": "sess_419bca60-56bf-464f-ad1b-5461ed61ea3a",
+        "timestamp": 1795519847602
+      }
+    ],
+    "4.7 Add the test clock and the speech mock": [
+      {
+        "executionId": "e1847da5-26ff-4e87-8867-e652a926cc0d",
+        "chatSessionId": "sess_bd9096c3-9c45-4d87-bcc7-e59a21f5ad81",
+        "timestamp": 1795519872864
+      },
+      {
+        "executionId": "e1847da5-26ff-4e87-8867-e652a926cc0d",
+        "chatSessionId": "sess_bd9096c3-9c45-4d87-bcc7-e59a21f5ad81",
+        "timestamp": 1795519976838
+      }
+    ],
+    "4. Implement the input adapters and the speech service": [
+      {
+        "executionId": "e1847da5-26ff-4e87-8867-e652a926cc0d",
+        "chatSessionId": "sess_bd9096c3-9c45-4d87-bcc7-e59a21f5ad81",
+        "timestamp": 1795519977539
+      }
+    ],
+    "5.1 Implement the palette": [
+      {
+        "executionId": "38c7bce5-77ef-499e-ade9-6caef0edab84",
+        "chatSessionId": "sess_6f92f2e2-78b7-4636-9e3b-aeb652cde742",
+        "timestamp": 1795551639907
+      },
+      {
+        "executionId": "38c7bce5-77ef-499e-ade9-6caef0edab84",
+        "chatSessionId": "sess_6f92f2e2-78b7-4636-9e3b-aeb652cde742",
+        "timestamp": 1795551814421
+      }
+    ],
+    "5.2 Write unit tests for the palette contrast": [
+      {
+        "executionId": "c122ce71-fcf2-4213-aab3-22227dcced36",
+        "chatSessionId": "sess_815aa14a-b60a-4f6a-938a-6a3d6e199362",
+        "timestamp": 1795552523649
+      },
+      {
+        "executionId": "c122ce71-fcf2-4213-aab3-22227dcced36",
+        "chatSessionId": "sess_815aa14a-b60a-4f6a-938a-6a3d6e199362",
+        "timestamp": 1795552925129
+      }
+    ],
+    "5.3 Implement `KeyScreenState` and `KeyScreenController`": [
+      {
+        "executionId": "2691d346-6b97-417c-b5b6-e7dc9fd14a6a",
+        "chatSessionId": "sess_1e5347dd-bf98-4d0a-9a96-32d3a9b6515d",
+        "timestamp": 1795553104773
+      },
+      {
+        "executionId": "2691d346-6b97-417c-b5b6-e7dc9fd14a6a",
+        "chatSessionId": "sess_1e5347dd-bf98-4d0a-9a96-32d3a9b6515d",
+        "timestamp": 1795553320786
+      }
+    ],
+    "5.4 Implement the Key_Screen widgets and the Fallback_View": [
+      {
+        "executionId": "dee36114-4521-4a4b-a1cb-bf65dfdffb31",
+        "chatSessionId": "sess_be6b849f-5e83-45b3-ba65-bfbaa8e641d3",
+        "timestamp": 1795553535090
+      },
+      {
+        "executionId": "dee36114-4521-4a4b-a1cb-bf65dfdffb31",
+        "chatSessionId": "sess_be6b849f-5e83-45b3-ba65-bfbaa8e641d3",
+        "timestamp": 1795553682293
+      }
+    ],
+    "5.5 Implement `KeyScreen` and wire it into `main.dart`": [
+      {
+        "executionId": "e270ce3d-e8aa-41e5-a5a6-536f48e0a3dc",
+        "chatSessionId": "sess_bf8dc31c-c0dc-4c73-b92c-d6d88679bcc3",
+        "timestamp": 1795553714707
+      },
+      {
+        "executionId": "e270ce3d-e8aa-41e5-a5a6-536f48e0a3dc",
+        "chatSessionId": "sess_bf8dc31c-c0dc-4c73-b92c-d6d88679bcc3",
+        "timestamp": 1795553855599
+      }
+    ],
+    "5.6 Write the dit-to-E widget test (REQ-CI-2c, required)": [
+      {
+        "executionId": "5c60f285-e63d-407c-b0a6-be33bb5d4bf3",
+        "chatSessionId": "sess_798c31a7-f991-4649-b766-9f9ce5d8e027",
+        "timestamp": 1795554129091
+      },
+      {
+        "executionId": "5c60f285-e63d-407c-b0a6-be33bb5d4bf3",
+        "chatSessionId": "sess_798c31a7-f991-4649-b766-9f9ce5d8e027",
+        "timestamp": 1795554277835
+      }
+    ],
+    "5.7 Write the single speech call widget test (REQ-CI-2d, required)": [
+      {
+        "executionId": "903c9a06-be3c-4c10-b8e9-a6e5467b3c57",
+        "chatSessionId": "sess_857e8f90-158e-4bc6-b650-10a063d90136",
+        "timestamp": 1795554617063
+      },
+      {
+        "executionId": "903c9a06-be3c-4c10-b8e9-a6e5467b3c57",
+        "chatSessionId": "sess_857e8f90-158e-4bc6-b650-10a063d90136",
+        "timestamp": 1795554717612
+      }
+    ],
+    "5.8 Write the Escape-closes-fallback widget test (REQ-CI-2e, required)": [
+      {
+        "executionId": "52e73339-1a2e-4937-b7c9-a6d0e84c9eab",
+        "chatSessionId": "sess_c6b85982-4b42-4e0b-afc3-40f89baff93c",
+        "timestamp": 1795554746934
+      },
+      {
+        "executionId": "52e73339-1a2e-4937-b7c9-a6d0e84c9eab",
+        "chatSessionId": "sess_c6b85982-4b42-4e0b-afc3-40f89baff93c",
+        "timestamp": 1795554869148
+      }
+    ],
+    "5.9 Write the successful-speak-closes-fallback widget test (REQ-CI-2f, required)": [
+      {
+        "executionId": "baf57338-c4f3-4a3b-892e-ff00dcd82786",
+        "chatSessionId": "sess_ceb72e34-6bf0-4b53-8fae-cdcd08666e7a",
+        "timestamp": 1795554907774
+      },
+      {
+        "executionId": "baf57338-c4f3-4a3b-892e-ff00dcd82786",
+        "chatSessionId": "sess_ceb72e34-6bf0-4b53-8fae-cdcd08666e7a",
+        "timestamp": 1795554989683
+      }
+    ],
+    "5.10 Write the remaining Key_Screen widget tests": [
+      {
+        "executionId": "25e87fd4-41af-4cdf-ab21-5e010b41b9d0",
+        "chatSessionId": "sess_8e5e2d69-4aa9-4cb6-9cb6-3b61e02b70a7",
+        "timestamp": 1795555322827
+      },
+      {
+        "executionId": "25e87fd4-41af-4cdf-ab21-5e010b41b9d0",
+        "chatSessionId": "sess_8e5e2d69-4aa9-4cb6-9cb6-3b61e02b70a7",
+        "timestamp": 1795555747064
+      }
+    ],
+    "5.11 Write the source rule tests": [
+      {
+        "executionId": "b7149a07-db75-4784-b6db-981fb8dbea46",
+        "chatSessionId": "sess_ef916480-267e-47a0-bb6d-832e6de34ecf",
+        "timestamp": 1795555883637
+      },
+      {
+        "executionId": "b7149a07-db75-4784-b6db-981fb8dbea46",
+        "chatSessionId": "sess_ef916480-267e-47a0-bb6d-832e6de34ecf",
+        "timestamp": 1795556110836
+      }
+    ],
+    "5. Build the Key_Screen UI and its widget tests": [
+      {
+        "executionId": "b7149a07-db75-4784-b6db-981fb8dbea46",
+        "chatSessionId": "sess_ef916480-267e-47a0-bb6d-832e6de34ecf",
+        "timestamp": 1795556110985
+      }
+    ],
+    "6. Checkpoint - Ensure all tests pass": [
+      {
+        "executionId": "497a8a1e-655a-4266-a48a-5d7f7b339682",
+        "chatSessionId": "sess_49d5dbee-1aef-46cb-a3bb-92aa69c97471",
+        "timestamp": 1795556192328
+      },
+      {
+        "executionId": "497a8a1e-655a-4266-a48a-5d7f7b339682",
+        "chatSessionId": "sess_49d5dbee-1aef-46cb-a3bb-92aa69c97471",
+        "timestamp": 1795556382973
+      }
+    ],
+    "7. Add the App tests step to the Deploy_Workflow": [
+      {
+        "executionId": "6add9b0a-e60a-44d8-bb7c-5c8c442b2a1f",
+        "chatSessionId": "sess_131504ef-56a0-4fbe-bd98-4597a7d0f284",
+        "timestamp": 1795556548519
+      },
+      {
+        "executionId": "6add9b0a-e60a-44d8-bb7c-5c8c442b2a1f",
+        "chatSessionId": "sess_131504ef-56a0-4fbe-bd98-4597a7d0f284",
+        "timestamp": 1795556777185
+      }
+    ],
+    "8. Final checkpoint - Ensure all tests pass": [
+      {
+        "executionId": "32a3a360-3af7-4b0a-921b-e1562bbde64f",
+        "chatSessionId": "sess_1b867ea5-a075-453c-916b-1b7e95d73824",
+        "timestamp": 1795557152762
+      },
+      {
+        "executionId": "32a3a360-3af7-4b0a-921b-e1562bbde64f",
+        "chatSessionId": "sess_1b867ea5-a075-453c-916b-1b7e95d73824",
+        "timestamp": 1795557241964
+      }
+    ],
+    "9. Manual browser check before submission": [
+      {
+        "executionId": "ab6b2067-c819-4125-9189-3db37d891640",
+        "chatSessionId": "sess_8da3e1de-1023-4ec5-a010-27f09cd591c7",
+        "timestamp": 1795611545749
       }
     ]
   }

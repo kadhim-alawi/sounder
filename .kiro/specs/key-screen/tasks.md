@@ -71,85 +71,85 @@ Conventions for every task:
   - Run `cd app && flutter test` and `cd packages/morse_core && dart test`.
   - Ensure all tests pass, ask the user if questions arise.
 
-- [ ] 4. Implement the input adapters and the speech service
-  - [ ] 4.1 Implement `TimeBase` and `PlatformTimeBase`
+- [x] 4. Implement the input adapters and the speech service
+  - [x] 4.1 Implement `TimeBase` and `PlatformTimeBase`
     - `app/lib/input/time_base.dart`: `TimeBase.stamp(Duration)`; `PlatformTimeBase` returns `d.inMicroseconds` (design R1, D1, D3)
     - _Requirements: REQ-KEY-4_
-  - [ ] 4.2 Implement `KeyAction` and `keyActionFor`
+  - [x] 4.2 Implement `KeyAction` and `keyActionFor`
     - `app/lib/input/keyboard_adapter.dart`: the design's table for Space, Enter (including `numpadEnter`), Escape and other keys across `KeyDownEvent`, `KeyUpEvent` and `KeyRepeatEvent`; no state
     - _Requirements: REQ-KEY-1, REQ-KEY-2, REQ-SPEAK-4_
-  - [ ]* 4.3 Write unit tests for `keyActionFor`
+  - [x] 4.3 Write unit tests for `keyActionFor`
     - `app/test/keyboard_adapter_test.dart`: every table cell, numpad Enter, and an unrelated key returning `ignore`
     - _Requirements: REQ-KEY-1, REQ-KEY-2, REQ-SPEAK-4_
-  - [ ] 4.4 Implement `PointerAdapter`
+  - [x] 4.4 Implement `PointerAdapter`
     - `app/lib/input/pointer_adapter.dart`: `down(pointer)` always returns true and tracks the pointer when none is tracked; `end(pointer)` returns true only for the tracked pointer and clears it
     - _Requirements: REQ-KEY-3, REQ-KEY-7_
-  - [ ]* 4.5 Write property test for PointerAdapter
+  - [x] 4.5 Write property test for PointerAdapter
     - Add to `compose_properties_test.dart`; 0 to 100 down, up or cancel events with ids 0 to 3, compared with a one-variable model
     - **Property 6: Only the pressing pointer releases**
     - **Validates: Requirements 1.3, 1.7** (REQ-KEY-3, REQ-KEY-7)
-  - [ ] 4.6 Implement `SpeechService` and `FlutterTtsSpeechService`
+  - [x] 4.6 Implement `SpeechService` and `FlutterTtsSpeechService`
     - `app/lib/speech/speech_service.dart`: `SpeechResult { completed, failed, superseded }` and the `SpeechService` interface (`init`, `speak`)
     - `app/lib/speech/flutter_tts_speech_service.dart`: `init` warms `getVoices`; `speak` returns `failed` for an empty or null voice list or a throw; while busy it supersedes the previous call, stores one pending text and calls `stop()` (D7); handlers treat `interrupted` and `canceled` like cancel and any other error code as `failed` (D6); no `awaitSpeakCompletion`; never stores the text beyond the pending slot and never logs it
     - _Requirements: REQ-SPEAK-1, REQ-SPEAK-2, REQ-SPEAK-3, REQ-CI-3_
-  - [ ] 4.7 Add the test clock and the speech mock
+  - [x] 4.7 Add the test clock and the speech mock
     - `app/test/support/manual_time_base.dart`: `ManualTimeBase implements TimeBase` with a settable `now` that `stamp` returns, ignoring its argument (D3)
     - `app/test/support/mock_speech_service.dart`: `MockSpeechService implements SpeechService` recording every `speak` text and returning a settable `SpeechResult`
     - _Requirements: REQ-CI-2, REQ-CI-3_
 
-- [ ] 5. Build the Key_Screen UI and its widget tests
-  - [ ] 5.1 Implement the palette
+- [x] 5. Build the Key_Screen UI and its widget tests
+  - [x] 5.1 Implement the palette
     - `app/lib/ui/sounder_colors.dart`: white text, `#121212` screen and Fallback_View, `#1E1E1E` released key and buttons, `#0D47A1` pressed key
     - _Requirements: REQ-A11Y-3_
-  - [ ]* 5.2 Write unit tests for the palette contrast
+  - [x] 5.2 Write unit tests for the palette contrast
     - `app/test/colors_test.dart`: WCAG 2.x relative luminance of each background ≤ 0.2 and contrast with white ≥ 7:1, computed from the constants
     - _Requirements: REQ-A11Y-3_
-  - [ ] 5.3 Implement `KeyScreenState` and `KeyScreenController`
+  - [x] 5.3 Implement `KeyScreenState` and `KeyScreenController`
     - `app/lib/ui/key_screen_state.dart`: immutable `sentence` (unmodifiable), `partialSequence`, `isPressed`, `fallbackVisible`
     - `app/lib/ui/key_screen_controller.dart`: `timeBaseProvider`, `speechServiceProvider`, `keyScreenControllerProvider` (`NotifierProvider`); `press`, `release`, `frame` stamp through the `TimeBase` and call `KeySession`; `frame` publishes only when `partialSequence`, `sentence` length or `isPressed` changed
     - `speak()`: empty `speakText` makes no call; otherwise one `speechService.speak` call; `failed` shows, `completed` hides, `superseded` leaves the Fallback_View; `undo`, `clear`, `closeFallback` (no-op when hidden); none of these change the Sentence except `undo` and `clear`
     - _Requirements: REQ-KEY-4, REQ-KEY-5, REQ-KEY-7, REQ-KEY-8, REQ-KEY-12, REQ-COMPOSE-2, REQ-COMPOSE-3, REQ-COMPOSE-4, REQ-COMPOSE-5, REQ-SPEAK-1, REQ-SPEAK-2, REQ-SPEAK-3, REQ-SPEAK-4, REQ-SPEAK-5_
-  - [ ] 5.4 Implement the Key_Screen widgets and the Fallback_View
+  - [x] 5.4 Implement the Key_Screen widgets and the Fallback_View
     - `app/lib/ui/on_screen_key.dart`: `Semantics(button: true, label: 'Morse key', value: 'pressed'/'released')` → `Listener` (down, up, cancel through `PointerAdapter`) → `DecoratedBox`, at least 160 px high, full width, "Pressed"/"Released" text and a 4 px versus 1 px border; no `InkWell`
     - `app/lib/ui/sentence_display.dart` and `app/lib/ui/partial_display.dart`: 36 px, wrapping, no `maxLines` or `overflow`, semantics label and value with an empty-field label
     - `app/lib/ui/action_bar.dart`: `Wrap` of Speak, Undo and Clear `FilledButton`s, `minimumSize: Size(64, 64)`, `NoSplash`, transparent overlay, `animationDuration: Duration.zero` (D9)
     - `app/lib/speech/fallback_view.dart`: full-screen Sentence text at 36 px, "Speech failed" notice, labelled Close button at least 64 by 64
     - _Requirements: REQ-KEY-3, REQ-KEY-8, REQ-KEY-9, REQ-KEY-10, REQ-KEY-11, REQ-KEY-12, REQ-SPEAK-3, REQ-A11Y-1, REQ-A11Y-2, REQ-A11Y-3, REQ-A11Y-4, REQ-A11Y-5_
-  - [ ] 5.5 Implement `KeyScreen` and wire it into `main.dart`
+  - [x] 5.5 Implement `KeyScreen` and wire it into `main.dart`
     - `app/lib/ui/key_screen.dart`: `ConsumerStatefulWidget` with `SingleTickerProviderStateMixin`; root `Focus(autofocus: true, onKeyEvent:)` mapping `keyActionFor` to controller calls with `event.timeStamp` and returning `handled` for everything except `ignore`; a `Ticker` calling `controller.frame(SchedulerBinding.instance.currentSystemFrameTimeStamp)`; `Stack` of a vertical `SingleChildScrollView` (Sentence, Partial_Sequence, On_Screen_Key, ActionBar, 16 px horizontal padding) and the Fallback_View; `initState` calls `speechServiceProvider` `init()` once
     - Rewrite `app/lib/main.dart` as `ProviderScope(child: MaterialApp(home: KeyScreen()))`
     - _Requirements: REQ-KEY-1, REQ-KEY-2, REQ-KEY-4, REQ-KEY-5, REQ-KEY-6, REQ-KEY-12, REQ-SPEAK-4, REQ-SPEAK-5, REQ-A11Y-4_
-  - [ ] 5.6 Write the dit-to-E widget test (REQ-CI-2c, required)
+  - [x] 5.6 Write the dit-to-E widget test (REQ-CI-2c, required)
     - Create `app/test/key_screen_test.dart` with a pump helper that overrides `timeBaseProvider` with `ManualTimeBase` and `speechServiceProvider` with `MockSpeechService`, and `frameTo(us)` advancing the clock in 16,667 µs steps with one `tester.pump` each
     - Space key-down at T, key-up at T + 100,000, frames until T + 900,000: Sentence text is exactly `E`
     - Also REQ-KEY-5: Sentence empty at the last frame below release + 475,000 and `E` at the first frame at or above it
     - _Requirements: REQ-CI-2, REQ-KEY-1, REQ-KEY-4, REQ-KEY-5_
-  - [ ] 5.7 Write the single speech call widget test (REQ-CI-2d, required)
+  - [x] 5.7 Write the single speech call widget test (REQ-CI-2d, required)
     - Key `HI`, then Enter: the mock has exactly one call with text `HI`, and the Sentence is unchanged
     - _Requirements: REQ-CI-2, REQ-SPEAK-1, REQ-COMPOSE-5_
-  - [ ] 5.8 Write the Escape-closes-fallback widget test (REQ-CI-2e, required)
+  - [x] 5.8 Write the Escape-closes-fallback widget test (REQ-CI-2e, required)
     - Mock returns `failed`; Speak shows the Fallback_View; focus its Close button; Escape key-down hides it; Sentence unchanged; mock still has one call
     - _Requirements: REQ-CI-2, REQ-SPEAK-3, REQ-SPEAK-4, REQ-COMPOSE-5_
-  - [ ] 5.9 Write the successful-speak-closes-fallback widget test (REQ-CI-2f, required)
+  - [x] 5.9 Write the successful-speak-closes-fallback widget test (REQ-CI-2f, required)
     - Mock returns `failed`, Fallback_View shown; set the mock to `completed`; focus the Close button; Enter key-down: the mock has a second call, the Fallback_View is hidden, the Sentence is unchanged
     - _Requirements: REQ-CI-2, REQ-SPEAK-5, REQ-COMPOSE-5_
-  - [ ]* 5.10 Write the remaining Key_Screen widget tests
+  - [x] 5.10 Write the remaining Key_Screen widget tests
     - Add to `key_screen_test.dart`, one test per row of the design's widget-test table not covered by 5.6 to 5.9: REQ-KEY-1 (Space with Undo focused makes a press, Undo not activated), REQ-KEY-2 (repeat events for Space, Enter, Escape), REQ-KEY-3 (gesture moved off the key then up releases), REQ-KEY-7 and REQ-KEY-8 (Space then pointer down, one press, "Pressed" after one pump), REQ-KEY-9 and REQ-A11Y-4 (200 items at widths 320 and 1920), REQ-KEY-11, REQ-KEY-12 (600 idle frames, state unchanged, no rebuild), REQ-SPEAK-2, REQ-SPEAK-3 with REQ-COMPOSE-5 (still shown after 10 s of frames, Close hides it), REQ-COMPOSE-3 and -4 via the buttons, REQ-A11Y-1, -2 and -5 at widths 320, 1024 and 1920
     - _Requirements: REQ-KEY-1, REQ-KEY-2, REQ-KEY-3, REQ-KEY-7, REQ-KEY-8, REQ-KEY-9, REQ-KEY-11, REQ-KEY-12, REQ-SPEAK-2, REQ-SPEAK-3, REQ-COMPOSE-3, REQ-COMPOSE-4, REQ-COMPOSE-5, REQ-A11Y-1, REQ-A11Y-2, REQ-A11Y-4, REQ-A11Y-5_
-  - [ ] 5.11 Write the source rule tests
+  - [x] 5.11 Write the source rule tests
     - `app/test/source_rules_test.dart`: REQ-COMPOSE-1 no banned import or identifier (`package:flutter`, `dart:ui`, `dart:html`, `dart:io`, `dart:js_interop`, `DateTime.now`, `Stopwatch`, `Timer`, `Future.delayed`) in `app/lib/compose/`; REQ-CI-3 no `class Mock…` and no import of `test/` in any `app/lib/` file; REQ-CI-2 every `test(`, `testWidgets(` and `property(` description under `app/test/` begins with a REQ ID list and a colon
     - _Requirements: REQ-COMPOSE-1, REQ-CI-2, REQ-CI-3_
 
-- [ ] 6. Checkpoint - Ensure all tests pass
+- [x] 6. Checkpoint - Ensure all tests pass
   - Run `cd app && flutter analyze` and `cd app && flutter test`, then `cd packages/morse_core && dart test`.
   - Ensure all tests pass, ask the user if questions arise.
 
-- [ ] 7. Add the App tests step to the Deploy_Workflow
+- [x] 7. Add the App tests step to the Deploy_Workflow
   - In `.github/workflows/deploy.yml`, insert a step named `App tests` with `working-directory: app` that runs `flutter pub get` then `flutter test`, between "Engine tests" and "Build web app"
   - No `continue-on-error` on the step or the job; leave "Engine tests", "Build web app" and "Deploy to Cloudflare" unchanged
   - _Requirements: REQ-CI-1_
 
-- [ ] 8. Final checkpoint - Ensure all tests pass
+- [x] 8. Final checkpoint - Ensure all tests pass
   - Run `cd packages/morse_core && dart test` and `cd app && flutter test`; both exit 0 with zero failures.
   - Ensure all tests pass, ask the user if questions arise.
 

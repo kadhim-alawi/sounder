@@ -1,34 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:morse_core/morse_core.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-void main() => runApp(const SounderApp());
+import 'ui/key_screen.dart';
 
-/// Temporary shell. Proves the app builds, deploys and uses morse_core.
-class SounderApp extends StatelessWidget {
-  const SounderApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    const encoder = MorseEncoder();
-    return MaterialApp(
+/// Starts Sounder with the Key_Screen as its only screen. REQ-KEY-6.
+void main() => runApp(
+  const ProviderScope(
+    child: MaterialApp(
       title: 'Sounder',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData.dark(),
-      home: Scaffold(
-        body: Center(
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              const Text('Sounder', style: TextStyle(fontSize: 40)),
-              const SizedBox(height: 16),
-              Text(
-                encoder.encode('SOS'),
-                style: const TextStyle(fontSize: 32, fontFamily: 'monospace'),
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-}
+      home: KeyScreen(),
+    ),
+  ),
+);

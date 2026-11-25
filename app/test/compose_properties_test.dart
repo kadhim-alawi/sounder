@@ -10,6 +10,7 @@ import 'package:morse_core/morse_core.dart';
 import 'package:sounder/compose/composer.dart';
 import 'package:sounder/compose/key_session.dart';
 import 'package:sounder/compose/sentence_text.dart';
+import 'package:sounder/input/pointer_adapter.dart';
 
 import 'support/item_arbitraries.dart';
 
@@ -252,6 +253,33 @@ void main() {
       maxExamples: 200,
       seed: 205003,
       onFalsify: report(205003),
+    );
+  });
+
+  // Feature: key-screen, Property 6: only the pressing pointer releases
+  property('REQ-KEY-3, REQ-KEY-7: only the pressing pointer releases', () {
+    forAll(
+      pointerEventCalls(maxLength: 100),
+      (events) {
+        final adapter = PointerAdapter();
+        // One-variable model: the tracked pointer, or null.
+        int? tracked;
+        for (final event in events) {
+          switch (event.kind) {
+            case PointerEventKind.down:
+              expect(adapter.down(event.pointer), isTrue, reason: '$event');
+              tracked ??= event.pointer;
+            case PointerEventKind.up:
+            case PointerEventKind.cancel:
+              final expected = tracked == event.pointer;
+              expect(adapter.end(event.pointer), expected, reason: '$event');
+              if (expected) tracked = null;
+          }
+        }
+      },
+      maxExamples: 200,
+      seed: 206003,
+      onFalsify: report(206003),
     );
   });
 }

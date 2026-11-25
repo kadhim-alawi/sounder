@@ -24,6 +24,12 @@ jobs:
           dart analyze
           dart test
 
+      - name: App tests
+        working-directory: app
+        run: |
+          flutter pub get
+          flutter test
+
       - name: Build web app
         working-directory: app
         run: |
