@@ -1,0 +1,14 @@
+{
+  "name": "sounder-worker",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "tsc --noEmit && vitest run"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "5.20261127.1",
+    "fast-check": "4.11.0",
+    "typescript": "7.0.2",
+    "vitest": "5.1.2"
+  }
+}

@@ -1,0 +1,384 @@
+{
+  "pbtResults": {
+    "2.4 Write the candidate generators and the property test for generated-valid candidates": {
+      "status": "passed",
+      "lastRunTimestamp": 1795787179534
+    },
+    "2.5 Write the property test for a changed first letter": {
+      "status": "passed",
+      "lastRunTimestamp": 1795787186069
+    },
+    "2.6 Write the property test for a different word count": {
+      "status": "passed",
+      "lastRunTimestamp": 1795787179913
+    },
+    "3.3 Write the property test for sentence-case validity": {
+      "status": "passed",
+      "lastRunTimestamp": 1795787181477
+    },
+    "3.4 Write the property test for the Reply_Processor output": {
+      "status": "passed",
+      "lastRunTimestamp": 1795787181613
+    },
+    "5.3 Write the property test for request body parsing": {
+      "status": "passed",
+      "lastRunTimestamp": 1795795706297
+    }
+  },
+  "executionHistory": {
+    "1. Set up the Worker project in `worker/`": [
+      {
+        "executionId": "df80d576-4a9e-44bf-a2ac-a7b4bfdbfd93",
+        "chatSessionId": "sess_7bda6422-acbe-4671-99b1-61519821beb3",
+        "timestamp": 1795783742596
+      },
+      {
+        "executionId": "df80d576-4a9e-44bf-a2ac-a7b4bfdbfd93",
+        "chatSessionId": "sess_7bda6422-acbe-4671-99b1-61519821beb3",
+        "timestamp": 1795783905498
+      }
+    ],
+    "2.1 Implement the TS_Validator": [
+      {
+        "executionId": "67bc2da1-c9cd-461b-9f14-1583d0cab711",
+        "chatSessionId": "sess_ca8fe319-07ec-4a29-806e-b37a4213b19a",
+        "timestamp": 1795783986907
+      },
+      {
+        "executionId": "67bc2da1-c9cd-461b-9f14-1583d0cab711",
+        "chatSessionId": "sess_ca8fe319-07ec-4a29-806e-b37a4213b19a",
+        "timestamp": 1795784100429
+      }
+    ],
+    "2.2 Create the Validator_Fixture": [
+      {
+        "executionId": "c7c52eb4-40a6-46d9-a3a2-38589ed21b8f",
+        "chatSessionId": "sess_b63e7e4f-542e-4f64-9b6e-91a0f2e6aaa3",
+        "timestamp": 1795784513979
+      },
+      {
+        "executionId": "c7c52eb4-40a6-46d9-a3a2-38589ed21b8f",
+        "chatSessionId": "sess_b63e7e4f-542e-4f64-9b6e-91a0f2e6aaa3",
+        "timestamp": 1795784914741
+      }
+    ],
+    "2.3 Write the TS fixture test and the fixture coverage test": [
+      {
+        "executionId": "599e7f49-68df-4def-92ce-617ed72c8b48",
+        "chatSessionId": "sess_0bad94f2-b7e8-4b41-b6c1-fb2d8d4b6426",
+        "timestamp": 1795785005159
+      },
+      {
+        "executionId": "599e7f49-68df-4def-92ce-617ed72c8b48",
+        "chatSessionId": "sess_0bad94f2-b7e8-4b41-b6c1-fb2d8d4b6426",
+        "timestamp": 1795785096450
+      }
+    ],
+    "2.4 Write the candidate generators and the property test for generated-valid candidates": [
+      {
+        "executionId": "db111141-ae69-47af-b647-02a39da43153",
+        "chatSessionId": "sess_c1564a41-edc7-4eb0-9a16-7e6adacd60a1",
+        "timestamp": 1795785210280
+      },
+      {
+        "executionId": "db111141-ae69-47af-b647-02a39da43153",
+        "chatSessionId": "sess_c1564a41-edc7-4eb0-9a16-7e6adacd60a1",
+        "timestamp": 1795785330799
+      }
+    ],
+    "2.5 Write the property test for a changed first letter": [
+      {
+        "executionId": "620d0821-b621-4bf6-b4d8-668d098e2cd7",
+        "chatSessionId": "sess_31a9d368-b6dc-482a-9a1f-ae293f6789d9",
+        "timestamp": 1795785351585
+      },
+      {
+        "executionId": "620d0821-b621-4bf6-b4d8-668d098e2cd7",
+        "chatSessionId": "sess_31a9d368-b6dc-482a-9a1f-ae293f6789d9",
+        "timestamp": 1795785430392
+      }
+    ],
+    "2.6 Write the property test for a different word count": [
+      {
+        "executionId": "eb32f910-f446-46b3-b342-62746d46bed9",
+        "chatSessionId": "sess_5d0068cb-e51e-40ee-b291-1aa419295675",
+        "timestamp": 1795785491490
+      },
+      {
+        "executionId": "eb32f910-f446-46b3-b342-62746d46bed9",
+        "chatSessionId": "sess_5d0068cb-e51e-40ee-b291-1aa419295675",
+        "timestamp": 1795785563740
+      }
+    ],
+    "2. Implement the TS_Validator and the shared Validator_Fixture": [
+      {
+        "executionId": "eb32f910-f446-46b3-b342-62746d46bed9",
+        "chatSessionId": "sess_5d0068cb-e51e-40ee-b291-1aa419295675",
+        "timestamp": 1795785563842
+      }
+    ],
+    "3.1 Implement `reply.ts`": [
+      {
+        "executionId": "03fcb0be-76e7-404f-b21f-b2e4607bf40f",
+        "chatSessionId": "sess_2a5c52b8-b79c-47b1-b0de-6c9fca5300df",
+        "timestamp": 1795785604344
+      },
+      {
+        "executionId": "03fcb0be-76e7-404f-b21f-b2e4607bf40f",
+        "chatSessionId": "sess_2a5c52b8-b79c-47b1-b0de-6c9fca5300df",
+        "timestamp": 1795785693615
+      }
+    ],
+    "3.2 Write the Reply_Processor example tests": [
+      {
+        "executionId": "ca31e108-8ff4-4601-b20e-8adc6bd624bf",
+        "chatSessionId": "sess_2bed57d5-111e-48f2-81fe-152f835e2a9f",
+        "timestamp": 1795785788655
+      },
+      {
+        "executionId": "ca31e108-8ff4-4601-b20e-8adc6bd624bf",
+        "chatSessionId": "sess_2bed57d5-111e-48f2-81fe-152f835e2a9f",
+        "timestamp": 1795785875887
+      }
+    ],
+    "3.3 Write the property test for sentence-case validity": [
+      {
+        "executionId": "5f6d02a4-531b-4420-ba8f-98dcaa6ea1d7",
+        "chatSessionId": "sess_d7e83e09-59b2-4058-bfa2-ab303f709b76",
+        "timestamp": 1795786570542
+      },
+      {
+        "executionId": "5f6d02a4-531b-4420-ba8f-98dcaa6ea1d7",
+        "chatSessionId": "sess_d7e83e09-59b2-4058-bfa2-ab303f709b76",
+        "timestamp": 1795786656997
+      }
+    ],
+    "3.4 Write the property test for the Reply_Processor output": [
+      {
+        "executionId": "b377aca1-f262-4bdf-9517-df33cf6b92cf",
+        "chatSessionId": "sess_cb263c3c-955c-4eeb-bfcb-e01f20d21e3a",
+        "timestamp": 1795786750159
+      },
+      {
+        "executionId": "b377aca1-f262-4bdf-9517-df33cf6b92cf",
+        "chatSessionId": "sess_cb263c3c-955c-4eeb-bfcb-e01f20d21e3a",
+        "timestamp": 1795786958288
+      }
+    ],
+    "3. Implement the Reply_Processor": [
+      {
+        "executionId": "b377aca1-f262-4bdf-9517-df33cf6b92cf",
+        "chatSessionId": "sess_cb263c3c-955c-4eeb-bfcb-e01f20d21e3a",
+        "timestamp": 1795786958592
+      }
+    ],
+    "4. Checkpoint - Ensure all Worker tests pass": [
+      {
+        "executionId": "bd687c76-18b3-41c9-82c6-2bd85c95c8fb",
+        "chatSessionId": "sess_fcb086b4-1915-4598-a795-4227f32943c0",
+        "timestamp": 1795787147658
+      },
+      {
+        "executionId": "bd687c76-18b3-41c9-82c6-2bd85c95c8fb",
+        "chatSessionId": "sess_fcb086b4-1915-4598-a795-4227f32943c0",
+        "timestamp": 1795787198477
+      }
+    ],
+    "5.1 Implement request parsing": [
+      {
+        "executionId": "c499d42e-d9a4-4398-b71b-e292a25bb809",
+        "chatSessionId": "sess_a4e89ba5-205c-411f-abc4-0dd7c090233b",
+        "timestamp": 1795795039686
+      },
+      {
+        "executionId": "c499d42e-d9a4-4398-b71b-e292a25bb809",
+        "chatSessionId": "sess_a4e89ba5-205c-411f-abc4-0dd7c090233b",
+        "timestamp": 1795795121519
+      }
+    ],
+    "5.2 Write the request parsing example tests": [
+      {
+        "executionId": "68f0865b-cfd7-45c8-929e-4fe3b82d3d71",
+        "chatSessionId": "sess_69c05af2-a505-47e1-b902-fcfa3941b171",
+        "timestamp": 1795795259461
+      },
+      {
+        "executionId": "68f0865b-cfd7-45c8-929e-4fe3b82d3d71",
+        "chatSessionId": "sess_69c05af2-a505-47e1-b902-fcfa3941b171",
+        "timestamp": 1795795358273
+      }
+    ],
+    "5.3 Write the property test for request body parsing": [
+      {
+        "executionId": "d626aef4-d769-418d-957b-42b6e3f7746f",
+        "chatSessionId": "sess_606b18c4-cc38-4049-b725-89024c938d15",
+        "timestamp": 1795795613921
+      },
+      {
+        "executionId": "d626aef4-d769-418d-957b-42b6e3f7746f",
+        "chatSessionId": "sess_606b18c4-cc38-4049-b725-89024c938d15",
+        "timestamp": 1795795721096
+      }
+    ],
+    "5.4 Implement the prompt and the Model_Caller": [
+      {
+        "executionId": "b3d46864-7c75-4f97-af27-efc60f490393",
+        "chatSessionId": "sess_53066a71-9389-4c07-a5ca-cba21a487d1f",
+        "timestamp": 1795795778539
+      },
+      {
+        "executionId": "b3d46864-7c75-4f97-af27-efc60f490393",
+        "chatSessionId": "sess_53066a71-9389-4c07-a5ca-cba21a487d1f",
+        "timestamp": 1795795898693
+      }
+    ],
+    "5.5 Implement the log line": [
+      {
+        "executionId": "d4b00aa2-8933-44a6-a31e-e7d680279af9",
+        "chatSessionId": "sess_4232f765-e5e8-4c96-b009-d152c5b33e3f",
+        "timestamp": 1795796637206
+      },
+      {
+        "executionId": "d4b00aa2-8933-44a6-a31e-e7d680279af9",
+        "chatSessionId": "sess_4232f765-e5e8-4c96-b009-d152c5b33e3f",
+        "timestamp": 1795796678284
+      }
+    ],
+    "5.6 Implement `handleExpand` and the test mocks": [
+      {
+        "executionId": "2963e026-3aff-48f2-a37e-133d70683745",
+        "chatSessionId": "sess_e15b0cc5-d884-4249-b871-4792c501f674",
+        "timestamp": 1795797747143
+      },
+      {
+        "executionId": "2963e026-3aff-48f2-a37e-133d70683745",
+        "chatSessionId": "sess_e15b0cc5-d884-4249-b871-4792c501f674",
+        "timestamp": 1795797858802
+      }
+    ],
+    "5.7 Write the `handleExpand` example tests": [
+      {
+        "executionId": "4eef9717-3ebf-41c3-845f-98a51b1874ec",
+        "chatSessionId": "sess_23181758-ec97-4069-8d6c-8343afff3dc7",
+        "timestamp": 1795798505298
+      },
+      {
+        "executionId": "4eef9717-3ebf-41c3-845f-98a51b1874ec",
+        "chatSessionId": "sess_23181758-ec97-4069-8d6c-8343afff3dc7",
+        "timestamp": 1795798637062
+      }
+    ],
+    "5.8 Write the log privacy test": [
+      {
+        "executionId": "cf6e5aae-20fa-4429-8c13-ebc756ff8ef8",
+        "chatSessionId": "sess_896661a2-e67f-4fae-a19b-0a39bd2b2dec",
+        "timestamp": 1795798906254
+      },
+      {
+        "executionId": "cf6e5aae-20fa-4429-8c13-ebc756ff8ef8",
+        "chatSessionId": "sess_896661a2-e67f-4fae-a19b-0a39bd2b2dec",
+        "timestamp": 1795799000292
+      }
+    ],
+    "5. Implement request handling, the Model_Caller, logging and `handleExpand`": [
+      {
+        "executionId": "cf6e5aae-20fa-4429-8c13-ebc756ff8ef8",
+        "chatSessionId": "sess_896661a2-e67f-4fae-a19b-0a39bd2b2dec",
+        "timestamp": 1795799000735
+      }
+    ],
+    "6.1 Implement the entry point and update `wrangler.jsonc`": [
+      {
+        "executionId": "1a0afb0f-eca0-4744-89a4-134f24901e11",
+        "chatSessionId": "sess_a2d8dff9-a17f-4393-8ee7-3c74f493dcc0",
+        "timestamp": 1795799208857
+      },
+      {
+        "executionId": "1a0afb0f-eca0-4744-89a4-134f24901e11",
+        "chatSessionId": "sess_a2d8dff9-a17f-4393-8ee7-3c74f493dcc0",
+        "timestamp": 1795799278530
+      }
+    ],
+    "6.2 Write the routing pass-through test": [
+      {
+        "executionId": "35d7d1ca-126e-4f63-b733-370bf59c4446",
+        "chatSessionId": "sess_3e59f7a1-1fa9-4646-b75a-8af733628bff",
+        "timestamp": 1795799507100
+      },
+      {
+        "executionId": "35d7d1ca-126e-4f63-b733-370bf59c4446",
+        "chatSessionId": "sess_3e59f7a1-1fa9-4646-b75a-8af733628bff",
+        "timestamp": 1795799563500
+      }
+    ],
+    "6.3 Add the \"Worker tests\" step to the Deploy_Workflow": [
+      {
+        "executionId": "8aee015e-adb2-4f95-b607-aa3fa997d990",
+        "chatSessionId": "sess_32eb2466-7f56-4fbf-b7f2-7acf36853366",
+        "timestamp": 1795799694389
+      },
+      {
+        "executionId": "8aee015e-adb2-4f95-b607-aa3fa997d990",
+        "chatSessionId": "sess_32eb2466-7f56-4fbf-b7f2-7acf36853366",
+        "timestamp": 1795802061158
+      }
+    ],
+    "6.4 Write the configuration and source smoke tests": [
+      {
+        "executionId": "9dcdfa29-5798-4697-9cda-ebaa1a70a977",
+        "chatSessionId": "sess_fbd450ce-5a00-43fd-a1f6-c74b77343f03",
+        "timestamp": 1795803822066
+      },
+      {
+        "executionId": "9dcdfa29-5798-4697-9cda-ebaa1a70a977",
+        "chatSessionId": "sess_fbd450ce-5a00-43fd-a1f6-c74b77343f03",
+        "timestamp": 1795803966664
+      }
+    ],
+    "6. Wire the Worker entry point, configuration and CI": [
+      {
+        "executionId": "9dcdfa29-5798-4697-9cda-ebaa1a70a977",
+        "chatSessionId": "sess_fbd450ce-5a00-43fd-a1f6-c74b77343f03",
+        "timestamp": 1795803967072
+      }
+    ],
+    "7.1 Update `.kiro/steering/tech.md`": [
+      {
+        "executionId": "d07f3eb6-cd3f-402c-8b20-68c6861165af",
+        "chatSessionId": "sess_ac025488-ac1d-4f20-bbb5-dc6c91821004",
+        "timestamp": 1795804307858
+      },
+      {
+        "executionId": "d07f3eb6-cd3f-402c-8b20-68c6861165af",
+        "chatSessionId": "sess_ac025488-ac1d-4f20-bbb5-dc6c91821004",
+        "timestamp": 1795804362994
+      }
+    ],
+    "7.2 Update `.kiro/steering/structure.md`": [
+      {
+        "executionId": "7b697395-3f3a-4990-a0f2-a78df39b806f",
+        "chatSessionId": "sess_e486443e-db8f-441e-8a15-b4c1261f823c",
+        "timestamp": 1795805074836
+      },
+      {
+        "executionId": "7b697395-3f3a-4990-a0f2-a78df39b806f",
+        "chatSessionId": "sess_e486443e-db8f-441e-8a15-b4c1261f823c",
+        "timestamp": 1795805133979
+      }
+    ],
+    "7. Update the steering files": [
+      {
+        "executionId": "7b697395-3f3a-4990-a0f2-a78df39b806f",
+        "chatSessionId": "sess_e486443e-db8f-441e-8a15-b4c1261f823c",
+        "timestamp": 1795805134300
+      }
+    ],
+    "8. Checkpoint - Part A is tested, deployed and recorded (REQ-CHECKPOINT-1)": [
+      {
+        "executionId": "80a63c26-e0fd-492b-b58e-b81dedab91f1",
+        "chatSessionId": "sess_5168cbd8-9cf5-4eef-a59e-b000fa977579",
+        "timestamp": 1795806010203
+      }
+    ]
+  }
+}
