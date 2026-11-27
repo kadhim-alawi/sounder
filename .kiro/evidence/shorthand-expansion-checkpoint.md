@@ -8,3 +8,4 @@
 - REQ-ROUTE-3, `GET https://sounder.kadhim-alawi.workers.dev/`: PASS, status 200, text/html, the app's index.html (title `sounder`, loads the Flutter bootstrap).
 - REQ-ROUTE-4, navigation to `/no-such-page` (`Sec-Fetch-Mode: navigate`, `Accept: text/html`): PASS, status 200, text/html, the same bytes as `GET /`.
 - Manual `POST /expand` with `{"tokens":["I","W","S","W","P"]}`: PASS, status 200, application/json, body keys `candidates` only, 2 candidates, both accepted by the TS_Validator (worker/src/validator.ts) for the tokens. Candidate text not recorded.
+- Manual check by Kadhim in Chrome DevTools on the hosted site: POST /expand {"tokens":["I","W","S","W","P"]} returned 200 with 2 candidates, the first matching the hoped sentence; GET /expand returned 405.
