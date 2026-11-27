@@ -1,0 +1,15 @@
+{
+  "name": "expand-spike",
+  "private": true,
+  "description": "Throwaway spike: compare two Workers AI models for expanding initials into sentences.",
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "types": "wrangler types",
+    "check": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "typescript": "7.0.2",
+    "wrangler": "4.166.0"
+  }
+}

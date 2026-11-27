@@ -1,0 +1,9 @@
+{
+  // Throwaway spike. Not part of the Sounder build.
+  "name": "sounder-expand-spike",
+  "main": "src/index.ts",
+  "compatibility_date": "2025-11-01",
+  "ai": {
+    "binding": "AI" // available in the Worker as env.AI
+  }
+}
