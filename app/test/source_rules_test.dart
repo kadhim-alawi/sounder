@@ -1,13 +1,16 @@
 // Source rule tests. They read the app's own Dart files and check rules that
 // no unit test can see from the outside: what lib/compose imports and calls
-// (REQ-COMPOSE-1), that no mock reaches lib/ (REQ-CI-3), and that every test
-// description starts with its requirement IDs (REQ-CI-2).
+// (REQ-COMPOSE-1), that no mock reaches lib/ (REQ-CI-3, REQ-APPTEST-4), that
+// the expansion code logs nothing (REQ-FAIL-4), that lib/ holds no hardcoded
+// Candidate (REQ-APPTEST-4), and that every test description starts with its
+// requirement IDs (REQ-CI-2, REQ-APPTEST-5).
 //
 // The checks run on tokens from a small Dart lexer below, not on raw text, so
 // a comment such as "starts no Timer" or a string literal containing a test
 // call never counts as code. `flutter test` runs with `app/` as the working
 // directory, so all paths are relative to it.
 
+import 'dart:convert';
 import 'dart:io';
 
 import 'package:flutter_test/flutter_test.dart';
@@ -24,6 +27,9 @@ final class _Token {
 
   /// True for tokens inside a `${...}` interpolation of a string literal.
   bool interpolated = false;
+
+  /// True for a raw string literal (`r'...'`), whose escapes are literal.
+  bool raw = false;
 }
 
 /// Splits Dart source into identifier, string and punctuation tokens and
@@ -68,7 +74,7 @@ List<_Token> _lex(String src) {
       }
     }
     i += close.length;
-    tokens.insert(position, _Token(_Kind.string, buf.toString()));
+    tokens.insert(position, _Token(_Kind.string, buf.toString())..raw = raw);
     for (var k = position + 1; k < tokens.length; k++) {
       tokens[k].interpolated = true;
     }
@@ -205,6 +211,123 @@ List<_TestCall> _testCalls(List<_Token> t) {
   return calls;
 }
 
+/// [file]'s path relative to `app/`, with `/` separators on every platform.
+String _posix(File file) => file.path.replaceAll(r'\', '/');
+
+/// The value of a non-raw string literal's text: Dart escapes resolved.
+/// Interpolations stay as written, so such a literal never equals a
+/// sentence.
+String _unescape(String s) {
+  final out = StringBuffer();
+  var i = 0;
+  while (i < s.length) {
+    final ch = s[i];
+    if (ch != r'\' || i + 1 >= s.length) {
+      out.write(ch);
+      i++;
+      continue;
+    }
+    final next = s[i + 1];
+    i += 2;
+    switch (next) {
+      case 'n':
+        out.write('\n');
+      case 'r':
+        out.write('\r');
+      case 't':
+        out.write('\t');
+      case 'f':
+        out.write('\f');
+      case 'b':
+        out.write('\b');
+      case 'v':
+        out.write('\v');
+      case 'x':
+        out.writeCharCode(int.parse(s.substring(i, i + 2), radix: 16));
+        i += 2;
+      case 'u':
+        if (i < s.length && s[i] == '{') {
+          final end = s.indexOf('}', i);
+          out.writeCharCode(int.parse(s.substring(i + 1, end), radix: 16));
+          i = end + 1;
+        } else {
+          out.writeCharCode(int.parse(s.substring(i, i + 4), radix: 16));
+          i += 4;
+        }
+      default:
+        out.write(next);
+    }
+  }
+  return out.toString();
+}
+
+/// The comparison form for the hardcoded-Candidate rule: ASCII letters
+/// lowercased, surrounding whitespace trimmed and trailing `.`, `!` and `?`
+/// removed. REQ-APPTEST-4.
+String _normalise(String s) {
+  final lower = String.fromCharCodes([
+    for (final c in s.codeUnits) c >= 0x41 && c <= 0x5A ? c + 0x20 : c,
+  ]);
+  return lower.trim().replaceFirst(RegExp(r'[.!?]+$'), '').trim();
+}
+
+/// Every string value written in [t]: each literal on its own, and each run
+/// of adjacent literals joined, as Dart concatenates them.
+List<String> _literalValues(List<_Token> t) {
+  final values = <String>[];
+  final run = <String>[];
+  void endRun() {
+    if (run.length > 1) values.add(run.join());
+    run.clear();
+  }
+
+  for (final token in t.where((x) => !x.interpolated)) {
+    if (token.kind != _Kind.string) {
+      endRun();
+      continue;
+    }
+    final value = token.raw ? token.text : _unescape(token.text);
+    values.add(value);
+    run.add(value);
+  }
+  endRun();
+  return values;
+}
+
+/// The six sentences hoped for in spike 3, from the `TESTS` table in
+/// `spikes/expand_spike/src/index.ts` (summarised in `spikes/RESULTS.md`).
+/// Copied here because nothing under `spikes/` ships or must stay.
+const _spike3Sentences = [
+  'I want some water please',
+  'Can you help me',
+  'I am tired',
+  'Please call my daughter',
+  'I need to go to the bathroom',
+  'What time is it',
+];
+
+/// Interfaces whose test doubles must be named `Mock...` (REQ-APPTEST-4).
+const _mockedSeams = {
+  'ExpansionTransport',
+  'ExpansionClient',
+  'NoticeStore',
+  'SpeechService',
+};
+
+/// Each class declared in [t], with every identifier between its name and
+/// its body (its supertypes, interfaces, mixins and type arguments).
+List<({String name, Set<String> supertypes})> _classes(List<_Token> t) => [
+  for (var k = 0; k + 1 < t.length; k++)
+    if (_isIdent(t, k, 'class') && t[k + 1].kind == _Kind.identifier)
+      (
+        name: t[k + 1].text,
+        supertypes: {
+          for (var j = k + 2; j < t.length && !_isPunct(t, j, '{'); j++)
+            if (t[j].kind == _Kind.identifier) t[j].text,
+        },
+      ),
+];
+
 void main() {
   test('REQ-COMPOSE-1: lib/compose imports no Flutter, dart:ui, dart:html, '
       'dart:io or dart:js_interop library and uses no clock or timer', () {
@@ -263,8 +386,8 @@ void main() {
     expect(problems, isEmpty);
   });
 
-  test('REQ-CI-2: every test, testWidgets and property description under '
-      'test/ begins with its REQ IDs and a colon', () {
+  test('REQ-CI-2, REQ-APPTEST-5: every test, testWidgets and property '
+      'description under test/ begins with its REQ IDs and a colon', () {
     final files = _dartFiles('test');
     final problems = <String>[];
     var count = 0;
@@ -285,10 +408,123 @@ void main() {
         }
       }
     }
-    // The scan must see this file's own three tests, so it cannot pass
+    // The scan must see this file's own six tests, so it cannot pass
     // vacuously.
-    expect(ownCount, 3);
-    expect(count, greaterThan(3));
+    expect(ownCount, 6);
+    expect(count, greaterThan(6));
+    expect(problems, isEmpty);
+  });
+
+  test('REQ-FAIL-4: the expansion files in lib/compose, lib/net, lib/store '
+      'and the Key_Screen controller call no print, debugPrint or log and '
+      'import no dart:developer', () {
+    final files = [
+      ..._dartFiles('lib/compose'),
+      ..._dartFiles('lib/net'),
+      ..._dartFiles('lib/store'),
+      File('lib/ui/key_screen_controller.dart'),
+    ];
+    final paths = files.map(_posix).toSet();
+    expect(
+      paths,
+      containsAll([
+        'lib/compose/initials_validator.dart',
+        'lib/compose/sentence_tokens.dart',
+        'lib/compose/narrowing.dart',
+        'lib/compose/expansion_client.dart',
+        'lib/net/http_expansion_transport.dart',
+        'lib/store/notice_store.dart',
+        'lib/ui/key_screen_controller.dart',
+      ]),
+    );
+    final problems = <String>[];
+    for (final file in files) {
+      final t = _lex(file.readAsStringSync());
+      for (final uri in _directiveUris(t)) {
+        if (uri == 'dart:developer') problems.add('${file.path}: imports $uri');
+      }
+      for (var k = 0; k < t.length; k++) {
+        // print and debugPrint count as a call or a tear-off; log only as a
+        // call or a member access, so a variable named log is allowed.
+        final banned =
+            _isIdent(t, k, 'print') ||
+            _isIdent(t, k, 'debugPrint') ||
+            (_isIdent(t, k, 'log') &&
+                (_isPunct(t, k + 1, '(') || _isPunct(t, k - 1, '.')));
+        if (banned) problems.add('${file.path}: uses ${t[k].text}');
+      }
+    }
+    expect(problems, isEmpty);
+  });
+
+  test('REQ-APPTEST-4: no string literal under lib/ equals a valid fixture '
+      'candidate or a spike-3 sentence', () {
+    final fixture = jsonDecode(
+      File('../fixtures/expansion_validator.json').readAsStringSync(),
+    ) as Map<String, dynamic>;
+    final candidates = [
+      for (final c in fixture['cases'] as List<dynamic>)
+        if ((c as Map<String, dynamic>)['valid'] == true)
+          c['candidate'] as String,
+    ];
+    expect(candidates, isNotEmpty);
+    expect(_spike3Sentences, hasLength(6));
+    final banned = {
+      for (final s in [...candidates, ..._spike3Sentences]) _normalise(s),
+    };
+    // The rule must be able to fire: a literal holding a fixture candidate
+    // is caught, through escapes, case, whitespace and trailing punctuation.
+    expect(
+      banned,
+      contains(_normalise(_literalValues(_lex(r"'I DON\'T know!? '")).single)),
+    );
+    final problems = <String>[];
+    for (final file in _dartFiles('lib')) {
+      for (final value in _literalValues(_lex(file.readAsStringSync()))) {
+        if (banned.contains(_normalise(value))) {
+          problems.add('${file.path}: hardcodes "$value"');
+        }
+      }
+    }
+    expect(problems, isEmpty);
+  });
+
+  test('REQ-APPTEST-4, REQ-COMPOSE-1, REQ-CI-3: the source rules cover the '
+      'new expansion files, and every test double of an expansion or speech '
+      'seam under test/ is named Mock', () {
+    // REQ-COMPOSE-1 scans every file in lib/compose; REQ-CI-3 every file in
+    // lib/.
+    expect(
+      _dartFiles('lib/compose').map(_posix),
+      containsAll([
+        'lib/compose/initials_validator.dart',
+        'lib/compose/sentence_tokens.dart',
+        'lib/compose/narrowing.dart',
+        'lib/compose/expansion_client.dart',
+      ]),
+    );
+    expect(
+      _dartFiles('lib').map(_posix),
+      containsAll([
+        'lib/net/http_expansion_transport.dart',
+        'lib/store/notice_store.dart',
+        'lib/ui/key_screen_controller.dart',
+      ]),
+    );
+    final declared = <String>{};
+    final problems = <String>[];
+    for (final file in _dartFiles('test')) {
+      for (final c in _classes(_lex(file.readAsStringSync()))) {
+        declared.add(c.name);
+        final seams = c.supertypes.intersection(_mockedSeams);
+        if (seams.isNotEmpty && !c.name.startsWith('Mock')) {
+          problems.add(
+            '${file.path}: ${c.name} implements ${seams.join(', ')}',
+          );
+        }
+      }
+    }
+    expect(declared, containsAll(['MockExpansionTransport', 'MockDelay']));
     expect(problems, isEmpty);
   });
 }

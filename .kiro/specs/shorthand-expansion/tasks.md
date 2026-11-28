@@ -145,7 +145,7 @@ Conventions for every task:
     - Remove `functions/expand/`; add `worker/`, `fixtures/` and `spikes/` with one line each as in the design; change the `eval/` entry to the exact text of REQ-STEER-2; add `lib/net/` under `app/` (D9)
     - _Requirements: REQ-STEER-2, REQ-STEER-3_
 
-- [-] 8. Checkpoint - Part A is tested, deployed and recorded (REQ-CHECKPOINT-1)
+- [x] 8. Checkpoint - Part A is tested, deployed and recorded (REQ-CHECKPOINT-1)
   - Run `cd worker && npm test`, `cd packages/morse_core && dart test` and `cd app && flutter test`; record the pass counts.
   - Ask the user before committing and pushing the Part A commit; then record the GitHub Actions run URL and its result.
   - On the hosted Worker, check that `GET https://sounder.kadhim-alawi.workers.dev/` loads the app and a navigation to `/no-such-page` loads the app with status 200 (REQ-ROUTE-3, REQ-ROUTE-4).
@@ -156,120 +156,120 @@ Conventions for every task:
 
 ### Part B: the client
 
-- [ ] 9. Implement the pure Dart expansion rules in `app/lib/compose/`
-  - [ ] 9.1 Add the app dependencies
+- [x] 9. Implement the pure Dart expansion rules in `app/lib/compose/`
+  - [x] 9.1 Add the app dependencies
     - Register `app/` and `packages/morse_core` as dart MCP roots; confirm `http` and `shared_preferences` versions and web support with `pub_dev_search`; add `http: ^1.6.0` and `shared_preferences: ^2.5.6` to `app/pubspec.yaml` with the dart MCP `pub` tool (or `flutter pub add` in the shell, saying so)
     - _Requirements: REQ-WAIT-3, REQ-NOTICE-2_
-  - [ ] 9.2 Implement the Dart_Validator
+  - [x] 9.2 Implement the Dart_Validator
     - `app/lib/compose/initials_validator.dart`: `maxCandidateLength`, `isE2Space`, `isStripChar`, `isAsciiLetter`, `asciiLower` (maps only 0x41..0x5A), `splitWords`, `stripWord`, `isWellFormedWord`, `isValidCandidate(tokens, candidate)`, the same algorithm as the TS_Validator over `codeUnitAt`; no `toLowerCase`, no regex Unicode classes
     - Pure Dart under the existing REQ-COMPOSE-1 source rule (D8)
     - _Requirements: REQ-VALIDATOR-1, REQ-VALIDATOR-4_
-  - [ ] 9.3 Write the Dart fixture test (required)
+  - [x] 9.3 Write the Dart fixture test (required)
     - `app/test/initials_validator_fixture_test.dart`: read `File('../fixtures/expansion_validator.json')`, check the schema shape, and assert each case's expected result, naming the case id on failure
     - _Requirements: REQ-VALIDATOR-2, REQ-APPTEST-1_
-  - [ ] 9.4 Write the Dart candidate generators and the property test for generated-valid candidates (required)
+  - [x] 9.4 Write the Dart candidate generators and the property test for generated-valid candidates (required)
     - `app/test/support/expansion_arbitraries.dart`: Token, Token_List and valid-candidate generators matching the fast-check ones (check kiri_check combinators with the dart MCP server before use)
     - Create `app/test/expansion_properties_test.dart`, seed `601003`, `maxExamples: 200`
     - **Property 1: Generated-valid candidates are accepted**
     - **Validates: Requirements 1.5, 1.1** (REQ-VALIDATOR-5, REQ-VALIDATOR-1, REQ-APPTEST-2)
-  - [ ] 9.5 Write the Dart property test for a changed first letter (required)
+  - [x] 9.5 Write the Dart property test for a changed first letter (required)
     - Add the mutation generator to `expansion_arbitraries.dart`; add the test to `expansion_properties_test.dart`, seed `602003`
     - **Property 2: Changing a first letter makes a candidate invalid**
     - **Validates: Requirements 1.6, 1.1** (REQ-VALIDATOR-6, REQ-VALIDATOR-1, REQ-APPTEST-2)
-  - [ ] 9.6 Write the Dart property test for a different word count (required)
+  - [x] 9.6 Write the Dart property test for a different word count (required)
     - Add the add-words and remove-words generators to `expansion_arbitraries.dart`; add the test to `expansion_properties_test.dart`, seed `603003`
     - **Property 3: A different word count makes a candidate invalid**
     - **Validates: Requirements 1.7, 1.1** (REQ-VALIDATOR-7, REQ-VALIDATOR-1, REQ-APPTEST-2)
-  - [ ] 9.7 Implement Sentence_Tokens
+  - [x] 9.7 Implement Sentence_Tokens
     - `app/lib/compose/sentence_tokens.dart`: `TokensCheck` (`TokensEmpty`, `TokensBlocked` with `TokensBlock.nonLetter`, `tooManyWords`, `wordTooLong` checked in that order, `TokensReady`), `sentenceTokens(items)` with words as maximal runs of non-Word_Space items (E16), and `tokensMessageFor(check)` returning the three exact messages
     - _Requirements: REQ-TOKENS-1, REQ-TOKENS-2, REQ-TOKENS-3_
-  - [ ] 9.8 Write the property test for Sentence_Tokens (required)
+  - [x] 9.8 Write the property test for Sentence_Tokens (required)
     - Add a Sentence generator to `expansion_arbitraries.dart` (0 to 14 words of 1 to 10 items, mostly ASCII Letter_Items, sometimes an Unknown_Letter_Item, digit or punctuation Letter_Item, 1 or more Word_Spaces between words, optional at the ends), reusing `item_arbitraries.dart` patterns; add the test to `expansion_properties_test.dart`, seed `607003`
     - **Property 7: Sentence_Tokens follow the words of the Sentence**
     - **Validates: Requirements 10.1, 10.2, 10.3** (REQ-TOKENS-1, REQ-TOKENS-2, REQ-TOKENS-3)
-  - [ ] 9.9 Implement narrowing
+  - [x] 9.9 Implement narrowing
     - `app/lib/compose/narrowing.dart`: `narrowCandidates(candidates, check)` returns `[]` unless `TokensReady`, else the in-order sublist the Dart_Validator accepts
     - _Requirements: REQ-NARROW-1_
-  - [ ] 9.10 Write the property test for narrowing keeps exactly the valid candidates (required)
+  - [x] 9.10 Write the property test for narrowing keeps exactly the valid candidates (required)
     - Add a Candidate_List generator (0 to 6 strings mixing valid candidates and arbitrary strings) and a TokensCheck generator to `expansion_arbitraries.dart`; add the test to `expansion_properties_test.dart`, seed `608003`
     - **Property 8: Narrowing keeps exactly the valid candidates, in order**
     - **Validates: Requirements 14.3, 14.1** (REQ-NARROW-3, REQ-NARROW-1, REQ-APPTEST-2)
-  - [ ] 9.11 Write the property test for adding letters only narrows (required)
+  - [x] 9.11 Write the property test for adding letters only narrows (required)
     - Add the T to T′ generator (append letters to 1 or more Tokens, each at most 8 letters, built by construction) to `expansion_arbitraries.dart`; candidates mostly valid for T′; add the test to `expansion_properties_test.dart`, seed `609003`
     - **Property 9: Adding letters to tokens only narrows**
     - **Validates: Requirements 14.4** (REQ-NARROW-4, REQ-APPTEST-2)
-  - [ ] 9.12 Write the property test for narrowing idempotence (required)
+  - [x] 9.12 Write the property test for narrowing idempotence (required)
     - Add the test to `expansion_properties_test.dart`, seed `610003`
     - **Property 10: Narrowing is idempotent**
     - **Validates: Requirements 14.5** (REQ-NARROW-5, REQ-APPTEST-2)
 
-- [ ] 10. Implement the Expansion_Client, transport, notice store and key actions
-  - [ ] 10.1 Implement the Expansion_Client
+- [x] 10. Implement the Expansion_Client, transport, notice store and key actions
+  - [x] 10.1 Implement the Expansion_Client
     - `app/lib/compose/expansion_client.dart`: `Delay`, `TransportResponse`, `ExpansionTransport`, `ExpansionResult` (`ExpansionReply`, `ExpansionFailure` with `timeout`, `network`, `status`, `unreadable`), `ExpansionClient`, `TransportExpansionClient` (`jsonEncode({'tokens': tokens})`, `Future.any` of the transport and `delay(6 s)`, any throw is `network`, non-200 is `status`, bad JSON or no `candidates` list is `unreadable`, else the string items in order)
     - No `Timer`, clock, Flutter or I/O imports (REQ-COMPOSE-1 source rule); no validation; no logging; no state
     - _Requirements: REQ-WAIT-3, REQ-WAIT-5, REQ-FAIL-1, REQ-FAIL-4_
-  - [ ] 10.2 Write the Expansion_Client unit tests
+  - [x] 10.2 Write the Expansion_Client unit tests
     - `app/test/expansion_client_test.dart` with `MockExpansionTransport` and `MockDelay` (a `Delay` whose futures the test completes): body is `{"tokens":[...]}` for the Sentence_Tokens; 200 reply keeps string items in order; non-200, unreadable, thrown error and timeout results; a late reply after the timeout does not change the result
     - _Requirements: REQ-WAIT-3, REQ-WAIT-5, REQ-FAIL-1, REQ-APPTEST-4_
-  - [ ] 10.3 Implement the HTTP transport
+  - [x] 10.3 Implement the HTTP transport
     - `app/lib/net/http_expansion_transport.dart`: `HttpExpansionTransport(http.Client)` posting to `Uri.base.resolve('/expand')` with `Content-Type: application/json`, returning `TransportResponse(statusCode, utf8.decode(bodyBytes, allowMalformed: true))`; check the `http` API with the dart MCP server
     - _Requirements: REQ-WAIT-3, REQ-FAIL-4_
-  - [ ] 10.4 Implement the notice store
+  - [x] 10.4 Implement the notice store
     - `app/lib/store/notice_store.dart`: `NoticeStore` (`isAccepted`, `accept`, both may throw) and `SharedPreferencesNoticeStore` using `SharedPreferencesAsync` with key `sounder.expansion_notice_accepted` and value `true`; nothing else stored; check the `SharedPreferencesAsync` API with the dart MCP server
     - _Requirements: REQ-NOTICE-2, REQ-NOTICE-3, REQ-NOTICE-5_
-  - [ ] 10.5 Add the new key actions
+  - [x] 10.5 Add the new key actions
     - `app/lib/input/keyboard_adapter.dart`: `KeyAction.expand` for a non-repeat ArrowDown key-down; `choose1` to `choose4` for non-repeat key-downs of `digit1`..`digit4` and `numpad1`..`numpad4` (E24); their key-ups and Repeat_Events return `swallow`; update the doc-comment table
     - _Requirements: REQ-TOKENS-4, REQ-CHOICE-3, REQ-NOTICE-2_
-  - [ ] 10.6 Write the key action unit tests
+  - [x] 10.6 Write the key action unit tests
     - Add to `app/test/keyboard_adapter_test.dart`: ArrowDown down, up and repeat; digits and numpad 1 to 4; digit 5 ignored; Space, Enter and Escape unchanged
     - _Requirements: REQ-TOKENS-4, REQ-CHOICE-3_
 
-- [ ] 11. Checkpoint - Ensure all tests pass
+- [x] 11. Checkpoint - Ensure all tests pass
   - Run `cd app && flutter test` and `cd packages/morse_core && dart test` (dart MCP test tools where available).
   - Ensure all tests pass, ask the user if questions arise.
 
-- [ ] 12. Wire the Expand flow into the Key_Screen
-  - [ ] 12.1 Extend `KeyScreenState`
+- [x] 12. Wire the Expand flow into the Key_Screen
+  - [x] 12.1 Extend `KeyScreenState`
     - `app/lib/ui/key_screen_state.dart`: `noticeVisible`, `thinking`, `candidates` (unmodifiable, 0 to 4), `failureVisible`, `fallbackCandidate` with a private sentinel in `copyWith` so it can be reset to `null`
     - _Requirements: REQ-NOTICE-1, REQ-WAIT-1, REQ-CHOICE-1, REQ-FAIL-1, REQ-CHOICE-5_
-  - [ ] 12.2 Extend `KeyScreenController`
+  - [x] 12.2 Extend `KeyScreenController`
     - `app/lib/ui/key_screen_controller.dart`: `expansionClientProvider` (real `TransportExpansionClient` with `HttpExpansionTransport(http.Client())` and `Future<void>.delayed`) and `noticeStoreProvider`
     - `build()` starts `_loadAcceptance()` (error is `false`, D10); `expand()`, `sendNotice()` (D11), `cancelNotice()`, `_send(tokens)` with `_requestSeq` and `_pendingId`, the newest-and-same-tokens check, the Dart_Validator and `take(4)`; `choose(n)`; `speak()` resets `fallbackCandidate`; `escape()` (D12); `arrowDown()`; `_publish()` sentence-change hook (D15) abandoning the pending request, clearing the Failure_Message and narrowing
     - Only `speak()` and `choose()` call the Speech_Service; nothing prints or logs text
     - _Requirements: REQ-TOKENS-2, REQ-NOTICE-1 to REQ-NOTICE-5, REQ-WAIT-3, REQ-WAIT-4, REQ-WAIT-6, REQ-CHOICE-1, REQ-CHOICE-3 to REQ-CHOICE-6, REQ-NARROW-1, REQ-NARROW-2, REQ-FAIL-1, REQ-FAIL-2, REQ-FAIL-4_
-  - [ ] 12.3 Implement the expansion widgets
+  - [x] 12.3 Implement the expansion widgets
     - One file each in `app/lib/ui/`: `tokens_message.dart` (24 px), `expansion_notice.dart` (inline panel, constant `expansionNoticeText` with the exact REQ-NOTICE-1 text, `Send` and `Cancel` with `sounderButtonStyle()`), `thinking_indicator.dart` (static `Thinking\u2026` in a live region, no spinner), `failure_message.dart` (live region), `candidate_list.dart` (numbered `FilledButton`s, 32 px, wrapping, at least 64 by 64, semantic label `n. text`)
     - _Requirements: REQ-TOKENS-3, REQ-NOTICE-1, REQ-WAIT-1, REQ-FAIL-1, REQ-FAIL-2, REQ-CHOICE-2_
-  - [ ] 12.4 Add the Expand button and the candidate fallback text
+  - [x] 12.4 Add the Expand button and the candidate fallback text
     - `app/lib/ui/action_bar.dart`: `Expand` button after Clear, disabled when Expand is not offered, same colours when disabled
     - `app/lib/speech/fallback_view.dart`: optional `candidateText` shown at 36 px in place of `SentenceDisplay`
     - _Requirements: REQ-TOKENS-2, REQ-TOKENS-4, REQ-CHOICE-5_
-  - [ ] 12.5 Wire `KeyScreen`
+  - [x] 12.5 Wire `KeyScreen`
     - `app/lib/ui/key_screen.dart`: expansion area below the action bar in the D14 order, so the Sentence, Partial_Sequence and On_Screen_Key never move; `_onKeyEvent` maps `expand` to `arrowDown()`, `choose1..4` to `choose(n)`, `closeFallback` to `escape()`; Space, Enter and repeat handling unchanged; pass `fallbackCandidate` to `FallbackView`
     - _Requirements: REQ-TOKENS-4, REQ-NOTICE-2, REQ-NOTICE-3, REQ-WAIT-2, REQ-CHOICE-3, REQ-FAIL-3_
-  - [ ] 12.6 Extend the source rules test
+  - [x] 12.6 Extend the source rules test
     - `app/test/source_rules_test.dart`: no `print`, `debugPrint` or `log` call in the expansion files under `lib/compose/`, `lib/net/`, `lib/store/` and the controller; no string literal under `lib/` equal (ASCII-lowercased, trailing `.!?` removed) to any valid fixture candidate or any of the six spike-3 sentences; confirm the REQ-COMPOSE-1 and `Mock` naming rules cover the new files
     - _Requirements: REQ-FAIL-4, REQ-APPTEST-4, REQ-APPTEST-5_
-  - [ ]* 12.7 Write widget tests for the Expansion_Notice
+  - [x] 12.7 Write widget tests for the Expansion_Notice
     - Create `app/test/support/expansion_mocks.dart` if not present (`MockExpansionClient` that records calls and completes replies on demand, `MockNoticeStore` with a settable result that can throw) and `app/test/expansion_screen_test.dart`, overriding providers with these, `MockSpeechService` and `ManualTimeBase`; use `pump`, not `pumpAndSettle`
     - Exact notice text; Send by button and ArrowDown sends one request; Cancel by button and Escape sends nothing and keeps the Sentence; stored acceptance skips the notice; a throwing store shows the notice again next time and still sends for an activated Send
     - _Requirements: REQ-NOTICE-1 to REQ-NOTICE-5, REQ-APPTEST-3_
-  - [ ]* 12.8 Write widget tests for waiting, stale replies and narrowing
+  - [x] 12.8 Write widget tests for waiting, stale replies and narrowing
     - Add to `expansion_screen_test.dart` (create the mocks file if not present): Thinking_Indicator shown in a live region; Space, Undo, Clear and Speak work while pending; a Sentence change abandons the request; a second Expand supersedes the first; a stale reply is ignored; adding a letter narrows the Candidate_List
     - _Requirements: REQ-WAIT-1, REQ-WAIT-2, REQ-WAIT-4, REQ-WAIT-6, REQ-NARROW-1, REQ-NARROW-2, REQ-APPTEST-3_
-  - [ ]* 12.9 Write widget tests for choosing, failure and the Tokens_Message
+  - [x] 12.9 Write widget tests for choosing, failure and the Tokens_Message
     - Add to `expansion_screen_test.dart` (create the mocks file if not present): choose by click and by number key, one speech call each, Sentence unchanged; Enter speaks the typed text while candidates are shown; speech failure shows the candidate in the Fallback_View; a reply arriving makes no speech call; locally invalid candidates dropped; Candidate_Button size, font and semantic label, wrapping at 320 px; Failure_Message for timeout, non-200 and an empty list, staying until the Sentence changes or Expand is pressed again; the three Tokens_Message texts with Expand disabled
     - _Requirements: REQ-CHOICE-1 to REQ-CHOICE-6, REQ-FAIL-1 to REQ-FAIL-3, REQ-TOKENS-2, REQ-TOKENS-3, REQ-APPTEST-3_
 
 - [ ] 13. Measure expansion latency in `eval/`
-  - [ ] 13.1 Write the latency script
+  - [x] 13.1 Write the latency script
     - Create the `eval/` folder and `eval/expansion_latency.js`: a browser-console snippet for the hosted page that sends the six spike-3 Token_Lists in turn, 24 requests, one every 3.5 s, timing `performance.now()` from send to parsed reply; it prints durations and statuses only, never candidate text
     - _Requirements: REQ-LATENCY-1, REQ-STEER-2_
   - [ ] 13.2 Run the manual latency measurement and record it
     - Run the snippet on the hosted site over broadband; write `eval/expansion_latency.md` with the method, every raw duration in ms, the statuses and the median plus one frame (about 17 ms, design L5); the median must be under 3,000 ms. Ask the user if the median is over budget
     - _Requirements: REQ-LATENCY-1_
 
-- [ ] 14. Final checkpoint - Ensure all tests pass
+- [x] 14. Final checkpoint - Ensure all tests pass
   - Run `cd worker && npm test`, `cd packages/morse_core && dart test` and `cd app && flutter test`.
   - Ensure all tests pass, ask the user if questions arise.
 

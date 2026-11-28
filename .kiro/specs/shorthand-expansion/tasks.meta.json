@@ -23,6 +23,34 @@
     "5.3 Write the property test for request body parsing": {
       "status": "passed",
       "lastRunTimestamp": 1795795706297
+    },
+    "9.4 Write the Dart candidate generators and the property test for generated-valid candidates (required)": {
+      "status": "passed",
+      "lastRunTimestamp": 1795811518929
+    },
+    "9.5 Write the Dart property test for a changed first letter (required)": {
+      "status": "passed",
+      "lastRunTimestamp": 1795820064186
+    },
+    "9.6 Write the Dart property test for a different word count (required)": {
+      "status": "passed",
+      "lastRunTimestamp": 1795820436751
+    },
+    "9.8 Write the property test for Sentence_Tokens (required)": {
+      "status": "passed",
+      "lastRunTimestamp": 1795822659518
+    },
+    "9.10 Write the property test for narrowing keeps exactly the valid candidates (required)": {
+      "status": "passed",
+      "lastRunTimestamp": 1795825511167
+    },
+    "9.11 Write the property test for adding letters only narrows (required)": {
+      "status": "passed",
+      "lastRunTimestamp": 1795826326517
+    },
+    "9.12 Write the property test for narrowing idempotence (required)": {
+      "status": "passed",
+      "lastRunTimestamp": 1795826799459
     }
   },
   "executionHistory": {
@@ -378,6 +406,404 @@
         "executionId": "80a63c26-e0fd-492b-b58e-b81dedab91f1",
         "chatSessionId": "sess_5168cbd8-9cf5-4eef-a59e-b000fa977579",
         "timestamp": 1795806010203
+      },
+      {
+        "executionId": "80a63c26-e0fd-492b-b58e-b81dedab91f1",
+        "chatSessionId": "sess_5168cbd8-9cf5-4eef-a59e-b000fa977579",
+        "timestamp": 1795807400443
+      }
+    ],
+    "9.1 Add the app dependencies": [
+      {
+        "executionId": "47e05ef6-e579-49df-a300-fa3140f9cdc9",
+        "chatSessionId": "sess_a48c7a8a-d93f-494d-8dbf-62cb9545b261",
+        "timestamp": 1795809356465
+      },
+      {
+        "executionId": "47e05ef6-e579-49df-a300-fa3140f9cdc9",
+        "chatSessionId": "sess_a48c7a8a-d93f-494d-8dbf-62cb9545b261",
+        "timestamp": 1795809517642
+      }
+    ],
+    "9.2 Implement the Dart_Validator": [
+      {
+        "executionId": "616bd8ea-4531-47bd-9b95-fa4252d29418",
+        "chatSessionId": "sess_c353b820-b4a7-4a88-b21f-68557dc9d8a0",
+        "timestamp": 1795809671618
+      },
+      {
+        "executionId": "616bd8ea-4531-47bd-9b95-fa4252d29418",
+        "chatSessionId": "sess_c353b820-b4a7-4a88-b21f-68557dc9d8a0",
+        "timestamp": 1795809873839
+      }
+    ],
+    "9.3 Write the Dart fixture test (required)": [
+      {
+        "executionId": "f6d6b4ee-f61c-4834-adcc-a352d2d35053",
+        "chatSessionId": "sess_a154e139-4fb7-4383-99c5-e6d7e781ccb7",
+        "timestamp": 1795810148046
+      },
+      {
+        "executionId": "f6d6b4ee-f61c-4834-adcc-a352d2d35053",
+        "chatSessionId": "sess_a154e139-4fb7-4383-99c5-e6d7e781ccb7",
+        "timestamp": 1795810293937
+      }
+    ],
+    "9.4 Write the Dart candidate generators and the property test for generated-valid candidates (required)": [
+      {
+        "executionId": "e1417088-2bc5-46bd-b4c6-da8f493ec524",
+        "chatSessionId": "sess_4f31cc1f-bea2-4d69-bce0-69b7be58ae76",
+        "timestamp": 1795811292267
+      },
+      {
+        "executionId": "e1417088-2bc5-46bd-b4c6-da8f493ec524",
+        "chatSessionId": "sess_4f31cc1f-bea2-4d69-bce0-69b7be58ae76",
+        "timestamp": 1795811533644
+      }
+    ],
+    "9.5 Write the Dart property test for a changed first letter (required)": [
+      {
+        "executionId": "37dd3110-bdfb-4386-b54d-531d901ac58e",
+        "chatSessionId": "sess_b2102076-32ed-42a7-a7a3-58777893deb1",
+        "timestamp": 1795812252574
+      },
+      {
+        "executionId": "43ab7daf-e22a-49f3-ab61-7d90ac9c5910",
+        "chatSessionId": "sess_b2102076-32ed-42a7-a7a3-58777893deb1",
+        "timestamp": 1795820078500
+      }
+    ],
+    "9.6 Write the Dart property test for a different word count (required)": [
+      {
+        "executionId": "132f0a78-0312-4342-b853-b980663c053b",
+        "chatSessionId": "sess_5727f249-453a-4caf-89eb-aa28262f0923",
+        "timestamp": 1795820247239
+      },
+      {
+        "executionId": "132f0a78-0312-4342-b853-b980663c053b",
+        "chatSessionId": "sess_5727f249-453a-4caf-89eb-aa28262f0923",
+        "timestamp": 1795820497895
+      }
+    ],
+    "9.7 Implement Sentence_Tokens": [
+      {
+        "executionId": "f5d9a9ff-95e7-4761-9653-edb7637b2815",
+        "chatSessionId": "sess_128cf5f7-209a-4171-8260-e336a81cfd99",
+        "timestamp": 1795821458302
+      },
+      {
+        "executionId": "f5d9a9ff-95e7-4761-9653-edb7637b2815",
+        "chatSessionId": "sess_128cf5f7-209a-4171-8260-e336a81cfd99",
+        "timestamp": 1795821633198
+      }
+    ],
+    "9.8 Write the property test for Sentence_Tokens (required)": [
+      {
+        "executionId": "be9c49ab-469d-4b91-982f-de8d6b4c5c46",
+        "chatSessionId": "sess_555bfa7c-4b3a-464b-bff3-5972fde19cce",
+        "timestamp": 1795822436387
+      },
+      {
+        "executionId": "be9c49ab-469d-4b91-982f-de8d6b4c5c46",
+        "chatSessionId": "sess_555bfa7c-4b3a-464b-bff3-5972fde19cce",
+        "timestamp": 1795822723197
+      }
+    ],
+    "9.9 Implement narrowing": [
+      {
+        "executionId": "68604379-02d4-453c-bc6a-8b10e68429c6",
+        "chatSessionId": "sess_d9a8271a-eac4-4d58-8df1-d3e399b34e83",
+        "timestamp": 1795823664320
+      },
+      {
+        "executionId": "68604379-02d4-453c-bc6a-8b10e68429c6",
+        "chatSessionId": "sess_d9a8271a-eac4-4d58-8df1-d3e399b34e83",
+        "timestamp": 1795824377441
+      }
+    ],
+    "9.10 Write the property test for narrowing keeps exactly the valid candidates (required)": [
+      {
+        "executionId": "a450cbe5-3b6c-42ef-aff8-1f04e9828d0c",
+        "chatSessionId": "sess_b8014cc3-9e84-40a0-9d28-ee9cb5bd5829",
+        "timestamp": 1795825013132
+      },
+      {
+        "executionId": "a450cbe5-3b6c-42ef-aff8-1f04e9828d0c",
+        "chatSessionId": "sess_b8014cc3-9e84-40a0-9d28-ee9cb5bd5829",
+        "timestamp": 1795825652876
+      }
+    ],
+    "9.11 Write the property test for adding letters only narrows (required)": [
+      {
+        "executionId": "7be4a1b8-a10e-4cc6-85e6-cfc5b33a0884",
+        "chatSessionId": "sess_54aeb7aa-eb62-44b8-95df-59599ec102c2",
+        "timestamp": 1795826131569
+      },
+      {
+        "executionId": "7be4a1b8-a10e-4cc6-85e6-cfc5b33a0884",
+        "chatSessionId": "sess_54aeb7aa-eb62-44b8-95df-59599ec102c2",
+        "timestamp": 1795826340362
+      }
+    ],
+    "9.12 Write the property test for narrowing idempotence (required)": [
+      {
+        "executionId": "1a7a63dc-c26f-4717-b1ca-72dea5abe0a9",
+        "chatSessionId": "sess_679956e8-c28b-47da-b8ab-11dc99e53936",
+        "timestamp": 1795826674610
+      },
+      {
+        "executionId": "1a7a63dc-c26f-4717-b1ca-72dea5abe0a9",
+        "chatSessionId": "sess_679956e8-c28b-47da-b8ab-11dc99e53936",
+        "timestamp": 1795826813498
+      }
+    ],
+    "9. Implement the pure Dart expansion rules in `app/lib/compose/`": [
+      {
+        "executionId": "1a7a63dc-c26f-4717-b1ca-72dea5abe0a9",
+        "chatSessionId": "sess_679956e8-c28b-47da-b8ab-11dc99e53936",
+        "timestamp": 1795826814379
+      }
+    ],
+    "10.1 Implement the Expansion_Client": [
+      {
+        "executionId": "2cc11924-efb6-4328-8c01-896ab360e370",
+        "chatSessionId": "sess_5f07a48c-de4a-45c4-a5ee-ce6189a7081e",
+        "timestamp": 1795827969984
+      },
+      {
+        "executionId": "2cc11924-efb6-4328-8c01-896ab360e370",
+        "chatSessionId": "sess_5f07a48c-de4a-45c4-a5ee-ce6189a7081e",
+        "timestamp": 1795828140642
+      }
+    ],
+    "10.5 Add the new key actions": [
+      {
+        "executionId": "2cc11924-efb6-4328-8c01-896ab360e370",
+        "chatSessionId": "sess_5f07a48c-de4a-45c4-a5ee-ce6189a7081e",
+        "timestamp": 1795827970146
+      },
+      {
+        "executionId": "2cc11924-efb6-4328-8c01-896ab360e370",
+        "chatSessionId": "sess_5f07a48c-de4a-45c4-a5ee-ce6189a7081e",
+        "timestamp": 1795828141312
+      }
+    ],
+    "10.2 Write the Expansion_Client unit tests": [
+      {
+        "executionId": "2cc11924-efb6-4328-8c01-896ab360e370",
+        "chatSessionId": "sess_5f07a48c-de4a-45c4-a5ee-ce6189a7081e",
+        "timestamp": 1795828146195
+      },
+      {
+        "executionId": "2cc11924-efb6-4328-8c01-896ab360e370",
+        "chatSessionId": "sess_5f07a48c-de4a-45c4-a5ee-ce6189a7081e",
+        "timestamp": 1795828404379
+      }
+    ],
+    "10.3 Implement the HTTP transport": [
+      {
+        "executionId": "2cc11924-efb6-4328-8c01-896ab360e370",
+        "chatSessionId": "sess_5f07a48c-de4a-45c4-a5ee-ce6189a7081e",
+        "timestamp": 1795828147345
+      },
+      {
+        "executionId": "2cc11924-efb6-4328-8c01-896ab360e370",
+        "chatSessionId": "sess_5f07a48c-de4a-45c4-a5ee-ce6189a7081e",
+        "timestamp": 1795828405829
+      }
+    ],
+    "10.4 Implement the notice store": [
+      {
+        "executionId": "2cc11924-efb6-4328-8c01-896ab360e370",
+        "chatSessionId": "sess_5f07a48c-de4a-45c4-a5ee-ce6189a7081e",
+        "timestamp": 1795828148574
+      },
+      {
+        "executionId": "2cc11924-efb6-4328-8c01-896ab360e370",
+        "chatSessionId": "sess_5f07a48c-de4a-45c4-a5ee-ce6189a7081e",
+        "timestamp": 1795828407407
+      }
+    ],
+    "10.6 Write the key action unit tests": [
+      {
+        "executionId": "2cc11924-efb6-4328-8c01-896ab360e370",
+        "chatSessionId": "sess_5f07a48c-de4a-45c4-a5ee-ce6189a7081e",
+        "timestamp": 1795828148802
+      },
+      {
+        "executionId": "2cc11924-efb6-4328-8c01-896ab360e370",
+        "chatSessionId": "sess_5f07a48c-de4a-45c4-a5ee-ce6189a7081e",
+        "timestamp": 1795828408591
+      }
+    ],
+    "10. Implement the Expansion_Client, transport, notice store and key actions": [
+      {
+        "executionId": "2cc11924-efb6-4328-8c01-896ab360e370",
+        "chatSessionId": "sess_5f07a48c-de4a-45c4-a5ee-ce6189a7081e",
+        "timestamp": 1795828408761
+      }
+    ],
+    "11. Checkpoint - Ensure all tests pass": [
+      {
+        "executionId": "487a654b-7028-49a7-b1a5-de9087477b65",
+        "chatSessionId": "sess_9de5dcaf-cc88-406d-8e13-620c31f3babe",
+        "timestamp": 1795829112777
+      },
+      {
+        "executionId": "487a654b-7028-49a7-b1a5-de9087477b65",
+        "chatSessionId": "sess_9de5dcaf-cc88-406d-8e13-620c31f3babe",
+        "timestamp": 1795832517383
+      }
+    ],
+    "12.1 Extend `KeyScreenState`": [
+      {
+        "executionId": "733852e4-9f5c-4fa5-ab82-bdb3682812d4",
+        "chatSessionId": "sess_2712bab1-9dfa-4fb0-b4c6-d590be9bf5d1",
+        "timestamp": 1795833138063
+      },
+      {
+        "executionId": "733852e4-9f5c-4fa5-ab82-bdb3682812d4",
+        "chatSessionId": "sess_2712bab1-9dfa-4fb0-b4c6-d590be9bf5d1",
+        "timestamp": 1795833816846
+      }
+    ],
+    "12.2 Extend `KeyScreenController`": [
+      {
+        "executionId": "3e322804-830a-4b22-8ff3-61748b3b80fd",
+        "chatSessionId": "sess_66cc41f8-93a9-41d5-a8b8-6a9af30a5891",
+        "timestamp": 1795834043324
+      },
+      {
+        "executionId": "3e322804-830a-4b22-8ff3-61748b3b80fd",
+        "chatSessionId": "sess_66cc41f8-93a9-41d5-a8b8-6a9af30a5891",
+        "timestamp": 1795834248954
+      }
+    ],
+    "12.3 Implement the expansion widgets": [
+      {
+        "executionId": "33c3b485-a6ff-4fa3-bf14-e440ee8563a5",
+        "chatSessionId": "sess_400e26f9-48db-4508-a8d1-ed86f1d87ec1",
+        "timestamp": 1795834293772
+      },
+      {
+        "executionId": "33c3b485-a6ff-4fa3-bf14-e440ee8563a5",
+        "chatSessionId": "sess_400e26f9-48db-4508-a8d1-ed86f1d87ec1",
+        "timestamp": 1795834439109
+      }
+    ],
+    "12.4 Add the Expand button and the candidate fallback text": [
+      {
+        "executionId": "3ffed8a5-d8ec-46c9-a33c-b46b37ee0237",
+        "chatSessionId": "sess_ffdb7e8a-3dff-4ed0-87b3-986b0dc7b915",
+        "timestamp": 1795834469714
+      },
+      {
+        "executionId": "3ffed8a5-d8ec-46c9-a33c-b46b37ee0237",
+        "chatSessionId": "sess_ffdb7e8a-3dff-4ed0-87b3-986b0dc7b915",
+        "timestamp": 1795835483017
+      }
+    ],
+    "12.5 Wire `KeyScreen`": [
+      {
+        "executionId": "ea382675-2311-402b-b1dd-1312adb676a0",
+        "chatSessionId": "sess_30f2a1c9-9be8-4603-a8d9-bea4c0e69929",
+        "timestamp": 1795869545192
+      },
+      {
+        "executionId": "ea382675-2311-402b-b1dd-1312adb676a0",
+        "chatSessionId": "sess_30f2a1c9-9be8-4603-a8d9-bea4c0e69929",
+        "timestamp": 1795869737961
+      }
+    ],
+    "12.6 Extend the source rules test": [
+      {
+        "executionId": "969e816a-6ceb-4403-be83-57cf0e017974",
+        "chatSessionId": "sess_40ff1fbc-e09d-4fa1-9e43-8f3ca3e6be99",
+        "timestamp": 1795870729273
+      },
+      {
+        "executionId": "969e816a-6ceb-4403-be83-57cf0e017974",
+        "chatSessionId": "sess_40ff1fbc-e09d-4fa1-9e43-8f3ca3e6be99",
+        "timestamp": 1795871009257
+      }
+    ],
+    "12. Wire the Expand flow into the Key_Screen": [
+      {
+        "executionId": "969e816a-6ceb-4403-be83-57cf0e017974",
+        "chatSessionId": "sess_40ff1fbc-e09d-4fa1-9e43-8f3ca3e6be99",
+        "timestamp": 1795871009607
+      }
+    ],
+    "12.7 Write widget tests for the Expansion_Notice": [
+      {
+        "executionId": "8cbf6052-5fc3-41f5-9b66-c7f310e23a21",
+        "chatSessionId": "sess_c2c8d72a-efff-497b-9d98-134ccfed6ca6",
+        "timestamp": 1795871083821
+      },
+      {
+        "executionId": "8cbf6052-5fc3-41f5-9b66-c7f310e23a21",
+        "chatSessionId": "sess_c2c8d72a-efff-497b-9d98-134ccfed6ca6",
+        "timestamp": 1795871297345
+      }
+    ],
+    "12.8 Write widget tests for waiting, stale replies and narrowing": [
+      {
+        "executionId": "426129f0-9077-4a4b-b791-8a69b3c7c75f",
+        "chatSessionId": "sess_a019c44d-b8e2-4759-bfba-7e2c9818d55c",
+        "timestamp": 1795871338083
+      },
+      {
+        "executionId": "426129f0-9077-4a4b-b791-8a69b3c7c75f",
+        "chatSessionId": "sess_a019c44d-b8e2-4759-bfba-7e2c9818d55c",
+        "timestamp": 1795871705349
+      }
+    ],
+    "12.9 Write widget tests for choosing, failure and the Tokens_Message": [
+      {
+        "executionId": "dcd066d6-e501-4a89-ad37-e389e1edce69",
+        "chatSessionId": "sess_de13a78d-0b84-4d54-9918-23ac24dea957",
+        "timestamp": 1795873301072
+      },
+      {
+        "executionId": "dcd066d6-e501-4a89-ad37-e389e1edce69",
+        "chatSessionId": "sess_de13a78d-0b84-4d54-9918-23ac24dea957",
+        "timestamp": 1795875106994
+      }
+    ],
+    "13.1 Write the latency script": [
+      {
+        "executionId": "53273de2-74ca-47f2-9241-e37d909018ed",
+        "chatSessionId": "sess_91033a72-5a97-4e9e-ab77-50699c5e9e9b",
+        "timestamp": 1795875787576
+      },
+      {
+        "executionId": "53273de2-74ca-47f2-9241-e37d909018ed",
+        "chatSessionId": "sess_91033a72-5a97-4e9e-ab77-50699c5e9e9b",
+        "timestamp": 1795875880372
+      }
+    ],
+    "13.2 Run the manual latency measurement and record it": [
+      {
+        "executionId": "fcec7f66-0337-4ad5-a0dd-ab70df17d324",
+        "chatSessionId": "sess_aba191b9-11f6-48e3-88fb-5f33f0f651a8",
+        "timestamp": 1795878010744
+      },
+      {
+        "executionId": "fcec7f66-0337-4ad5-a0dd-ab70df17d324",
+        "chatSessionId": "sess_aba191b9-11f6-48e3-88fb-5f33f0f651a8",
+        "timestamp": 1795878091248
+      }
+    ],
+    "14. Final checkpoint - Ensure all tests pass": [
+      {
+        "executionId": "140e6822-0d13-46d1-9eab-118bb2a6aa10",
+        "chatSessionId": "sess_cca8dc88-1210-4f83-84c1-f065c012596a",
+        "timestamp": 1795879159252
+      },
+      {
+        "executionId": "140e6822-0d13-46d1-9eab-118bb2a6aa10",
+        "chatSessionId": "sess_cca8dc88-1210-4f83-84c1-f065c012596a",
+        "timestamp": 1795879967582
       }
     ]
   }
